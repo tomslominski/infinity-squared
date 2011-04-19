@@ -1,0 +1,130 @@
+/* Main */
+body {
+	background:#F1F1F1;
+	color:#000;
+	font-family:'Ubuntu', sans-serif, Helvetica, Arial;
+	font-size: 12px;
+}
+h2 {
+	color:#000;
+	margin-bottom:-8px;
+}
+a {
+	color:#013F6D;
+	text-decoration:none;
+}
+a:visited {
+	color:#013F6D;
+	text-decoration:none;
+}
+/* Header */
+h1 {
+	background: url(img/noise.png) #013F6D;
+	width:100%;
+	text-align:center;
+	color:#FFFFFF;
+	font-size:60px;
+	border-top:4px #000 solid;
+	margin-top:0;
+	margin-bottom:-6px;
+}
+h1 a {
+	color:#FFF;
+	text-decoration:none;
+}
+h1 a:hover {
+	border-bottom: #FFF 1px dashed;
+}
+h1 a:visited {
+	color:#FFF;
+	text-decoration:none;
+}
+.menu {
+	background: #000;
+	display: block;
+	float: left;
+	margin: 0 auto;
+	width: 750px;
+	color:#FFF;
+	padding: 0 15px 0 15px;
+	margin-bottom:30px;
+}
+.menu a {
+	color: #FFF;
+	text-decoration: none;
+	line-height:38px;
+	display: block;
+	padding: 0 10px;
+}
+.menu a:hover {
+	background:#292929;
+}
+.menu li {
+	list-style: none;
+	float: left;
+	line-height:38px;
+	background:#000;
+	width:auto;
+}
+/* Container */
+#container {
+	width: 780px;
+	margin-left: auto;
+	margin-right: auto; 
+	background-color: #FFF;
+	padding: 20px;
+	margin-top: 20px;
+}
+.right {
+	width: 400px;
+	float: right;
+}
+.bookmarklet {
+	-moz-border-radius: 11px;
+	-webkit-border-radius: 11px;
+	border-radius: 11px;
+	background: #ddd url(../img/button.png) repeat-x;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #ddd));
+	background: -moz-linear-gradient(top center, #fff 0%, #ddd 100%);
+	border: 1px solid;
+	border-color: #ddd #bbb #999;
+	cursor: pointer;
+	color: #333;
+	font: bold 12px/1.2 Arial, sans-serif;
+	outline: 0;
+	overflow: visible;
+	padding: 3px 10px 4px;
+	text-shadow: #fff 0 1px 1px;
+	width: auto;
+	text-decoration:none;
+}
+/* Footer */
+.footer {
+	text-align:center;
+	border-top:3px solid #000;
+	margin-top:30px;
+}
+.footer p {
+	padding-top:20px;
+	margin:0 auto;
+}
+.footer a {
+	color:#013F6D;
+}
+.footer a:hover {
+	text-decoration:none;
+	border-bottom:dashed 1px #013F6D;
+}
+.footer a:visited {
+	color:#013F6D;
+}
+/* Other */
+div#copybox {
+	width:600px;
+	height:auto;
+}
+div#sharebox {
+	height:auto;
+	width:600px;
+	margin-top: 20px
+}
