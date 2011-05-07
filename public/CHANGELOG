@@ -1,0 +1,22 @@
+∞² for YOURLS
+CHANGELOG
+=======================================================================
+=======================================================================
+Version 1.0
+-----------------------------------------------------------------------
+Initial release
+=======================================================================
+Version 1.1
+-----------------------------------------------------------------------
+Added a "for" attribute to the shortening form
+Added tooltips for revealing more information about inputs
+Removed input=text content (replaced by tooltips)
+Changed file theme structure (files now located in /public)
+New README and CHANGELOG files
+Updated formalize
+The theme is now showing links on it's own
+Added a new sharing system using native buttons
+Got rid of yourls_share_box
+Updated footer with new credits and a github repo link
+Cleaned up CSS
+=======================================================================

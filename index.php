@@ -6,15 +6,24 @@ require_once( dirname(__FILE__).'/includes/load-yourls.php' );
 <head>
 <title>kwl.me</title>
 <link rel="stylesheet" href="<?php echo YOURLS_SITE; ?>/css/share.css?v=<?php echo YOURLS_VERSION; ?>" type="text/css" media="screen" />
-<link rel="stylesheet" href="<?php echo YOURLS_SITE; ?>/public.css" type="text/css" media="screen" />
-<link href='http://fonts.googleapis.com/css?family=Ubuntu:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
-<script src="<?php echo YOURLS_SITE; ?>/js/jquery-1.3.2.min.js" type="text/javascript"></script>
+<script src="<?php echo YOURLS_SITE; ?>/js/jquery-1.4.3.min.js" type="text/javascript"></script>
 <script src="<?php echo YOURLS_SITE; ?>/js/ZeroClipboard.js?v=<?php echo YOURLS_VERSION; ?>" type="text/javascript"></script>
 <script type="text/javascript">ZeroClipboard.setMoviePath( '<?php echo YOURLS_SITE; ?>/js/ZeroClipboard.swf' );</script>
 <script src="<?php echo YOURLS_SITE; ?>/js/share.js?v=<?php echo YOURLS_VERSION; ?>" type="text/javascript"></script>
-<!-- Formalize -->
-<link rel="stylesheet" href="css/formalize.css" />
-<script src="js/jquery.formalize.min.js"></script>
+<!-- Custom -->
+<link rel="stylesheet" href="<?php echo YOURLS_SITE; ?>/public/formalize.css" />
+<script src="<?php echo YOURLS_SITE; ?>/public/js/jquery.formalize.min.js" type="text/javascript"></script>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+<script src="<?php echo YOURLS_SITE; ?>/public/js/jquery.qtip.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="<?php echo YOURLS_SITE; ?>/public/jquery.qtip.min.css" />
+<link rel="stylesheet" href="<?php echo YOURLS_SITE; ?>/public/public.css" type="text/css" media="screen" />
+<script>
+$(document).ready(function()
+{
+   // Match all A links with a title tag and use it as the content (default).
+   $('label[title]').qtip();
+});
+</script>
 </head>
 
 <body>
@@ -34,28 +43,6 @@ require_once( dirname(__FILE__).'/includes/load-yourls.php' );
 		$url     = yourls_sanitize_url( $_REQUEST['url'] );
 		$keyword = isset( $_REQUEST['keyword'] ) ? yourls_sanitize_keyword( $_REQUEST['keyword'] ): '' ;
 		$title   = isset( $_REQUEST['title'] ) ? yourls_sanitize_title( $_REQUEST['title'] ) : '' ;
-
-// Mr. Tech- URL Sanitizing
-function valid_url($str) {
-	return ( ! preg_match('/^(http|https|ftp):\/\/([A-Z0-9][A-Z0-9_-]*(?:\.[A-Z0-9][A-Z0-9_-]*)+):?(\d+)?\/?/i', $str)) 
-? FALSE : TRUE;
-}
-
-$url = yourls_sanitize_url($_REQUEST['url']);
-
-if (!valid_url($url)) {
-	die( 'Invalid url, go back and try again' );
-}
-
-// Mr. Tech- Bans
-$url = $_REQUEST['url'];
-
-foreach ($yourls_banned_URL as $banned_url) {
-	if (stristr($url, $banned_url)) {
-		die( 'Banned site' );
-	}
-}
-
 		$return  = yourls_add_new_link( $url, $keyword, $title );
 		
 		$shorturl = isset( $return['shorturl'] ) ? $return['shorturl'] : '';
@@ -63,14 +50,19 @@ foreach ($yourls_banned_URL as $banned_url) {
 		$title    = isset( $return['title'] ) ? $return['title'] : '';
 		
 		echo <<<RESULT
-		<h2>URL has been shortened</h2>
-		<p>Original URL: <code><a href="$url">$url</a></code></p>
-		<p>Short URL: <code><a href="$shorturl">$shorturl</a></code></p>
-		<p><strong>$message</strong></p>
+		<h2>Your URL has been shortened</h2>
+		<p>$message</p>
+		<div class="output">
+		<p>Original URL: <a href="$url">$url</a></p>
+		<p>Short URL: <a href="$shorturl">$shorturl</a></p>
+		<p>Stats: <a href="$shorturl+">$shorturl+</a></p>
+		</div>
+
+		<h2>Share</h2>
+		<p>Share your short URL</p>
+		<a href="http://twitter.com/share" class="twitter-share-button" data-url="$shorturl" data-text="$keyword" data-count="vertical">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+		<iframe src="http://www.facebook.com/plugins/like.php?href=$shorturl&amp;send=false&amp;layout=box_count&amp;width=50&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=90" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:55px; height:60px;" allowTransparency="true"></iframe>
 RESULT;
-		
-		// Include the Copy box and the Quick Share box
-		yourls_share_box( $url, $shorturl, $title );
 
 	// Part to be executed when no form has been submitted
 	} else {
@@ -79,12 +71,13 @@ RESULT;
 
 		echo <<<HTML
 		<h2>Enter a new URL to shorten</h2>
+		<h3>Hover over the labels to see more information</h3>
 		<form method="post" action="">
-		<p><label>URL (required):</label> <input type="text" name="url" value="Paste the long URL here" onfocus="if(this.value == this.defaultValue) this.value = ''" class="right" /></p>
-		<p><label>Custom keyword:</label> <input type="text" name="keyword" value="A keyword replaces the default short string" onfocus="if(this.value == this.defaultValue) this.value = ''" class="right" /></p>
-		<p><label>Optional title:</label> <input type="text" name="title" value="Optional title used when sharing a link from YOURLS" onfocus="if(this.value == this.defaultValue) this.value = ''" class="right" /></p>
+		<p><label for="url" title="Paste the long URL here">Long URL (required):</label> <input type="text" id="url" class="right" name="url" /></p>
+		<p><label for="keyword" title="A keyword replaces the default short string">Custom keyword:</label> <input type="text" id="keyword" class="right" name="keyword" /></p>
+		<p><label for="title" title="Optional title used when sharing a link from YOURLS">Optional title:</label> <input type="text" id="title" class="right" name="title" /></p>
 		<p><input type="submit" value="Shorten" /></p>
-		</form>	
+		</form>
 HTML;
 
 	}
@@ -97,7 +90,7 @@ HTML;
 <p><a href="javascript:(function()%7Bvar%20d=document,k=prompt('Custom%20URL'),s=d.createElement('script');if(k!=null){window.yourls_callback=function(r)%7Bif(r.short_url)%7Bprompt(r.message,r.short_url);%7Delse%7Balert('An%20error%20occured:%20'+r.message);%7D%7D;s.src='http://kwl.me/admin/index.php?u='+encodeURIComponent(d.location.href)+'&k='+k+'&jsonp=yourls';void(d.body.appendChild(s));%7D%7D)();" class="bookmarklet">Custom Keyword Shorten</a></p>
 
 <div class="footer">
-<p>Powered by <a href="http://yourls.org/" title="YOURLS">YOURLS</a>. Design by <a href="http://tomslominski.net/">Tom Slominski</a>.</p>
+<p>Powered by <a href="http://yourls.org/" title="YOURLS">YOURLS</a>. Design by <a href="http://tomslominski.net/">Tom Slominski</a>. Also used: <a href="http://formalize.me/">Formalize</a> and <a href="http://craigsworks.com/projects/qtip2/">qTip²</a>. Find this theme on <a href="https://github.com/tomslominski/infinity-squared-yourls">GitHub</a>.</p>
 </div>
 </div>
 </body>
