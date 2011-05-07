@@ -20,3 +20,7 @@ Got rid of yourls_share_box
 Updated footer with new credits and a github repo link
 Cleaned up CSS
 =======================================================================
+Version 1.1.1
+-----------------------------------------------------------------------
+Excluding some no longer used files from the header
+=======================================================================

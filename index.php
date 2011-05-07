@@ -5,12 +5,7 @@ require_once( dirname(__FILE__).'/includes/load-yourls.php' );
 <html>
 <head>
 <title>kwl.me</title>
-<link rel="stylesheet" href="<?php echo YOURLS_SITE; ?>/css/share.css?v=<?php echo YOURLS_VERSION; ?>" type="text/css" media="screen" />
 <script src="<?php echo YOURLS_SITE; ?>/js/jquery-1.4.3.min.js" type="text/javascript"></script>
-<script src="<?php echo YOURLS_SITE; ?>/js/ZeroClipboard.js?v=<?php echo YOURLS_VERSION; ?>" type="text/javascript"></script>
-<script type="text/javascript">ZeroClipboard.setMoviePath( '<?php echo YOURLS_SITE; ?>/js/ZeroClipboard.swf' );</script>
-<script src="<?php echo YOURLS_SITE; ?>/js/share.js?v=<?php echo YOURLS_VERSION; ?>" type="text/javascript"></script>
-<!-- Custom -->
 <link rel="stylesheet" href="<?php echo YOURLS_SITE; ?>/public/formalize.css" />
 <script src="<?php echo YOURLS_SITE; ?>/public/js/jquery.formalize.min.js" type="text/javascript"></script>
 <link href='http://fonts.googleapis.com/css?family=Ubuntu:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
