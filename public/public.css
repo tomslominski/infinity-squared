@@ -120,7 +120,10 @@ h1 a:visited {
 }
 .output a:hover {
 	border-bottom: #013F6D 1px dashed;
-}	
+}
+.share-button, .twitter-share-button {
+	padding-right:3px;
+}
 /* Footer */
 .footer {
 	text-align:center;

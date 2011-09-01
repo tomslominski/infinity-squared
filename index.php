@@ -24,7 +24,7 @@ $(document).ready(function()
 <body>
 
 <div id="container">
-<h1><a href="<?php echo YOURLS_SITE; ?>">kwl.me</a></h1>
+<h1><a href="<?php echo YOURLS_SITE; ?>"><?php echo INFINITYSQUARED_NAME; ?></a></h1>
 <ul class="menu">
 	<li><a href="http://tomslominski.net/">Blog</a></li>
 	<li><a href="http://local.tomslominski.net/">Local</a></li>
@@ -56,7 +56,7 @@ $(document).ready(function()
 		<h2>Share</h2>
 		<p>Share your short URL</p>
 		<a href="http://twitter.com/share" class="twitter-share-button" data-url="$shorturl" data-text="$keyword" data-count="vertical">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-		<iframe src="http://www.facebook.com/plugins/like.php?href=$shorturl&amp;send=false&amp;layout=box_count&amp;width=50&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=90" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:55px; height:60px;" allowTransparency="true"></iframe>
+		<a href="#" class="share-button" onClick="facebook=window.open('http://facebook.com/sharer.php?u=$shorturl&t=$title','facebook','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,width=626,height=436,left=0,top=0'); return false;"><img src="public/img/facebook.png" alt="Share on Facebook" /></a>
 RESULT;
 
 	// Part to be executed when no form has been submitted
