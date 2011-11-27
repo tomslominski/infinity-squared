@@ -2,8 +2,8 @@
 // Start YOURLS engine
 require_once( dirname(__FILE__).'/includes/load-yourls.php' );
 
-// Define infinity-squared settings
-define( 'INFINITYSQUARED_NAME', 'kwl.me' );
+// Ask for Infinity Squared settings
+include( dirname(__FILE__).'/public/config.php' );
 ?>
 <html>
 <head>
@@ -27,10 +27,18 @@ $(document).ready(function()
 <body>
 
 <div id="container">
-<h1><a href="<?php echo YOURLS_SITE; ?>"><?php echo INFINITYSQUARED_NAME; ?></a></h1>
+<h1><a href="<?php echo YOURLS_SITE; ?>"><?php echo ISQ_NAME; ?></a></h1>
 <ul class="menu">
-	<li><a href="http://tomslominski.net/">Blog</a></li>
-	<li><a href="http://local.tomslominski.net/">Local</a></li>
+	<li><a href="<?php echo ISQ_LINK1_URL; ?>"><?php echo ISQ_LINK1_NAME; ?></a></li>
+	<li><a href="<?php echo ISQ_LINK2_URL; ?>"><?php echo ISQ_LINK2_NAME; ?></a></li>
+	<li><a href="<?php echo ISQ_LINK3_URL; ?>"><?php echo ISQ_LINK3_NAME; ?></a></li>
+	<li><a href="<?php echo ISQ_LINK4_URL; ?>"><?php echo ISQ_LINK4_NAME; ?></a></li>
+	<li><a href="<?php echo ISQ_LINK5_URL; ?>"><?php echo ISQ_LINK5_NAME; ?></a></li>
+	<li><a href="<?php echo ISQ_LINK6_URL; ?>"><?php echo ISQ_LINK6_NAME; ?></a></li>
+	<li><a href="<?php echo ISQ_LINK7_URL; ?>"><?php echo ISQ_LINK7_NAME; ?></a></li>
+	<li><a href="<?php echo ISQ_LINK8_URL; ?>"><?php echo ISQ_LINK8_NAME; ?></a></li>
+	<li><a href="<?php echo ISQ_LINK9_URL; ?>"><?php echo ISQ_LINK9_NAME; ?></a></li>
+	<li><a href="<?php echo ISQ_LINK10_URL; ?>"><?php echo ISQ_LINK10_NAME; ?></a></li>
 </ul>
 
 	<?php
