@@ -16,25 +16,25 @@ if (!empty(ISQ::$social['linkedin'])) { $ISQlinkedin = "<script src='http://plat
 if (!empty(ISQ::$general['qr'])) { $ISQqr = "<h2>QR code</h2>\n<p>Share your code with external devices</p>\n<img class='qr' src='https://chart.googleapis.com/chart?cht=qr&chs=150x150&chl=$shorturl&chld=L|0' alt='QR code' />"; }
 $ISQtitle = ISQ::$general['name'];
 $ISQname_1= ISQ::$links['name_1'];
-$ISQname_1= ISQ::$links['url_1'];
+$ISQurl_1= ISQ::$links['url_1'];
 $ISQname_2= ISQ::$links['name_2'];
-$ISQname_2= ISQ::$links['url_2'];
+$ISQurl_2= ISQ::$links['url_2'];
 $ISQname_3= ISQ::$links['name_3'];
-$ISQname_3= ISQ::$links['url_3'];
+$ISQurl_3= ISQ::$links['url_3'];
 $ISQname_4= ISQ::$links['name_4'];
-$ISQname_4= ISQ::$links['url_4'];
+$ISQurl_4= ISQ::$links['url_4'];
 $ISQname_5= ISQ::$links['name_5'];
-$ISQname_5= ISQ::$links['url_5'];
+$ISQurl_5= ISQ::$links['url_5'];
 $ISQname_6= ISQ::$links['name_6'];
-$ISQname_6= ISQ::$links['url_6'];
+$ISQurl_6= ISQ::$links['url_6'];
 $ISQname_7= ISQ::$links['name_7'];
-$ISQname_7= ISQ::$links['url_7'];
+$ISQurl_7= ISQ::$links['url_7'];
 $ISQname_8= ISQ::$links['name_8'];
-$ISQname_8= ISQ::$links['url_8'];
+$ISQurl_8= ISQ::$links['url_8'];
 $ISQname_9= ISQ::$links['name_9'];
-$ISQname_9= ISQ::$links['url_9'];
+$ISQurl_9= ISQ::$links['url_9'];
 $ISQname_10= ISQ::$links['name_10'];
-$ISQname_10= ISQ::$links['url_10'];
+$ISQurl_10= ISQ::$links['url_10'];
 
 // Error definitions
 if ( $message = $url. "added to database") {
