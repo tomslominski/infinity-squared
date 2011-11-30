@@ -154,3 +154,6 @@ div#sharebox {
 	width:600px;
 	margin-top: 20px
 }
+.error {
+	color:red;
+}
