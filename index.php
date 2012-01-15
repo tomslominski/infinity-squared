@@ -9,11 +9,6 @@ require_once( dirname(__FILE__).'/public/config.php' );
 class ISQ { public static $general = array(), $links = array(), $social = array(); }
 
 // Settings definitions
-if (!empty(ISQ::$social['facebook'])) { $ISQfacebook = "<a href='#' class='share-button' onClick='facebook=window.open('http://facebook.com/sharer.php?u=$shorturl&t=$title','facebook','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,width=626,height=436,left=0,top=0'); return false;'><img src='public/img/facebook.png' alt='Share on Facebook' /></a>"; }
-if (!empty(ISQ::$social['twitter'])) { $ISQtwitter = "<a href='http://twitter.com/share' class='twitter-share-button' data-url='$shorturl' data-text='$keyword' data-count='vertical'>Tweet</a><script type='text/javascript' src='http://platform.twitter.com/widgets.js'></script>"; }
-if (!empty(ISQ::$social['plus'])) { $ISQplus = "<a href='https://m.google.com/app/plus/x/?v=compose&content=$shorturl' target='_blank'><img src='public/img/plus.png' alt='Share on Google+' /></a>"; }
-if (!empty(ISQ::$social['linkedin'])) { $ISQlinkedin = "<script src='http://platform.linkedin.com/in.js' type='text/javascript'></script><script type='IN/Share' data-url='$shorturl' data-counter='top'></script>"; }
-if (!empty(ISQ::$general['qr'])) { $ISQqr = "<h2>QR code</h2>\n<p>Share your code with external devices</p>\n<img class='qr' src='https://chart.googleapis.com/chart?cht=qr&chs=150x150&chl=$shorturl&chld=L|0' alt='QR code' />"; }
 $ISQtitle = ISQ::$general['name'];
 $ISQname_1= ISQ::$links['name_1'];
 $ISQurl_1= ISQ::$links['url_1'];
@@ -100,7 +95,13 @@ $(document).ready(function()
 		$shorturl = isset( $return['shorturl'] ) ? $return['shorturl'] : '';
 		$message  = isset( $return['message'] ) ? $return['message'] : '';
 		$title    = isset( $return['title'] ) ? $return['title'] : '';
-		
+
+		if (!empty(ISQ::$social['facebook'])) { $ISQfacebook = "<a href='http://facebook.com/sharer.php?u=$shorturl' class='share-button' target='_blank'><img src='public/img/facebook.png' alt='Share on Facebook' /></a>"; }
+		if (!empty(ISQ::$social['twitter'])) { $ISQtwitter = "<a href='http://twitter.com/share' class='twitter-share-button' data-url='$shorturl' data-text='$title' data-count='vertical'>Tweet</a><script type='text/javascript' src='http://platform.twitter.com/widgets.js'></script>"; }
+		if (!empty(ISQ::$social['plus'])) { $ISQplus = "<a href='https://m.google.com/app/plus/x/?v=compose&content=$shorturl' target='_blank'><img src='public/img/plus.png' alt='Share on Google+' /></a>"; }
+		if (!empty(ISQ::$social['linkedin'])) { $ISQlinkedin = "<script src='http://platform.linkedin.com/in.js' type='text/javascript'></script><script type='IN/Share' data-url='$shorturl' data-counter='top'></script>"; }
+		if (!empty(ISQ::$general['qr'])) { $ISQqr = "<h2>QR code</h2>\n<p>Share your code with external devices</p>\n<img class='qr' src='https://chart.googleapis.com/chart?cht=qr&chs=150x150&chl=$shorturl&chld=L|0' alt='QR code' />"; }
+
 		echo <<<RESULT
 		$error
 		<div class="output">
