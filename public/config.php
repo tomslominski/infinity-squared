@@ -2,17 +2,18 @@
 // General settings
 // 1 to enable, 0 to disable
 ISQ::$general = array(
-	'name' => 'Edit public/config.php to set up ∞²', // The name of your URL shortener
-	'qr' => 1 // Do you want to display a QR code?
+	'name' => 'kwl.me', // The name of your URL shortener
+	'qr' => 1, // Do you want to display a QR code?
+	'mobile' => 1 // Do you want to display a QR code?
 );
 
 // Menu- The width of ∞² menu allows you to have about 10 links
 // Leave empty to disable
 ISQ::$links = array(
-	'name_1' => '',
-	'url_1' => '',
-	'name_2' => '',
-	'url_2' => '',
+	'name_1' => 'Blog',
+	'url_1' => 'http://tomslominski.net/',
+	'name_2' => 'Get ∞²!',
+	'url_2' => 'http://tomslominski.net/infinity-squared/',
 	'name_3' => '',
 	'url_3' => '',
 	'name_4' => '',

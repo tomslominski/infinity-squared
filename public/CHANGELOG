@@ -1,0 +1,6 @@
+----------------- 1.3 ----------------
+- Added a mobile version of the theme which can be disabled in the config file
+- Discreet gradient in the menu
+- New Google+ sharer
+- Bookmarklet code updated with code with YOURLS 1.5
+- Usual assortment of bug fixes, cleaned up code etc.

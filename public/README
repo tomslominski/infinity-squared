@@ -1,11 +1,12 @@
-Infinity Squared, a beautiful theme for YOURLS, by Tom Slominski (http://tomslominski.net/)
+Infinity Squared, a beautiful theme for YOURLS, by Tom Slominski (http://tomslominski.net/infinity-squared/)
 
-See the project's page to view the latest installation and upgrade instructions
-as well as the latest news on the project
-http://tomslominski.net/infinity-squared/
+See the project's Wiki pages at GitHub for the latest installation instructions
+https://github.com/tomslominski/infinity-squared
 
 qTip 2 is dual licensed under MIT or GPLv2 licenses
 http://en.wikipedia.org/wiki/MIT_License
 http://en.wikipedia.org/wiki/GNU_General_Public_License
 
 Formalize and the theme itself are also licenced on GPLv2.
+
+To update the theme from a previous version, backup your public/config.php and merge changes from new config.php file into your old one, keeping your old config the same. Next, delete public/, upload new files (replacing the old ones if there's any left) and restore your modified config.php.
