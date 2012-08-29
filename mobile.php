@@ -47,31 +47,21 @@ if ( $message = $url. "added to database") {
 
 <html>
 <head>
-<?php if (!empty(ISQ::$general['mobile'])) { echo "<script type='text/javascript'>if (screen.width <= 720) { document.location = 'mobile.php'; }</script>"; } ?>
 <title><?php echo $ISQtitle; ?></title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
 <script src="<?php echo YOURLS_SITE; ?>/js/jquery-1.4.3.min.js" type="text/javascript"></script>
 <link rel="stylesheet" href="<?php echo YOURLS_SITE; ?>/public/formalize.css" />
 <script src="<?php echo YOURLS_SITE; ?>/public/js/jquery.formalize.min.js" type="text/javascript"></script>
-<link href="http://fonts.googleapis.com/css?family=Ubuntu:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<script src="<?php echo YOURLS_SITE; ?>/public/js/jquery.qtip.min.js" type="text/javascript"></script>
-<link rel="stylesheet" href="<?php echo YOURLS_SITE; ?>/public/jquery.qtip.min.css" />
-<link rel="stylesheet" href="<?php echo YOURLS_SITE; ?>/public/normal.css" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Ubuntu:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="<?php echo YOURLS_SITE; ?>/public/mobile.css" type="text/css" />
 <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
   {lang: "en-GB"}
-</script>
-<script>
-$(document).ready(function()
-{
-	// Match all labels with a title tag and use it as the content
-	$('label[title]').qtip();
-});
 </script>
 </head>
 
 <body>
 
-<div id="container">
 <div class="header">
 <h1><a href="<?php echo YOURLS_SITE; ?>"><?php echo $ISQtitle; ?></a></h1>
 <ul class="menu">
@@ -116,8 +106,6 @@ $(document).ready(function()
 		<p>Stats: <a href="$shorturl+">$shorturl+</a></p>
 		</div>
 
-		$ISQqr
-
 		<h2>Share</h2>
 		<p>Share your short URL</p>
 		$ISQfacebook
@@ -133,11 +121,13 @@ RESULT;
 
 		echo <<<HTML
 		<h2>Enter a new URL to shorten</h2>
-		<h3>Hover over the labels to see more information</h3>
 		<form method="post" action="">
-		<p><label for="url" title="Paste the long URL here">Long URL (required):</label> <input type="text" id="url" class="right" name="url" /></p>
-		<p><label for="keyword" title="A keyword replaces the default short string">Custom keyword:</label> <input type="text" id="keyword" class="right" name="keyword" /></p>
-		<p><label for="title" title="Optional title used when sharing a link from YOURLS">Optional title:</label> <input type="text" id="title" class="right" name="title" /></p>
+		<p><label for="url" title="Paste the long URL here">Long URL (required):</label></p>
+		<p><input type="text" id="url" class="right" name="url" /></p>
+		<p><label for="keyword" title="A keyword replaces the default short string">Custom keyword:</label></p>
+		<p><input type="text" id="keyword" class="right" name="keyword" /></p>
+		<p><label for="title" title="Optional title used when sharing a link from YOURLS">Optional title:</label></p>
+		<p><input type="text" id="title" class="right" name="title" /></p>
 		<p><input type="submit" value="Shorten" /></p>
 		</form>
 HTML;
@@ -145,16 +135,8 @@ HTML;
 	}
 	?>
 	</div>
-
-<div class="paragraph">
-<h2>The bookmarklets</h2>
-<p>To use the bookmarklets drag them to your bookmark bar or simply right click on them and select the appropriate option. The instant bookmarklet shortens the URL of the current tab and then opens a kwl.me page in the current tab.</p>
-<p><a href="javascript:void(location.href='<?php echo YOURLS_SITE; ?>/index.php?format=simple&action=shorturl&url='+escape(location.href))" class="bookmarklet">Instant Shorten</a></p>
-</div>
-
-<div class="footer">
-<p>Powered by <a href="http://yourls.org/" title="YOURLS">YOURLS</a>. Design by <a href="http://tomslominski.net/">Tom Slominski</a>. Also used: <a href="http://formalize.me/">Formalize</a> and <a href="http://craigsworks.com/projects/qtip2/">qTip²</a>. Find this theme on <a href="https://github.com/tomslominski/infinity-squared">GitHub</a>.</p>
-</div>
-</div>
 </body>
+<footer>
+<p>Powered by <a href="http://yourls.org/" title="YOURLS">YOURLS</a> and <a href="http://formalize.me/">Formalize</a>. Design by <a href="http://tomslominski.net/">Tom Slominski</a>. Find this theme on <a href="https://github.com/tomslominski/infinity-squared">GitHub</a>.</p>
+</footer>
 </html>
