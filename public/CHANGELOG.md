@@ -9,6 +9,7 @@ Infinity-Squared CHANGELOG
 * Updated qTip² and Formalize.me so they're compatible with the new version of jQuery
 * Added a few more comments to the code so it's easier to modify it
 * Improved the readability of the documentation by moving over to Markdown
+* Updated links in the config file
 * Usual assortment of bug fixed, cleaned up code etc.
 
 1.3 (August 2012)
