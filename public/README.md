@@ -4,7 +4,7 @@ Infinity Squared
 ================
 A beautiful theme for YOURLS, carefully crafted by [Tom Slominski](http://tomslominski.net/).
 
-See the project's [Wiki pages](https://github.com/tomslominski/infinity-squared) on GitHub for the latest installation and upgrade instructions.
+See the project's [Wiki pages](https://github.com/tomslominski/infinity-squared) at GitHub for the latest installation and upgrade instructions.
 
 qTip 2 is dual licensed under [MIT](http://en.wikipedia.org/wiki/MIT_License) or [GPLv2](http://en.wikipedia.org/wiki/GNU_General_Public_License) licenses.
 
