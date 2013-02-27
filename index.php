@@ -47,16 +47,16 @@ if ( $message = $url. "added to database") {
 
 <html>
 <head>
-<?php if (!empty(ISQ::$general['mobile'])) { echo "<script type='text/javascript'>if (screen.width <= 720) { document.location = 'mobile.php'; }</script>"; } ?>
-<title><?php echo $ISQtitle; ?></title>
+<?php if (!empty(ISQ::$general['mobile'])) { echo "<script type='text/javascript'>if (screen.width <= 720) { document.location = 'mobile.php'; }</script>"; } ?> <!-- Redirect to mobile if screen narrower than 720px -->
+<title><?php echo $ISQtitle; ?></title> <!-- Site title defined in theme settings -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
-<script src="<?php echo YOURLS_SITE; ?>/js/jquery-1.4.3.min.js" type="text/javascript"></script>
-<link rel="stylesheet" href="<?php echo YOURLS_SITE; ?>/public/formalize.css" />
-<script src="<?php echo YOURLS_SITE; ?>/public/js/jquery.formalize.min.js" type="text/javascript"></script>
-<link href="http://fonts.googleapis.com/css?family=Ubuntu:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<script src="<?php echo YOURLS_SITE; ?>/public/js/jquery.qtip.min.js" type="text/javascript"></script>
-<link rel="stylesheet" href="<?php echo YOURLS_SITE; ?>/public/jquery.qtip.min.css" />
-<link rel="stylesheet" href="<?php echo YOURLS_SITE; ?>/public/normal.css" type="text/css" />
+<script src="<?php echo YOURLS_SITE; ?>/js/jquery-1.9.1.min.js" type="text/javascript"></script> <!-- jQuery -->
+<link rel="stylesheet" href="<?php echo YOURLS_SITE; ?>/public/formalize.css" /> <!-- Formalize CSS -->
+<script src="<?php echo YOURLS_SITE; ?>/public/js/jquery.formalize.min.js" type="text/javascript"></script><!-- Formalize JS -->
+<link href="http://fonts.googleapis.com/css?family=Ubuntu:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css"><!-- Ubuntu from Google Web Fonts -->
+<link rel="stylesheet" href="<?php echo YOURLS_SITE; ?>/public/jquery.qtip.min.css" /><!-- qTip CSS -->
+<script src="<?php echo YOURLS_SITE; ?>/public/js/jquery.qtip.min.js" type="text/javascript"></script><!-- qTip JS -->
+<link rel="stylesheet" href="<?php echo YOURLS_SITE; ?>/public/normal.css" type="text/css" /><!-- Theme CSS -->
 <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
   {lang: "en-GB"}
 </script>
@@ -65,6 +65,8 @@ $(document).ready(function()
 {
 	// Match all labels with a title tag and use it as the content
 	$('label[title]').qtip();
+	// Match all bookmarklet links and use their title as content
+	$('a.bookmarklet[title]').qtip();
 });
 </script>
 </head>
@@ -148,8 +150,11 @@ HTML;
 
 <div class="paragraph">
 <h2>The bookmarklets</h2>
-<p>To use the bookmarklets drag them to your bookmark bar or simply right click on them and select the appropriate option. The instant bookmarklet shortens the URL of the current tab and then opens a kwl.me page in the current tab.</p>
-<p><a href="javascript:void(location.href='<?php echo YOURLS_SITE; ?>/index.php?format=simple&action=shorturl&url='+escape(location.href))" class="bookmarklet">Instant Shorten</a></p>
+<p>To use the bookmarklets drag them to your bookmark bar or simply right click on them and select the appropriate option. </p>
+<a href="javascript:(function()%7Bvar%20d=document,w=window,enc=encodeURIComponent,e=w.getSelection,k=d.getSelection,x=d.selection,s=(e?e():(k)?k():(x?x.createRange().text:0)),s2=((s.toString()=='')?s:enc(s)),f='<?php echo $page; ?>',l=d.location,p='?url='+enc(l.href)+'&title='+enc(d.title)+'&text='+s2,u=f+p;try%7Bthrow('ozhismygod');%7Dcatch(z)%7Ba=function()%7Bif(!w.open(u))l.href=u;%7D;if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else%20a();%7Dvoid(0);%7D)()" class="bookmarklet" title="Shortens the URL of the current site and opens a new tab with the details of the shortened URL.">Simple Shorten</a>
+<a href="javascript:(function()%7Bvar%20d=document,s=d.createElement('script');window.yourls_callback=function(r)%7Bif(r.short_url)%7Bprompt(r.message,r.short_url);%7Delse%7Balert('An%20error%20occured:%20'+r.message);%7D%7D;s.src='<?php echo $page; ?>?url='+encodeURIComponent(d.location.href)+'&jsonp=yourls';void(d.body.appendChild(s));%7D)();" class="bookmarklet">Instant Shorten</a>
+<a href="javascript:(function()%7Bvar%20d=document,w=window,enc=encodeURIComponent,e=w.getSelection,k=d.getSelection,x=d.selection,s=(e?e():(k)?k():(x?x.createRange().text:0)),s2=((s.toString()=='')?s:enc(s)),f='<?php echo $page; ?>',l=d.location,k=prompt(%22Custom%20URL%22),k2=(k?'&keyword='+k:%22%22),p='?url='+enc(l.href)+'&title='+enc(d.title)+'&text='+s2+k2,u=f+p;if(k!=null)%7Btry%7Bthrow('ozhismygod');%7Dcatch(z)%7Ba=function()%7Bif(!w.open(u))l.href=u;%7D;if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else%20a();%7Dvoid(0)%7D%7D)()" class="bookmarklet" title="Opens a popup which asks for the URL you want to shorten and opens a new tab with the details of the shortened URL.">Custom Shorten</a>
+<a href="javascript:(function()%7Bvar%20d=document,k=prompt('Custom%20URL'),s=d.createElement('script');if(k!=null){window.yourls_callback=function(r)%7Bif(r.short_url)%7Bprompt(r.message,r.short_url);%7Delse%7Balert('An%20error%20occured:%20'+r.message);%7D%7D;s.src='<?php echo $page; ?>?url='+encodeURIComponent(d.location.href)+'&keyword='+k+'&jsonp=yourls';void(d.body.appendChild(s));%7D%7D)();" class="bookmarklet">Instant Custom Shorten</a>
 </div>
 
 <div class="footer">
