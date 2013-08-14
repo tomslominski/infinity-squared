@@ -4,7 +4,7 @@
 ISQ::$general = array(
 	'name' => 'kwl.me', // The name of your URL shortener
 	'qr' => 1, // Do you want to display a QR code?
-	'mobile' => 1 // Do you want to enable the mobile version?
+	'mobile' => 0 // Do you want to enable the mobile version?
 );
 
 // Menu- The width of ∞² menu allows you to have about 10 links

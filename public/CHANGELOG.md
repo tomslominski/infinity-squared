@@ -1,6 +1,22 @@
 Infinity-Squared CHANGELOG
 ==========================
 
+1.5 (August 2013)
+-----------------
+Big changes:
+* Internationalisation! See Wiki for instructions on how to use Infinity Squared in your language and translate it for other people to use.
+* A proper CSS mobile interface. When I tried to add internationalisation, it quickly became apparent that having two code bases was stupid.
+
+Bug fixes:
+* HTML5 doctype
+* Upgraded to qTip2
+* Including jQuery and qTip from CDN
+* No longer loading G+ code if it's not enabled
+* Parallel loading of scripts thanks to Chrome's audits
+* Rearranged the CSS so that it's more readable
+
+Many thanks to [Ozh](http://ozh.org) for help with internationalisation
+
 1.4 (February 2013)
 -------------------
 * Bookmarklets updated to the code relevant to YOURLS 1.6
