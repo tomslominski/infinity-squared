@@ -122,7 +122,6 @@ h1 a:hover {
 /* Main style */
 .paragraph {
 	padding: 0 2.5% 0 2.5%;
-<<<<<<< HEAD:public/style.css
 }
 
 h2 {
@@ -130,15 +129,6 @@ h2 {
 	margin-bottom: -8px;
 }
 
-=======
-}
-
-h2 {
-	color: black;
-	margin-bottom: -8px;
-}
-
->>>>>>> 656a0c985880d87881d8ab157da0e848527f4c49:public/style.css
 .right {
 	width: 60%;
 	float: right;
@@ -179,7 +169,6 @@ a.bookmarklet {
 /* Output */
 .output label {
 	width: 30%;
-<<<<<<< HEAD:public/style.css
 	float:left;
 }
 
@@ -187,15 +176,6 @@ a.bookmarklet {
 	width: 70%
 }
 
-=======
-	float: left;
-}
-
-.output input {
-	width: 70%
-}
-
->>>>>>> 656a0c985880d87881d8ab157da0e848527f4c49:public/style.css
 .error {
 	color: red;
 }
