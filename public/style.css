@@ -134,6 +134,13 @@ h2 {
 	float: right;
 }
 
+.radio {
+	margin-right: 10%;
+}
+input[type="radio"] {
+	margin-right: 1%;
+}
+
 a.bookmarklet {
 	border-radius: 11px;
 	background: #ddd url(../img/button.png) repeat-x;
@@ -169,7 +176,7 @@ a.bookmarklet {
 /* Output */
 .output label {
 	width: 30%;
-	float:left;
+	float: left;
 }
 
 .output input {
@@ -178,6 +185,7 @@ a.bookmarklet {
 
 .error {
 	color: red;
+	padding-bottom: 20px;
 }
 
 /* Footer */

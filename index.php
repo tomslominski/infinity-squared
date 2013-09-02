@@ -170,6 +170,10 @@ $(document).ready(function()
 	// Part to be executed if FORM has been submitted
 	if ( isset($_REQUEST['url']) ) {
 
+		if ( isset($_POST['antispam']) && $_POST['antispam'] != user ) {
+			exit('<p class="error">Antispam check failed!</p>'); 
+		}
+
 		$url     = yourls_sanitize_url( $_REQUEST['url'] );
 		$keyword = isset( $_REQUEST['keyword'] ) ? yourls_sanitize_keyword( $_REQUEST['keyword'] ): '' ;
 		$title   = isset( $_REQUEST['title'] ) ? yourls_sanitize_title( $_REQUEST['title'] ) : '' ;
@@ -199,9 +203,9 @@ $(document).ready(function()
 		echo <<<RESULT
 		$error
 		<div class="output">
-		<p><label>$output_original</label> <input type="text" name="shorturl" onclick="this.select();" onload="this.select();" value="$url" id="long-copy"> $ISQlongcopy </p>
-		<p><label>$output_short</label> <input type="text" name="shorturl" onclick="this.select();" onload="this.select();" value="$shorturl" id="short-copy"> $ISQshortcopy </p>
-		<p><label>$output_stats</label> <input type="text" name="shorturl" onclick="this.select();" onload="this.select();" value="$shorturl+" id="stats-copy"> $ISQstatscopy </p>
+		<p><label for="longurl">$output_original</label> <input type="text" name="longurl" onclick="this.select();" onload="this.select();" value="$url" id="long-copy"> $ISQlongcopy </p>
+		<p><label for="shorturl">$output_short</label> <input type="text" name="shorturl" onclick="this.select();" onload="this.select();" value="$shorturl" id="short-copy"> $ISQshortcopy </p>
+		<p><label for="stats">$output_stats</label> <input type="text" name="stats" onclick="this.select();" onload="this.select();" value="$shorturl+" id="stats-copy"> $ISQstatscopy </p>
 		<p class="desktop-only">$output_copy</p>
 		</div>
 
@@ -237,6 +241,7 @@ RESULT;
 		<p><label for="url" title="$site_long_hover">$site_long</label> <input type="text" id="url" class="right" name="url" /></p>
 		<p><label for="keyword" title="$site_keyword_hover">$site_keyword</label> <input type="text" id="keyword" class="right" name="keyword" /></p>
 		<p><label for="title" title="$site_title_hover">$site_title</label> <input type="text" id="title" class="right" name="title" /></p>
+		<p><label for="antispam" title="Antispam check">You are a bot or a human?</label> <span class="right"><span class="radio"><input type="radio" name="antispam" checked value="bot" />Bot</span> <span class="radio"><input type="radio" name="antispam" value="user" />Human</span></span></p> 
 		<p><input type="submit" value="$site_submit" /></p>
 		</form>
 HTML;
