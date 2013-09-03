@@ -186,6 +186,9 @@ a.bookmarklet {
 .error {
 	color: red;
 	padding-bottom: 20px;
+	font-weight: bold;
+	text-align: center;
+	font-size: 1.2rem;
 }
 
 /* Footer */
