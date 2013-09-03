@@ -171,7 +171,7 @@ $(document).ready(function()
 	if ( isset($_REQUEST['url']) ) {
 
 		if ( isset($_POST['antispam']) && $_POST['antispam'] != user ) {
-			exit('<p class="error">Antispam check failed!</p>'); 
+			exit('<p class="error">' . yourls__( 'Antispam check failed!', 'isq_translation') . '</p>'); 
 		}
 
 		$url     = yourls_sanitize_url( $_REQUEST['url'] );
@@ -233,6 +233,10 @@ RESULT;
 		$site_title = yourls__( 'Optional title:', 'isq_translation');
 		$site_title_hover = yourls__( 'Optional title used when sharing a link from YOURLS', 'isq_translation');
 		$site_submit = yourls__( 'Shorten', 'isq_translation');
+		$antispam_title = yourls__( 'Antispam check', 'isq_translation');
+		$antispam_value = yourls__( 'Are you a bot or a human?', 'isq_translation');
+		$antispam_bot = yourls__( 'Bot', 'isq_translation');
+		$antispam_human = yourls__( 'Human', 'isq_translation');
 
 		echo <<<HTML
 		<h2>$site_enter</h2>
@@ -241,7 +245,7 @@ RESULT;
 		<p><label for="url" title="$site_long_hover">$site_long</label> <input type="text" id="url" class="right" name="url" /></p>
 		<p><label for="keyword" title="$site_keyword_hover">$site_keyword</label> <input type="text" id="keyword" class="right" name="keyword" /></p>
 		<p><label for="title" title="$site_title_hover">$site_title</label> <input type="text" id="title" class="right" name="title" /></p>
-		<p><label for="antispam" title="Antispam check">You are a bot or a human?</label> <span class="right"><span class="radio"><input type="radio" name="antispam" checked value="bot" />Bot</span> <span class="radio"><input type="radio" name="antispam" value="user" />Human</span></span></p> 
+		<p><label for="antispam" title="$antispam_title">$antispam_value</label> <span class="right"><span class="radio"><input type="radio" name="antispam" checked value="bot" />$antispam_bot</span> <span class="radio"><input type="radio" name="antispam" value="user" />$antispam_human</span></span></p> 
 		<p><input type="submit" value="$site_submit" /></p>
 		</form>
 HTML;
