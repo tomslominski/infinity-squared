@@ -4,4 +4,7 @@
 # Except Infinity Squared
 !public/
 !index.php
+!result.php
+!header.php
+!footer.php
 !.gitignore
