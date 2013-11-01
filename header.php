@@ -7,40 +7,15 @@ require_once( dirname(__FILE__).'/includes/load-yourls.php' );
 include( dirname(__FILE__).'/public/config.php' );
 class ISQ { public static $general = array(), $links = array(), $social = array(); }
 
-// Translations stuff
+// Load translations
 function isq_load_textdomain() {
     yourls_load_custom_textdomain( 'isq_translation', $site . '/public/languages' );
     $site = YOURLS_SITE;
 }
 isq_load_textdomain();
 
-// Settings definitions
-$ISQtitle = ISQ::$general['name'];
-$ISQname_1= ISQ::$links['name_1'];
-$ISQurl_1= ISQ::$links['url_1'];
-$ISQname_2= ISQ::$links['name_2'];
-$ISQurl_2= ISQ::$links['url_2'];
-$ISQname_3= ISQ::$links['name_3'];
-$ISQurl_3= ISQ::$links['url_3'];
-$ISQname_4= ISQ::$links['name_4'];
-$ISQurl_4= ISQ::$links['url_4'];
-$ISQname_5= ISQ::$links['name_5'];
-$ISQurl_5= ISQ::$links['url_5'];
-$ISQname_6= ISQ::$links['name_6'];
-$ISQurl_6= ISQ::$links['url_6'];
-$ISQname_7= ISQ::$links['name_7'];
-$ISQurl_7= ISQ::$links['url_7'];
-$ISQname_8= ISQ::$links['name_8'];
-$ISQurl_8= ISQ::$links['url_8'];
-$ISQname_9= ISQ::$links['name_9'];
-$ISQurl_9= ISQ::$links['url_9'];
-$ISQname_10= ISQ::$links['name_10'];
-$ISQurl_10= ISQ::$links['url_10'];
-
 // Error definitions
-
 $genericerror = '<h2 class="error">' . yourls__( 'An error has occured :(', 'isq_translation') . '</h2>';
-
 if ( $message = $url. yourls__( 'added to database', 'isq_translation') ) {
 		$error = '<h2>' . yourls__( 'URL shortened successfully', 'isq_translation') . '</h2><p>' . yourls__( 'View the details of your short URL below.', 'isq_translation') . '</p>';
 	} elseif ( $message = $url. yourls__( 'already exists in database', 'isq_translation') ) {
@@ -56,7 +31,7 @@ if ( $message = $url. yourls__( 'added to database', 'isq_translation') ) {
 
 <html>
 <head>
-<title><?php echo $ISQtitle; ?></title> <!-- Site title defined in theme settings -->
+<title><?php echo ISQ::$general['name']; ?></title> <!-- Site title defined in theme settings -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <?php if (!empty(ISQ::$general['clipboard'])) { ?>
@@ -150,18 +125,19 @@ $(document).ready(function()
 
 <div id="container">
 <header>
-<h1><a href="<?php echo YOURLS_SITE; ?>"><?php echo $ISQtitle; ?></a></h1>
-<ul class="menu">
-	<li><a href="<?php echo $ISQurl_1; ?>"><?php echo $ISQname_1; ?></a></li>
-	<li><a href="<?php echo $ISQurl_2; ?>"><?php echo $ISQname_2; ?></a></li>
-	<li><a href="<?php echo $ISQurl_3; ?>"><?php echo $ISQname_3; ?></a></li>
-	<li><a href="<?php echo $ISQurl_4; ?>"><?php echo $ISQname_4; ?></a></li>
-	<li><a href="<?php echo $ISQurl_5; ?>"><?php echo $ISQname_5; ?></a></li>
-	<li><a href="<?php echo $ISQurl_6; ?>"><?php echo $ISQname_6; ?></a></li>
-	<li><a href="<?php echo $ISQurl_7; ?>"><?php echo $ISQname_7; ?></a></li>
-	<li><a href="<?php echo $ISQurl_8; ?>"><?php echo $ISQname_8; ?></a></li>
-	<li><a href="<?php echo $ISQurl_9; ?>"><?php echo $ISQname_9; ?></a></li>
-	<li><a href="<?php echo $ISQurl_10; ?>"><?php echo $ISQname_10; ?></a></li>
-</ul>
+	<h1><a href="<?php echo YOURLS_SITE; ?>"><?php echo ISQ::$general['name']; ?></a></h1>
+	<ul class="menu">
+		<li><a href="<?php echo ISQ::$links['url_1']; ?>"><?php echo ISQ::$links['name_1']; ?></a></li>
+		<li><a href="<?php echo ISQ::$links['url_2']; ?>"><?php echo ISQ::$links['name_2']; ?></a></li>
+		<li><a href="<?php echo ISQ::$links['url_3']; ?>"><?php echo ISQ::$links['name_3']; ?></a></li>
+		<li><a href="<?php echo ISQ::$links['url_4']; ?>"><?php echo ISQ::$links['name_4']; ?></a></li>
+		<li><a href="<?php echo ISQ::$links['url_5']; ?>"><?php echo ISQ::$links['name_5']; ?></a></li>
+		<li><a href="<?php echo ISQ::$links['url_6']; ?>"><?php echo ISQ::$links['name_6']; ?></a></li>
+		<li><a href="<?php echo ISQ::$links['url_7']; ?>"><?php echo ISQ::$links['name_7']; ?></a></li>
+		<li><a href="<?php echo ISQ::$links['url_8']; ?>"><?php echo ISQ::$links['name_8']; ?></a></li>
+		<li><a href="<?php echo ISQ::$links['url_9']; ?>"><?php echo ISQ::$links['name_9']; ?></a></li>
+		<li><a href="<?php echo ISQ::$links['url_10']; ?>"><?php echo ISQ::$links['name_10']; ?></a></li>
+	</ul>
 </header>
-	<div class="paragraph">
+
+<div class="paragraph">
