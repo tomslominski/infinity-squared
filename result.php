@@ -2,7 +2,7 @@
 var_dump($_REQUEST);
 include('header.php');
 
-
+		// antispam
 		// if ( isset($_POST['antispam']) && $_POST['antispam'] != user ) {
 		// 	exit('<p class="error">' . yourls__( 'Antispam check failed!', 'isq_translation') . '</p>'); 
 		// }
