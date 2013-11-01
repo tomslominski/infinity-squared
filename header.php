@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php 
+<?php
 // Start YOURLS engine
 require_once( dirname(__FILE__).'/includes/load-yourls.php' );
 
