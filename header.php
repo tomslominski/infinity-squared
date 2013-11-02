@@ -56,7 +56,7 @@ require_once('public/recaptchalib.php');
 <?php } ?>
 <script type="text/javascript"><!-- reCAPTCHA -->
 var RecaptchaOptions = {
-	theme : 'clean'
+	theme : 'white'
 };
 </script>
 <?php if (!empty(ISQ::$general['clipboard'])) { ?>
