@@ -3,6 +3,7 @@
 
 # Except Infinity Squared
 !public/
+!public/config-sample.php
 !index.php
 !result.php
 !header.php
