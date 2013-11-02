@@ -243,17 +243,14 @@ header {
 }
 
 /* Error page */
-#wrap > h1 > a,
-#wrap > h1,
-header > h1 {
+#wrap > h1 > a {
 	display: none;
-}
-
-#container > header > h1 {
-	display: inline-block;
 }
 
 #wrap > h2,
 #wrap > p {
 	color: red;
 }
+
+/* Importing custom user styles */
+@import url("public/user-style.css");
