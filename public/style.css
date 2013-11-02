@@ -241,3 +241,19 @@ header {
 	display:none;
 }
 }
+
+/* Error page */
+#wrap {
+	border-left: none; !important
+}
+
+#wrap > h1 > a,
+#wrap > h1,
+header > h1 {
+	display: none;
+}
+
+#wrap > h2,
+#wrap > p {
+	color: red;
+}
