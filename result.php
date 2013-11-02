@@ -15,7 +15,7 @@ $shorturl = isset( $return['shorturl'] ) ? $return['shorturl'] : '';
 $message  = isset( $return['message'] ) ? $return['message'] : '';
 $title    = isset( $return['title'] ) ? $return['title'] : '';
 
-// Stop here if bookmarklet with a JSON callback function ("instant" bookmarklets)
+// Stop here if bookmarklet with a JSON callback function ("instant" bookmarklets) -- code from YOURLS
 if( isset( $_GET['jsonp'] ) && $_GET['jsonp'] == 'yourls' ) {
 	$short = $return['shorturl'] ? $return['shorturl'] : '';
 	$message = "Short URL (Ctrl+C to copy)";
