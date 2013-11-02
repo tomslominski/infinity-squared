@@ -1,6 +1,6 @@
 <?php
 
-// Copy and rename your file to config.php in tis directory to edit your settings
+// Copy and rename your file to config.php in this directory to edit your settings
 
 // General settings
 // 1 to enable, 0 to disable
