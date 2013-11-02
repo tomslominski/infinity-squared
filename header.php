@@ -127,6 +127,7 @@ $(document).ready(function()
 <header>
 	<h1><a href="<?php echo YOURLS_SITE; ?>"><?php echo ISQ::$general['name']; ?></a></h1>
 	<ul class="menu">
+		<li><a href="<?php echo YOURLS_SITE; ?>"><?php echo ISQ::$general['name']; ?></a></li>
 		<li><a href="<?php echo ISQ::$links['url_1']; ?>"><?php echo ISQ::$links['name_1']; ?></a></li>
 		<li><a href="<?php echo ISQ::$links['url_2']; ?>"><?php echo ISQ::$links['name_2']; ?></a></li>
 		<li><a href="<?php echo ISQ::$links['url_3']; ?>"><?php echo ISQ::$links['name_3']; ?></a></li>

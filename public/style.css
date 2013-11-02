@@ -243,14 +243,14 @@ header {
 }
 
 /* Error page */
-#wrap {
-	border-left: none; !important
-}
-
 #wrap > h1 > a,
 #wrap > h1,
 header > h1 {
 	display: none;
+}
+
+#container > header > h1 {
+	display: inline-block;
 }
 
 #wrap > h2,
