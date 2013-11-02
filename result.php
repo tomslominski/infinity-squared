@@ -1,20 +1,6 @@
 <?php
 include('header.php');
 
-// antispam
-// if ( isset($_POST['antispam']) && $_POST['antispam'] != user ) {
-// 	exit('<p class="error">' . yourls__( 'Antispam check failed!', 'isq_translation') . '</p>'); 
-// }
-
-$url     = yourls_sanitize_url( $_REQUEST['url'] );
-$keyword = isset( $_REQUEST['keyword'] ) ? yourls_sanitize_keyword( $_REQUEST['keyword'] ): '' ;
-$title   = isset( $_REQUEST['title'] ) ? yourls_sanitize_title( $_REQUEST['title'] ) : '' ;
-$return  = yourls_add_new_link( $url, $keyword, $title );
-		
-$shorturl = isset( $return['shorturl'] ) ? $return['shorturl'] : '';
-$message  = isset( $return['message'] ) ? $return['message'] : '';
-$title    = isset( $return['title'] ) ? $return['title'] : '';
-
 // Stop here if bookmarklet with a JSON callback function ("instant" bookmarklets) -- code from YOURLS
 if( isset( $_GET['jsonp'] ) && $_GET['jsonp'] == 'yourls' ) {
 	$short = $return['shorturl'] ? $return['shorturl'] : '';
@@ -24,6 +10,25 @@ if( isset( $_GET['jsonp'] ) && $_GET['jsonp'] == 'yourls' ) {
 
 	die();
 }
+
+$resp = recaptcha_check_answer (ISQ::$recaptcha['private'],
+								$_SERVER["REMOTE_ADDR"],
+								$_POST["recaptcha_challenge_field"],
+								$_POST["recaptcha_response_field"]);
+
+if (!$resp->is_valid) {
+	// What happens when the CAPTCHA was entered incorrectly
+	die ( '<p class="error" title="' . $resp->error . '">' . yourls__( 'The reCAPTCHA wasn\'t entered correctly. Go back and try it again.', 'isq_translation' ) . '</p></div></div>' );
+}
+
+$url     = yourls_sanitize_url( $_REQUEST['url'] );
+$keyword = isset( $_REQUEST['keyword'] ) ? yourls_sanitize_keyword( $_REQUEST['keyword'] ): '' ;
+$title   = isset( $_REQUEST['title'] ) ? yourls_sanitize_title( $_REQUEST['title'] ) : '' ;
+$return  = yourls_add_new_link( $url, $keyword, $title );
+		
+$shorturl = isset( $return['shorturl'] ) ? $return['shorturl'] : '';
+$message  = isset( $return['message'] ) ? $return['message'] : '';
+$title    = isset( $return['title'] ) ? $return['title'] : '';
 
 ?>
 

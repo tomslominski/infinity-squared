@@ -5,7 +5,7 @@ require_once( dirname(__FILE__).'/includes/load-yourls.php' );
 
 // Ask for Infinity Squared settings
 include( dirname(__FILE__).'/public/config.php' );
-class ISQ { public static $general = array(), $links = array(), $social = array(); }
+class ISQ { public static $general = array(), $links = array(), $social = array(), $recaptcha = array(); }
 
 // Load translations
 function isq_load_textdomain() {
@@ -27,6 +27,9 @@ if ( $message = $url. yourls__( 'added to database', 'isq_translation') ) {
 	} elseif ( $message = yourls__( 'This URL is a short URL', 'isq_translation') ) {
 		$error = $genericerror . '<p class="error">' . yourls__( 'You cannot shorten a short URL!', 'isq_translation') . '</p>';
 	}
+
+// Load reCAPTCHA
+require_once('public/recaptchalib.php');
 ?>
 
 <html>
@@ -65,6 +68,11 @@ if ( $message = $url. yourls__( 'added to database', 'isq_translation') ) {
   {lang: "en-GB"}
 </script>
 <?php } ?>
+<script type="text/javascript"><!-- reCAPTCHA -->
+var RecaptchaOptions = {
+	theme : 'clean'
+};
+</script>
 <?php if (!empty(ISQ::$general['clipboard'])) { ?>
 <script type="text/javascript" src="js/jquery.zclip.min.js"></script>
 <script>
