@@ -14,20 +14,6 @@ function isq_load_textdomain() {
 }
 isq_load_textdomain();
 
-// Error definitions
-$genericerror = '<h2 class="error">' . yourls__( 'An error has occured :(', 'isq_translation') . '</h2>';
-if ( $message = $url. yourls__( 'added to database', 'isq_translation') ) {
-		$error = '<h2>' . yourls__( 'URL shortened successfully', 'isq_translation') . '</h2><p>' . yourls__( 'View the details of your short URL below.', 'isq_translation') . '</p>';
-	} elseif ( $message = $url. yourls__( 'already exists in database', 'isq_translation') ) {
-		$error = $genericerror . '<p class="error">' . yourls__( 'This URL already exists in this database. This website does not allow a single URL to have multiple short links.', 'isq_translation') . '</p>';
-	} elseif ( $message = yourls__( 'Short URL', 'isq_translation') . $url . yourls__( 'already exists in database or is reserved', 'isq_translation') ) {
-		$error = $genericerror . '<p class="error">' . yourls__( 'This short URL already exists in this database or is reserved. This website does not allow a single URL to have multiple short links. It could\'ve also been reserved by the admin.', 'isq_translation') . '</p>';
-	} elseif ( $message = yourls__( 'Missing URL input', 'isq_translation') ) {
-		$error = $genericerror . '<p class="error">' . yourls__( 'You did not enter the URL you want to shorten or the server lost it. Please try again.', 'isq_translation') . '</p>';
-	} elseif ( $message = yourls__( 'This URL is a short URL', 'isq_translation') ) {
-		$error = $genericerror . '<p class="error">' . yourls__( 'You cannot shorten a short URL!', 'isq_translation') . '</p>';
-	}
-
 // Load reCAPTCHA
 require_once('public/recaptchalib.php');
 ?>
