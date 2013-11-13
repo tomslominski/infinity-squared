@@ -238,7 +238,7 @@ header {
 	margin-top:0;
 }
 
-.desktop-only {
+.desktop-only, .zclip {
 	display:none;
 }
 }
