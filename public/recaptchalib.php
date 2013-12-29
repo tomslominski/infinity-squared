@@ -99,16 +99,16 @@ function _recaptcha_http_post($host, $path, $data, $port = 80) {
  * is embedded within the HTML form it was called from.
  * @param string $pubkey A public key for reCAPTCHA
  * @param string $error The error given by reCAPTCHA (optional, default is null)
- * @param boolean $use_ssl Should the request be made over ssl? (optional, default is false)
  * @return string - The HTML to be embedded in the user's form.
  */
-function recaptcha_get_html ($pubkey, $error = null, $use_ssl = false)
+function recaptcha_get_html ($pubkey, $error = null)
 {
 	if ($pubkey == null || $pubkey == '') {
 		die ("To use reCAPTCHA you must get an API key from <a href='https://www.google.com/recaptcha/admin/create'>https://www.google.com/recaptcha/admin/create</a>");
 	}
 	
-	if ($use_ssl) {
+        if (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off'
+        || $_SERVER['SERVER_PORT'] == 443) { // http://stackoverflow.com/questions/1175096/how-to-find-out-if-you-are-using-https-without-serverhttps
                 $server = RECAPTCHA_API_SECURE_SERVER;
         } else {
                 $server = RECAPTCHA_API_SERVER;
