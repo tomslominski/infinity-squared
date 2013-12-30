@@ -1,16 +1,14 @@
 # Ignore everything
-*
+/*
+/*/
 
 # Except Infinity Squared
 !public/
-!public/config-sample.php
-!public/recaptchalib.php
 !index.php
 !result.php
 !header.php
 !footer.php
 !.gitignore
-!public/fonts/
 
 # Specifically ignore the config file
 public/config.php
