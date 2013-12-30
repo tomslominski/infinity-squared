@@ -42,6 +42,7 @@ require_once('public/recaptchalib.php');
 	}
 </style>
 <?php } ?>
+<link rel="shortcut icon" href="<?php echo YOURLS_SITE; ?>/images/favicon.gif" /> <!-- Default favicon -->
 <link rel="stylesheet" href="<?php echo YOURLS_SITE; ?>/public/formalize.css" /> <!-- Formalize CSS -->
 <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.1.1/basic/jquery.qtip.min.css" /><!-- qTip CSS -->
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,italic,bold,bolditalic"><!-- Ubuntu from Google Web Fonts -->
