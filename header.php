@@ -23,25 +23,6 @@ require_once('public/recaptchalib.php');
 <title><?php echo ISQ::$general['name']; ?></title> <!-- Site title defined in theme settings -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<?php if (!empty(ISQ::$general['clipboard'])) { ?>
-<style type="text/css">
-	.output label {
-		width: 20%;
-	}
-
-	.output input {
-		width: 60%
-	}
-
-	.output button {
-		float: right;
-	}
-
-	.output button.active {
-		color:#013F6D;
-	}
-</style>
-<?php } ?>
 <link rel="shortcut icon" href="<?php echo YOURLS_SITE; ?>/images/favicon.gif" /> <!-- Default favicon -->
 <link rel="stylesheet" href="<?php echo YOURLS_SITE; ?>/public/formalize.css" /> <!-- Formalize CSS -->
 <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.1.1/basic/jquery.qtip.min.css" /><!-- qTip CSS -->
@@ -87,23 +68,6 @@ $(document).ready(function(){
     });
 });
 </script>
-<style type="text/css">
-	.output label {
-		width: 20%;
-	}
-
-	.output input {
-		width: 60%
-	}
-
-	.output button {
-		float: right;
-	}
-
-	.output button.active {
-		color:#013F6D;
-	}
-</style>
 <?php } ?>
 <script>
 $(document).ready(function()

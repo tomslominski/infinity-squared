@@ -207,6 +207,22 @@ input[type="radio"] {
 	padding: 0 2px;
 }
 
+.output label {
+	width: 20%;
+}
+
+.output input {
+	width: 60%
+}
+
+.output button {
+	float: right;
+}
+
+.output button.active {
+	color:#013F6D;
+}
+
 /* Footer */
 .footer {
 	text-align: center;
