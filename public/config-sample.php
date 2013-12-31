@@ -41,7 +41,8 @@ ISQ::$social = array(
 	'facebook' => 1,
 	'twitter' => 1,
 	'plus' => 1,
-	'linkedin' => 1
+	'linkedin' => 1,
+	'tumblr' => 1
 );
 
 // reCAPTCHA API keys
