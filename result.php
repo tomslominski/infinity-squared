@@ -51,7 +51,7 @@ if (!$resp->is_valid) {
 <h2><?php yourls_e( 'Share', 'isq_translation'); ?></h2>
 <p><?php yourls_e( 'Share your short URL', 'isq_translation'); ?></p>
 <?php if (!empty(ISQ::$social['facebook'])) { echo '<div class="social-sharer"><a href="http://facebook.com/sharer.php?u=' . $shorturl . '" class="share-button" target="_blank"><img src="public/img/facebook.png" alt="Facebook" width="55px" height="62px" /></a></div>'; } ?>
-<?php if (!empty(ISQ::$social['twitter'])) { echo '<div class="social-sharer"><a href="http://twitter.com/share" class="twitter-share-button" data-url="' . $shorturl . '" data-text="Check out this link!" data-count="vertical">Tweet</a><script src="http://platform.twitter.com/widgets.js"></script></div>'; } ?>
+<?php if (!empty(ISQ::$social['twitter'])) { echo '<div class="social-sharer"><a href="http://twitter.com/share" class="twitter-share-button" data-url="' . $shorturl . '" data-text="'. $title .'" data-count="vertical">Tweet</a><script src="http://platform.twitter.com/widgets.js"></script></div>'; } ?>
 <?php if (!empty(ISQ::$social['plus'])) { echo '<div class="g-plus social-sharer" data-action="share" data-annotation="vertical-bubble" data-height="62" data-href="' . $shorturl . '"></div>'; } ?>
 <?php if (!empty(ISQ::$social['linkedin'])) { echo '<div class="social-sharer"><script src="http://platform.linkedin.com/in.js"></script><script type="IN/Share" data-url="' . $shorturl . '" data-counter="top"></script></div>'; } ?>
 
