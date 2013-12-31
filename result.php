@@ -54,5 +54,5 @@ if (!$resp->is_valid) {
 <?php if (!empty(ISQ::$social['twitter'])) { echo '<div class="social-sharer"><a href="http://twitter.com/share" class="twitter-share-button" data-url="' . $shorturl . '" data-text="'. $title .'" data-count="vertical">Tweet</a><script src="http://platform.twitter.com/widgets.js"></script></div>'; } ?>
 <?php if (!empty(ISQ::$social['plus'])) { echo '<div class="g-plus social-sharer" data-action="share" data-annotation="vertical-bubble" data-height="62" data-href="' . $shorturl . '"></div>'; } ?>
 <?php if (!empty(ISQ::$social['linkedin'])) { echo '<div class="social-sharer"><script src="http://platform.linkedin.com/in.js"></script><script type="IN/Share" data-url="' . $shorturl . '" data-counter="top"></script></div>'; } ?>
-<?php if (!empty(ISQ::$social['tumblr'])) { echo '<a href="http://www.tumblr.com/share/link?url='. urlencode($shorturl) .'&description='. urlencode($title) .'" title="Share on Tumblr"><img src="public/img/tumblr.png" alt="Share on Tumblr" width="55px" height="62px" /></a>'; } ?>
+<?php if (!empty(ISQ::$social['tumblr'])) { echo '<a href="http://www.tumblr.com/share/link?url='. urlencode($shorturl) .'&name='. urlencode($title) .'" title="Share on Tumblr"><img src="public/img/tumblr.png" alt="Share on Tumblr" width="55px" height="62px" /></a>'; } ?>
 <?php include('footer.php'); ?>
