@@ -3,6 +3,21 @@ Infinity Squared CSS
 https://github.com/tomslominski/infinity-squared
 */
 
+/* Structure */
+body {
+	background: #F1F1F1;
+	color: black;
+	font-family: 'Ubuntu', sans-serif, Helvetica, Arial;
+	font-size: 62.5%;
+}
+
+#container {
+	width: 60%;
+	min-width: 720px;
+	margin: 0 auto;
+	background-color: white;
+}
+
 /* General */
 ::selection {
 	background: rgba(1,63,109,0.7);
@@ -29,23 +44,30 @@ a, a:visited, .footer a, .footer a:visited {
 	text-decoration: none;
 }
 
-p {
+p, a {
 	font-size: 1.2em;
 }
 
-/* Structure */
-body {
-	background: #F1F1F1;
-	color: black;
-	font-family: 'Ubuntu', sans-serif, Helvetica, Arial;
-	font-size: 62.5%;
+@font-face {
+	font-family: 'icons';
+	src:url('fonts/icons.woff') format('woff'),
+		url('fonts/icons.ttf') format('truetype'),
+		url('fonts/icons.svg#icons') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
 
-#container {
-	width: 60%;
-	min-width: 720px;
-	margin: 0 auto;
-	background-color: white;
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icons';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 /* Header */
@@ -88,7 +110,6 @@ h1 a:hover {
 	color: white;
 	padding: 0 2% 0 2%;
 	margin-bottom: 30px;
-	font-size: 1.2em;
 }
 
 .menu a {
@@ -137,26 +158,15 @@ h2 {
 .radio {
 	margin-right: 10%;
 }
+
 input[type="radio"] {
 	margin-right: 1%;
 }
 
-a.bookmarklet {
-	border-radius: 11px;
-	background: #ddd url(../img/button.png) repeat-x;
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #ddd));
-	background: -moz-linear-gradient(top center, #fff 0%, #ddd 100%);
-	border: 1px solid;
-	border-color: #ddd #bbb #999;
-	cursor: pointer;
-	color: #333;
-	font: bold 12px/1.2 Arial, sans-serif;
-	outline: 0;
-	overflow: visible;
-	padding: 3px 10px 4px;
-	text-shadow: #fff 0 1px 1px;
-	text-decoration: none;
-	margin-right: 2%;
+.bookmarklet:before {
+	font-family: 'icons';
+	content: "\e600";
+	margin: 2px;
 }
 
 /* Tooltips */
@@ -191,6 +201,27 @@ a.bookmarklet {
 	font-size: 1.2rem;
 }
 
+.social-sharer {
+	display: inline-block;
+	padding: 0 2px;
+}
+
+.output label {
+	width: 20%;
+}
+
+.output input {
+	width: 60%
+}
+
+.output button {
+	float: right;
+}
+
+.output button.active {
+	color:#013F6D;
+}
+
 /* Footer */
 .footer {
 	text-align: center;
@@ -201,6 +232,10 @@ a.bookmarklet {
 .footer p {
 	padding: 2%;
 	margin: 0 auto;
+	font-size: 1.1em;
+}
+
+.footer a {
 	font-size: 1.1em;
 }
 
@@ -232,7 +267,20 @@ header {
 	margin-top:0;
 }
 
-.desktop-only {
+.desktop-only, .zclip {
 	display:none;
 }
 }
+
+/* Error page */
+#wrap > h1 > a {
+	display: none;
+}
+
+#wrap > h2,
+#wrap > p {
+	color: red;
+}
+
+/* Importing custom user styles */
+@import url("public/user-style.css");
