@@ -3,6 +3,21 @@ Infinity Squared CSS
 https://github.com/tomslominski/infinity-squared
 */
 
+/* Structure */
+body {
+	background: #F1F1F1;
+	color: black;
+	font-family: 'Ubuntu', sans-serif, Helvetica, Arial;
+	font-size: 62.5%;
+}
+
+#container {
+	width: 60%;
+	min-width: 720px;
+	margin: 0 auto;
+	background-color: white;
+}
+
 /* General */
 ::selection {
 	background: rgba(1,63,109,0.7);
@@ -55,21 +70,6 @@ p, a {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-/* Structure */
-body {
-	background: #F1F1F1;
-	color: black;
-	font-family: 'Ubuntu', sans-serif, Helvetica, Arial;
-	font-size: 62.5%;
-}
-
-#container {
-	width: 60%;
-	min-width: 720px;
-	margin: 0 auto;
-	background-color: white;
-}
-
 /* Header */
 header {
 	width: 95%;
@@ -110,7 +110,6 @@ h1 a:hover {
 	color: white;
 	padding: 0 2% 0 2%;
 	margin-bottom: 30px;
-	font-size: 1.2em;
 }
 
 .menu a {
@@ -233,6 +232,10 @@ input[type="radio"] {
 .footer p {
 	padding: 2%;
 	margin: 0 auto;
+	font-size: 1.1em;
+}
+
+.footer a {
 	font-size: 1.1em;
 }
 
