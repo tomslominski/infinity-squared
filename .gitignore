@@ -1,0 +1,14 @@
+# Ignore everything
+/*
+/*/
+
+# Except Infinity Squared
+!public/
+!index.php
+!result.php
+!header.php
+!footer.php
+!.gitignore
+
+# Specifically ignore the config file
+public/config.php
