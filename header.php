@@ -15,7 +15,7 @@ function isq_load_textdomain() {
 isq_load_textdomain();
 
 // Load reCAPTCHA
-require_once('public/recaptchalib.php');
+require_once( dirname(__FILE__).'/public/recaptchalib.php');
 ?>
 
 <html>
