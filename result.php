@@ -10,17 +10,6 @@ $shorturl = isset( $return['shorturl'] ) ? $return['shorturl'] : '';
 $message  = isset( $return['message'] ) ? $return['message'] : '';
 $title    = isset( $return['title'] ) ? $return['title'] : '';
 
-// Stop here if bookmarklet with a JSON callback function ("instant" bookmarklets) -- code from YOURLS
-if( isset( $_GET['jsonp'] ) && $_GET['jsonp'] == 'yourls' ) {
-	$short = $return['shorturl'] ? $return['shorturl'] : '';
-	$message = "Short URL (Ctrl+C to copy)";
-	header('Content-type: application/json');
-	echo yourls_apply_filter( 'bookmarklet_jsonp', "yourls_callback({'short_url':'$short','message':'$message'});" );
-	include('footer.php');
-
-	die();
-}
-
 $resp = recaptcha_check_answer (ISQ::$recaptcha['private'],
 								$_SERVER["REMOTE_ADDR"],
 								$_POST["recaptcha_challenge_field"],
