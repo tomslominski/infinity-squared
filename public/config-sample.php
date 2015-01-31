@@ -48,7 +48,7 @@ ISQ::$social = array(
 // reCAPTCHA API keys
 // Get yourls from https://www.google.com/recaptcha/admin
 ISQ::$recaptcha = array(
-	'public' => '',
-	'private' => ''
+	'sitekey' => '',
+	'secret' => ''
 );
 ?>

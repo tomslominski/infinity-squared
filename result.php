@@ -10,14 +10,12 @@ $shorturl = isset( $return['shorturl'] ) ? $return['shorturl'] : '';
 $message  = isset( $return['message'] ) ? $return['message'] : '';
 $title    = isset( $return['title'] ) ? $return['title'] : '';
 
-$resp = recaptcha_check_answer (ISQ::$recaptcha['private'],
-								$_SERVER["REMOTE_ADDR"],
-								$_POST["recaptcha_challenge_field"],
-								$_POST["recaptcha_response_field"]);
+$recaptcha_data = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . ISQ::$recaptcha['secret'] . '&response=' . $_REQUEST['g-recaptcha-response']);
+$recaptcha_json = json_decode($recaptcha_data, TRUE);
 
-if (!$resp->is_valid) {
+if ($recaptcha_json['success'] != 'true') {
 	// What happens when the CAPTCHA was entered incorrectly
-	die ( '<p class="error" title="' . $resp->error . '">' . yourls__( 'The reCAPTCHA wasn\'t entered correctly. Go back and try it again.', 'isq_translation' ) . '</p></div></div>' );
+	die ( '<p class="error" title="' . $resp->error . '">' . yourls__( 'Are you a bot? Google thinks so. Go back and try again.', 'isq_translation' ) . '</p></div></div>' );
 }
 
 ?>
@@ -29,7 +27,7 @@ if (!$resp->is_valid) {
 <h2><?php yourls_e( 'Results', 'isq_translation'); ?></h2>
 <p><?php yourls_e( 'View your short URL', 'isq_translation'); ?></p>
 <div class="output">
-	<p><label for="longurl"><? yourls_e( 'Original URL:', 'isq_translation'); ?></label> <input type="text" name="longurl" onclick="this.select();" onload="this.select();" value="<?php echo $url; ?>" id="long-copy"> <?php if (!empty(ISQ::$general['clipboard'])) { echo '<button id="long-copy" data-clipboard-target="long-copy" class="desktop-only">' . yourls__( 'Copy to Clipboard', 'isq-translation' ) . '</button>'; } ?> </p>
+	<p><label for="longurl"><?php yourls_e( 'Original URL:', 'isq_translation'); ?></label> <input type="text" name="longurl" onclick="this.select();" onload="this.select();" value="<?php echo $url; ?>" id="long-copy"> <?php if (!empty(ISQ::$general['clipboard'])) { echo '<button id="long-copy" data-clipboard-target="long-copy" class="desktop-only">' . yourls__( 'Copy to Clipboard', 'isq-translation' ) . '</button>'; } ?> </p>
 	<p><label for="shorturl"><?php yourls_e( 'Short URL:', 'isq_translation'); ?></label> <input type="text" name="shorturl" onclick="this.select();" onload="this.select();" value="<?php echo $shorturl; ?>" id="short-copy"> <?php if (!empty(ISQ::$general['clipboard'])) { echo '<button id="short-copy" data-clipboard-target="short-copy" class="desktop-only">' . yourls__( 'Copy to Clipboard', 'isq-translation' ) . '</button>'; } ?> </p>
 	<p><label for="stats"><?php /* translators: This is short for statistics */ yourls_e( 'Stats:', 'isq_translation'); ?></label> <input type="text" name="stats" onclick="this.select();" onload="this.select();" value="<?php echo $shorturl . '+'; ?>" id="stats-copy"> <?php if (!empty(ISQ::$general['clipboard'])) { echo '<button id="stats-copy" data-clipboard-target="stats-copy" class="desktop-only">' . yourls__( 'Copy to Clipboard', 'isq-translation' ) . '</button>'; } ?> </p>
 	<p class="desktop-only"><?php yourls_e( 'Click on a link and press Ctrl+C to quickly copy it.', 'isq_translation'); ?></p>

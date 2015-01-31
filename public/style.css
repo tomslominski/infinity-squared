@@ -169,6 +169,12 @@ input[type="radio"] {
 	margin: 2px;
 }
 
+/* reCAPTCHA */
+.recaptcha-container {
+	font-size: 1.2em;
+	overflow: hidden;
+}
+
 /* Tooltips */
 .qtip-default {
 	border-color: #013F6D;

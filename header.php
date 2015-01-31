@@ -13,9 +13,6 @@ function isq_load_textdomain() {
     $site = YOURLS_SITE;
 }
 isq_load_textdomain();
-
-// Load reCAPTCHA
-require_once( dirname(__FILE__).'/public/recaptchalib.php');
 ?>
 
 <html>
@@ -36,11 +33,7 @@ require_once( dirname(__FILE__).'/public/recaptchalib.php');
   {lang: "en-GB"}
 </script>
 <?php } ?>
-<script type="text/javascript"><!-- reCAPTCHA -->
-var RecaptchaOptions = {
-	theme : 'white'
-};
-</script>
+<script src='https://www.google.com/recaptcha/api.js'></script><!-- reCAPTCHA -->
 <?php if (!empty(ISQ::$general['clipboard'])) { ?>
 <script type="text/javascript" src="js/jquery.zclip.min.js"></script>
 <script>
