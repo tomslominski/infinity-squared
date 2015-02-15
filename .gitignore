@@ -12,3 +12,6 @@
 
 # Specifically ignore the config file
 public/config.php
+
+# And the OS X files
+public/.DS_Store
