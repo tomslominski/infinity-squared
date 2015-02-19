@@ -1,15 +1,6 @@
 <?php
 include('header.php');
 
-$url     = yourls_sanitize_url( $_REQUEST['url'] );
-$keyword = isset( $_REQUEST['keyword'] ) ? yourls_sanitize_keyword( $_REQUEST['keyword'] ): '' ;
-$title   = isset( $_REQUEST['title'] ) ? yourls_sanitize_title( $_REQUEST['title'] ) : '' ;
-$return  = yourls_add_new_link( $url, $keyword, $title );
-		
-$shorturl = isset( $return['shorturl'] ) ? $return['shorturl'] : '';
-$message  = isset( $return['message'] ) ? $return['message'] : '';
-$title    = isset( $return['title'] ) ? $return['title'] : '';
-
 $resp = recaptcha_check_answer (ISQ::$recaptcha['private'],
 								$_SERVER["REMOTE_ADDR"],
 								$_POST["recaptcha_challenge_field"],
@@ -20,6 +11,14 @@ if (!$resp->is_valid) {
 	die ( '<p class="error" title="' . $resp->error . '">' . yourls__( 'The reCAPTCHA wasn\'t entered correctly. Go back and try it again.', 'isq_translation' ) . '</p></div></div>' );
 }
 
+$url     = yourls_sanitize_url( $_REQUEST['url'] );
+$keyword = isset( $_REQUEST['keyword'] ) ? yourls_sanitize_keyword( $_REQUEST['keyword'] ): '' ;
+$title   = isset( $_REQUEST['title'] ) ? yourls_sanitize_title( $_REQUEST['title'] ) : '' ;
+$return  = yourls_add_new_link( $url, $keyword, $title );
+		
+$shorturl = isset( $return['shorturl'] ) ? $return['shorturl'] : '';
+$message  = isset( $return['message'] ) ? $return['message'] : '';
+$title    = isset( $return['title'] ) ? $return['title'] : '';
 ?>
 
 <!-- Error reporting -->
