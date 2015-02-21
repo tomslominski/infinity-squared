@@ -1,4 +1,4 @@
-<?php include('header.php'); 
+<?php include('header.php');
 
 $url     = isset( $_REQUEST['url'] ) ? yourls_sanitize_url( $_REQUEST['url'] ) : '' ;
 $keyword = isset( $_REQUEST['keyword'] ) ? yourls_sanitize_keyword( $_REQUEST['keyword'] ) : '' ;
