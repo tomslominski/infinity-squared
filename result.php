@@ -22,7 +22,7 @@ $title    = isset( $return['title'] ) ? $return['title'] : '';
 ?>
 
 <!-- Error reporting -->
-<?php isset( $error ) ? echo $error : ''; ?>
+<?php isset( $error ) ? $error : ''; ?>
 
 <!-- Default output -->
 <h2><?php yourls_e( 'Results', 'isq_translation'); ?></h2>
