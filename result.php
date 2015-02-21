@@ -12,17 +12,17 @@ if (!$resp->is_valid) {
 }
 
 $url     = yourls_sanitize_url( $_REQUEST['url'] );
-$keyword = isset( $_REQUEST['keyword'] ) ? yourls_sanitize_keyword( $_REQUEST['keyword'] ): '' ;
+$keyword = isset( $_REQUEST['keyword'] ) ? yourls_sanitize_keyword( $_REQUEST['keyword'] ) : '' ;
 $title   = isset( $_REQUEST['title'] ) ? yourls_sanitize_title( $_REQUEST['title'] ) : '' ;
 $return  = yourls_add_new_link( $url, $keyword, $title );
-		
+
 $shorturl = isset( $return['shorturl'] ) ? $return['shorturl'] : '';
 $message  = isset( $return['message'] ) ? $return['message'] : '';
 $title    = isset( $return['title'] ) ? $return['title'] : '';
 ?>
 
 <!-- Error reporting -->
-<?php echo $error; ?>
+<?php isset( $error ) ? echo $error : ''; ?>
 
 <!-- Default output -->
 <h2><?php yourls_e( 'Results', 'isq_translation'); ?></h2>
