@@ -1,11 +1,6 @@
 <?php
 include('header.php');
 
-if ($recaptcha_json['success'] != 'true') {
-	// What happens when the CAPTCHA was entered incorrectly
-	die ( '<p class="error" title="' . $resp->error . '">' . yourls__( 'Are you a bot? Google thinks so. Go back and try again.', 'isq_translation' ) . '</p></div></div>' );
-}
-
 $url     = yourls_sanitize_url( $_REQUEST['url'] );
 $keyword = isset( $_REQUEST['keyword'] ) ? yourls_sanitize_keyword( $_REQUEST['keyword'] ): '' ;
 $title   = isset( $_REQUEST['title'] ) ? yourls_sanitize_title( $_REQUEST['title'] ) : '' ;
@@ -14,6 +9,15 @@ $return  = yourls_add_new_link( $url, $keyword, $title );
 $shorturl = isset( $return['shorturl'] ) ? $return['shorturl'] : '';
 $message  = isset( $return['message'] ) ? $return['message'] : '';
 $title    = isset( $return['title'] ) ? $return['title'] : '';
+
+$recaptcha_data = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . ISQ::$recaptcha['secret'] . '&response=' . $_REQUEST['g-recaptcha-response']);
+$recaptcha_json = json_decode($recaptcha_data, TRUE);
+
+if ($recaptcha_json['success'] != 'true') {
+	// What happens when the CAPTCHA was entered incorrectly
+	die ( '<p class="error" title="' . $resp->error . '">' . yourls__( 'Are you a bot? Google thinks so. Go back and try again.', 'isq_translation' ) . '</p></div></div>' );
+}
+
 ?>
 
 <!-- Error reporting -->
