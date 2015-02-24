@@ -10,7 +10,7 @@ $shorturl = isset( $return['shorturl'] ) ? $return['shorturl'] : '';
 $message  = isset( $return['message'] ) ? $return['message'] : '';
 $title    = isset( $return['title'] ) ? $return['title'] : '';
 
-$recaptcha_data = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . ISQ::$recaptcha['secret'] . '&response=' . $_REQUEST['g-recaptcha-response']);
+$recaptcha_data = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=6Lc-RQETAAAAANBhC2ZdRSWiQQNaDURx2-EIN-SI&response=' . $_REQUEST['g-recaptcha-response']);
 $recaptcha_json = json_decode($recaptcha_data, TRUE);
 
 if ($recaptcha_json['success'] != 'true') {
@@ -18,6 +18,14 @@ if ($recaptcha_json['success'] != 'true') {
 	die ( '<p class="error" title="' . $resp->error . '">' . yourls__( 'Are you a bot? Google thinks so. Go back and try again.', 'isq_translation' ) . '</p></div></div>' );
 }
 
+// QR code shenanigans
+include('public/phpqrcode/qrlib.php');
+
+$qrContainerId = 'url-qr-code'; 
+$saveToFile = false; 
+$imageWidth = 600; // in pixels
+
+$qrCode = QRcode::svg($url, $qrContainerId, $saveToFile, QR_ECLEVEL_L, $imageWidth);
 ?>
 
 <!-- Error reporting -->
@@ -34,7 +42,7 @@ if ($recaptcha_json['success'] != 'true') {
 </div>
 
 <!-- QR code -->
-<?php if (!empty(ISQ::$general['qr'])) { echo '<h2>' . yourls__( 'QR code', 'isq-translation' ) . '</h2><p>' . yourls__( 'Share your link with external devices', 'isq-translation' ) . '</p><img class="qr" src="https://chart.googleapis.com/chart?cht=qr&chs=250x250&chl=$shorturl&chld=L|0" alt="QR" width="250px" height="250px" />'; } ?>
+<?php if (!empty(ISQ::$general['qr'])) { echo '<h2>' . yourls__( 'QR code', 'isq-translation' ) . '</h2><p>' . yourls__( 'Share your link with external devices', 'isq-translation' ) . '</p>' . $qrCode; } ?>
 
 <!-- Social sharers -->
 <h2><?php yourls_e( 'Share', 'isq_translation'); ?></h2>

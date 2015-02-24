@@ -13,3 +13,6 @@
 # Specifically ignore the config file and the DS_Store
 public/config.php
 public/.DS_Store
+
+# Also specifically ignore the phpqrcode cache
+public/phpqrcode/cache/*
