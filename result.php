@@ -18,6 +18,14 @@ if ($recaptcha_json['success'] != 'true') {
 	die ( '<p class="error" title="' . $resp->error . '">' . yourls__( 'Are you a bot? Google thinks so. Go back and try again.', 'isq_translation' ) . '</p></div></div>' );
 }
 
+$url     = yourls_sanitize_url( $_REQUEST['url'] );
+$keyword = isset( $_REQUEST['keyword'] ) ? yourls_sanitize_keyword( $_REQUEST['keyword'] ): '' ;
+$title   = isset( $_REQUEST['title'] ) ? yourls_sanitize_title( $_REQUEST['title'] ) : '' ;
+$return  = yourls_add_new_link( $url, $keyword, $title );
+		
+$shorturl = isset( $return['shorturl'] ) ? $return['shorturl'] : '';
+$message  = isset( $return['message'] ) ? $return['message'] : '';
+$title    = isset( $return['title'] ) ? $return['title'] : '';
 ?>
 
 <!-- Error reporting -->
