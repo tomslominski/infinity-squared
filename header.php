@@ -9,8 +9,7 @@ class ISQ { public static $general = array(), $links = array(), $social = array(
 
 // Load translations
 function isq_load_textdomain() {
-    yourls_load_custom_textdomain( 'isq_translation', $site . '/public/languages' );
-    $site = YOURLS_SITE;
+    yourls_load_custom_textdomain( 'isq_translation', '/public/languages' );
 }
 isq_load_textdomain();
 ?>
