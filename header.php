@@ -27,10 +27,10 @@ isq_load_textdomain();
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> <!-- jQuery -->
 <script src="<?php echo YOURLS_SITE; ?>/public/js/jquery.formalize.min.js"></script><!-- Formalize JS -->
 <script src="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.1.1/basic/jquery.qtip.min.js"></script><!-- qTip JS -->
-<?php if (!empty(ISQ::$social['plus'])) { ?>
-<script type="text/javascript" src="https://apis.google.com/js/plusone.js">
-  {lang: "en-GB"}
-</script>
+<?php if ( ISQ::$social['plus'] ) { ?>
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+      {lang: "en-GB"}
+    </script>
 <?php } ?>
 <script src='https://www.google.com/recaptcha/api.js'></script><!-- reCAPTCHA -->
 <?php if (!empty(ISQ::$general['clipboard'])) { ?>
