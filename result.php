@@ -19,13 +19,18 @@ if ($recaptcha_json['success'] != 'true') {
 }
 
 // QR code shenanigans
-include('public/phpqrcode/qrlib.php');
+if ( ISQ::$general['qr'] ) { 
 
-$qrContainerId = 'url-qr-code'; 
-$saveToFile = false; 
-$imageWidth = 600; // in pixels
+	include('public/phpqrcode/qrlib.php');
 
-$qrCode = QRcode::svg($url, $qrContainerId, $saveToFile, QR_ECLEVEL_L, $imageWidth);
+	$qrContainerId = 'url-qr-code'; 
+	$saveToFile = false; 
+	$imageWidth = 600; // in pixels
+
+	$qrCode = QRcode::svg($url, $qrContainerId, $saveToFile, QR_ECLEVEL_L, $imageWidth);
+
+};
+
 ?>
 
 <!-- Error reporting -->
@@ -42,7 +47,7 @@ $qrCode = QRcode::svg($url, $qrContainerId, $saveToFile, QR_ECLEVEL_L, $imageWid
 </div>
 
 <!-- QR code -->
-<?php if (!empty(ISQ::$general['qr'])) { echo '<h2>' . yourls__( 'QR code', 'isq-translation' ) . '</h2><p>' . yourls__( 'Share your link with external devices', 'isq-translation' ) . '</p>' . $qrCode; } ?>
+<?php if ( ISQ::$general['qr'] ) { echo '<h2>' . yourls__( 'QR code', 'isq-translation' ) . '</h2><p>' . yourls__( 'Share your link with external devices', 'isq-translation' ) . '</p>' . $qrCode; } ?>
 
 <!-- Social sharers -->
 <h2><?php yourls_e( 'Share', 'isq_translation'); ?></h2>

@@ -228,6 +228,11 @@ input[type="radio"] {
 	color:#013F6D;
 }
 
+svg#url-qr-code {
+	width: 50%;
+	height: 50%;
+}
+
 /* Footer */
 .footer {
 	text-align: center;
