@@ -43,4 +43,5 @@ ISQ::$recaptcha = array(
 	'sitekey' => '',
 	'secret' => ''
 );
+
 ?>
