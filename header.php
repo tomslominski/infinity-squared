@@ -9,7 +9,7 @@ class ISQ { public static $general = array(), $links = array(), $social = array(
 
 // Load translations
 function isq_load_textdomain() {
-    yourls_load_custom_textdomain( 'isq_translation', '/public/languages' );
+	yourls_load_custom_textdomain( 'isq_translation', '/public/languages' );
 }
 isq_load_textdomain();
 ?>
@@ -28,38 +28,38 @@ isq_load_textdomain();
 <script src="<?php echo YOURLS_SITE; ?>/public/js/jquery.formalize.min.js"></script><!-- Formalize JS -->
 <script src="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.1.1/basic/jquery.qtip.min.js"></script><!-- qTip JS -->
 <?php if ( ISQ::$social['plus'] ) { ?>
-    <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
-      {lang: "en-GB"}
-    </script>
+	<script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+		{lang: "en-GB"}
+	</script>
 <?php } ?>
 <script src='https://www.google.com/recaptcha/api.js'></script><!-- reCAPTCHA -->
 <?php if (!empty(ISQ::$general['clipboard'])) { ?>
-<script type="text/javascript" src="js/jquery.zclip.min.js"></script>
-<script>
-$(document).ready(function(){
-    $('button#long-copy').zclip({
-        path:'js/ZeroClipboard.swf',
-        copy:function(){return $('input#long-copy').val();},
-        afterCopy: function() {
-        	$("button#long-copy").html('<?php yourls_e( 'Copied!', 'isq_translation'); ?>');
-        }
-    });
-    $('button#short-copy').zclip({
-        path:'js/ZeroClipboard.swf',
-        copy:function(){return $('input#short-copy').val();},
-        afterCopy: function() {
-        	$("button#short-copy").html('<?php yourls_e( 'Copied!', 'isq_translation'); ?>');
-        }
-    });
-    $('button#stats-copy').zclip({
-        path:'js/ZeroClipboard.swf',
-        copy:function(){return $('input#stats-copy').val();},
-        afterCopy: function() {
-        	$("button#stats-copy").html('<?php yourls_e( 'Copied!', 'isq_translation'); ?>');
-        }
-    });
-});
-</script>
+	<script type="text/javascript" src="js/jquery.zclip.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		$('button#long-copy').zclip({
+			path:'js/ZeroClipboard.swf',
+			copy:function(){return $('input#long-copy').val();},
+			afterCopy: function() {
+				$("button#long-copy").html('<?php yourls_e( 'Copied!', 'isq_translation'); ?>');
+			}
+		});
+		$('button#short-copy').zclip({
+			path:'js/ZeroClipboard.swf',
+			copy:function(){return $('input#short-copy').val();},
+			afterCopy: function() {
+				$("button#short-copy").html('<?php yourls_e( 'Copied!', 'isq_translation'); ?>');
+			}
+		});
+		$('button#stats-copy').zclip({
+			path:'js/ZeroClipboard.swf',
+			copy:function(){return $('input#stats-copy').val();},
+			afterCopy: function() {
+				$("button#stats-copy").html('<?php yourls_e( 'Copied!', 'isq_translation'); ?>');
+			}
+		});
+	});
+	</script>
 <?php } ?>
 <script>
 $(document).ready(function()
@@ -72,7 +72,7 @@ $(document).ready(function()
 </script>
 
 <!-- App icons
-    Generated using http://realfavicongenerator.net -->
+	Generated using http://realfavicongenerator.net -->
 <link rel="apple-touch-icon" sizes="57x57" href="public/images/app-icons/apple-touch-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="public/images/app-icons/apple-touch-icon-60x60.png">
 <link rel="apple-touch-icon" sizes="72x72" href="public/images/app-icons/apple-touch-icon-72x72.png">
@@ -100,11 +100,11 @@ $(document).ready(function()
 <header>
 	<h1><a href="<?php echo YOURLS_SITE; ?>"><?php echo ISQ::$general['name']; ?></a></h1>
 	<ul class="menu">
-        <?php
-            foreach( ISQ::$links as $menuItem ) {
-                echo '<li><a href="' . $menuItem['link'] . '">' . $menuItem['name'] . '</a></li>';
-            }
-        ?>
+		<?php
+			foreach( ISQ::$links as $menuItem ) {
+				echo '<li><a href="' . $menuItem['link'] . '">' . $menuItem['name'] . '</a></li>';
+			}
+		?>
 	</ul>
 </header>
 
