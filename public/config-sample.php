@@ -1,16 +1,17 @@
 <?php
 
-// Copy and rename your file to config.php in this directory to edit your settings
+// Copy and rename your file to config.php in the /public/ directory to edit your settings
+// 0, FALSE or '' to disable
+// Pretty much everything else to enable, such as 1, TRUE or any string
 
-// General settings
-// 1 to enable, 0 to disable
+// GENERAL SETTINGS
 ISQ::$general = array(
 	'name' => 'URL shortener', // The name of your URL shortener
-	'qr' => 1, // Do you want to display a QR code?
+	'qr' => TRUE, // Do you want to display a QR code?
 	'clipboard' => 1 // Do you want to enable zeroClipboard? (uses flash)
 );
 
-// Menu links
+// MENU LINKS
 // Add more comma seperated arrays to add more links
 ISQ::$links = array(
 	array(
@@ -27,17 +28,16 @@ ISQ::$links = array(
 	)
 );
 
-// Social sharing
-// 1 to enable, 0 to disable
+// SOCIAL SHARING
 ISQ::$social = array(
-	'facebook' => 1,
-	'twitter' => 1,
-	'plus' => 1,
-	'linkedin' => 1,
-	'tumblr' => 1
+	'facebook' => TRUE,
+	'twitter' => TRUE,
+	'plus' => TRUE,
+	'linkedin' => TRUE,
+	'tumblr' => TRUE
 );
 
-// reCAPTCHA API keys
+// reCAPTCHA API KEYS
 // Get yourls from https://www.google.com/recaptcha/admin
 ISQ::$recaptcha = array(
 	'sitekey' => '',
