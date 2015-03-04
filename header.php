@@ -104,11 +104,11 @@ isq_load_textdomain();
 
 			<header class="site-header">
 				<h1><a href="<?php echo YOURLS_SITE; ?>"><?php echo ISQ::$general['name']; ?></a></h1>
-				<ul class="menu">
+				<nav class="menu">
 					<?php
 						foreach( ISQ::$links as $menuItem ) {
-							echo '<li><a href="' . $menuItem['link'] . '">' . $menuItem['name'] . '</a></li>';
+							echo '<a href="' . $menuItem['link'] . '">' . $menuItem['name'] . '</a>';
 						};
 					?>
-				</ul>
+				</nav>
 			</header>
