@@ -81,9 +81,8 @@ p, a {
 
 /* Header */
 header {
-	width: 95%;
-	padding: 2.5%;
 	margin: 0 auto;
+	padding-top: 10px;
 }
 
 h1 {
@@ -150,8 +149,8 @@ h1 a:hover {
 }
 
 /* Main style */
-.paragraph {
-	padding: 0 2.5% 0 2.5%;
+.content {
+	background: white;
 }
 
 h2 {

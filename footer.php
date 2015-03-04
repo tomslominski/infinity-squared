@@ -1,5 +1,5 @@
-</div>
-<div class="paragraph">
+
+<div class="content">
 	<h2><?php yourls_e( 'The bookmarklet', 'isq_translation') ?></h2>
 
 	<?php $bookmarkletdialog = yourls__( 'Save this as a bookmark', 'isq_translation') // Can't put it where it belongs as there'd be too much char escaping ?>
@@ -8,7 +8,7 @@
 	<p><?php yourls_e( 'Support for bookmarklets on mobile varies. For example, they work on Chrome for Android but you have to add and sync them from your desktop.', 'isq_translation') ?></p>
 </div>
 
-<div class="footer">
+<div class="content footer">
 	<p><?php yourls_e( 'Powered by <a href="http://yourls.org/">YOURLS</a>. Design by <a href="http://tomslominski.net/">Tom Slominski</a>. Also used: <a href="http://formalize.me/">Formalize</a> and <a href="http://qtip2.com/">qTip²</a>. Find this theme on <a href="https://github.com/tomslominski/infinity-squared">GitHub</a>.', 'isq_translation') ?></p>
 </div>
 </div>

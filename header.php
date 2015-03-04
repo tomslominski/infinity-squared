@@ -112,8 +112,3 @@ isq_load_textdomain();
 					?>
 				</ul>
 			</header>
-
-
-<div id="container">
-	
-	<div class="paragraph">
