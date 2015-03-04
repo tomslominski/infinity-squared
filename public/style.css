@@ -4,11 +4,20 @@ https://github.com/tomslominski/infinity-squared
 */
 
 /* Structure */
+html {
+	font-size: 62.5%;
+	box-sizing: border-box;
+}
+
 body {
 	background: #F1F1F1;
 	color: black;
 	font-family: 'Ubuntu', sans-serif, Helvetica, Arial;
-	font-size: 62.5%;
+}
+
+.wrapper {
+	width: 60%;
+	margin: 0 auto;
 }
 
 #container {
@@ -78,11 +87,11 @@ header {
 }
 
 h1 {
-	background: url(img/noise.png) #013F6D;
+	background-color: #013F6D;
 	width: 100%;
 	text-align: center;
 	color: white;
-	font-size: 7em;
+	font-size: 7rem;
 	border-top: 4px #000 solid;
 	margin: 0 auto;
 }

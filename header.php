@@ -98,18 +98,22 @@ isq_load_textdomain();
 		<meta name="theme-color" content="#013f6d">
 	</head>
 
-<body>
+	<body>
+
+		<div class="wrapper">
+
+			<header class="site-header">
+				<h1><a href="<?php echo YOURLS_SITE; ?>"><?php echo ISQ::$general['name']; ?></a></h1>
+				<ul class="menu">
+					<?php
+						foreach( ISQ::$links as $menuItem ) {
+							echo '<li><a href="' . $menuItem['link'] . '">' . $menuItem['name'] . '</a></li>';
+						};
+					?>
+				</ul>
+			</header>
+
 
 <div id="container">
-<header>
-	<h1><a href="<?php echo YOURLS_SITE; ?>"><?php echo ISQ::$general['name']; ?></a></h1>
-	<ul class="menu">
-		<?php
-			foreach( ISQ::$links as $menuItem ) {
-				echo '<li><a href="' . $menuItem['link'] . '">' . $menuItem['name'] . '</a></li>';
-			}
-		?>
-	</ul>
-</header>
-
-<div class="paragraph">
+	
+	<div class="paragraph">
