@@ -106,43 +106,24 @@ h1 a:hover {
 
 .menu {
 	background: black;
-	display: block;
 	margin: 0 auto;
-	/*width: 96%;*/
 	width: 100%;
 	color: white;
-	/*padding: 0 2% 0 2%;*/
-	/*margin-bottom: 30px;*/
 }
 
 .menu a {
 	color: #FFF;
 	text-decoration: none;
-	/*line-height: 38px;*/
 	display: inline-block;
 	padding: 12px;
 	background: none;
-	/*width: auto;*/
-	transition: background 800ms;
-	-moz-transition: background 800ms; /* Firefox 4 */
-	-webkit-transition: background 800ms; /* Safari and Chrome */
-	-o-transition: background 800ms; /* Opera */
+	transition: background 0.8s;
 }
 
 .menu a:hover {
-	transition: background 800ms;
-	-moz-transition: background 800ms; /* Firefox 4 */
-	-webkit-transition: background 800ms; /* Safari and Chrome */
-	-o-transition: background 800ms; /* Opera */
+	transition: background 0.8s;
 	background: #292929;
 }
-
-/*.menu li {
-	list-style: none;
-	float: left;
-	line-height: 38px;
-	width: auto;
-}*/
 
 /* Main style */
 .content {
