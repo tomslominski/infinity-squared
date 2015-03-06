@@ -178,22 +178,6 @@ input[type=submit] {
 	text-align: right;
 }
 
-
-
-/* Tooltips */
-.qtip-default {
-	border-color: #013F6D;
-	background-color: #013F6D;
-	color: #FFF;
-}
-
-.ui-tooltip-titlebar,
-.ui-tooltip-content{
-	border-color: #013F6D;
-	background-color: #013F6D;
-	color: #FFF;
-}
-
 /* Output */
 .output label {
 	width: 30%;
