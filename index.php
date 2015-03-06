@@ -28,7 +28,7 @@ $title   = isset( $_REQUEST['title'] ) ? yourls_sanitize_title( $_REQUEST['title
 			<label for="title" class="secondary"><?php yourls_e( 'Optional title used when sharing a link from YOURLS using social sharers', 'isq_translation'); ?></label>
 			<input type="text" id="title" value="<?php echo($title); ?>" />
 		</div>
-		
+
 		</div>
 
 		<div class="form-item recaptcha-container">
@@ -37,7 +37,9 @@ $title   = isset( $_REQUEST['title'] ) ? yourls_sanitize_title( $_REQUEST['title
 			<div class="g-recaptcha" data-sitekey="<?php echo ISQ::$recaptcha['sitekey']; ?>"></div>
 		</div>
 
-		<p><input type="submit" value="<?php yourls_e( 'Shorten', 'isq_translation'); ?>" /></p>
+		<div class="form-item submit-container">
+			<input type="submit" value="<?php yourls_e( 'Shorten', 'isq_translation'); ?>" />
+		</div>
 	</form>
 </div>
 
