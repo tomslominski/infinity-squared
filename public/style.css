@@ -4,9 +4,12 @@ https://github.com/tomslominski/infinity-squared
 */
 
 /* Set up */
+* {
+	box-sizing: border-box;
+}
+
 html {
 	font-size: 62.5%;
-	box-sizing: border-box;
 }
 
 body {
@@ -101,7 +104,7 @@ a, a:visited {
 
 /* Forms */
 .form-item {
-	padding: 2%;
+	padding: 2% 0;
 }
 
 .full-width {
