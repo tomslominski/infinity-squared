@@ -164,6 +164,12 @@ input[type=submit] {
 	background: #EBEBEB;
 	border: none;
 	font-family: 'Ubuntu', sans-serif, Helvetica, Arial;
+	transition: background 0.5s;
+	cursor: pointer;
+}
+
+input[type=submit]:hover {
+	background: #D3D3D3;
 }
 
 .submit-container {
@@ -225,12 +231,11 @@ svg#url-qr-code {
 	margin: 8px 0;
 	font-size: 1.6rem;
 	color: black;
-	transition: color 0.5s, fill 0.5s;
+	transition: background 0.5s;
 }
 
 .bookmarklet:hover {
-	color: #013F6D;
-	fill: #013F6D;
+	background: #D3D3D3;
 }
 
 .icon-move svg {
