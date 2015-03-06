@@ -120,9 +120,15 @@ a, a:visited {
 }
 
 .halves {
+	display: flex;
 	display: -webkit-flex;
+	display: -moz-flex;
+	justify-content: space-between;
 	-webkit-justify-content: space-between;
+	-moz-justify-content: space-between;
+	align-items: flex-end;
 	-webkit-align-items: flex-end;
+	-moz-align-items: flex-end;
 }
 
 label {
