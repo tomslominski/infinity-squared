@@ -16,7 +16,7 @@ body {
 	background: #F1F1F1;
 	color: black;
 	font-family: 'Ubuntu', sans-serif, Helvetica, Arial;
-	font-size: 1.3rem;
+	font-size: 1.4rem;
 }
 
 ::selection {
@@ -104,7 +104,7 @@ a, a:visited {
 
 /* Forms */
 .form-item {
-	padding: 2% 0;
+	padding: 10px 0;
 }
 
 .full-width {
@@ -112,7 +112,18 @@ a, a:visited {
 }
 
 .half-width {
-	width: 50%;
+	width: 49%;
+}
+
+.halves {
+	display: -webkit-flex;
+	-webkit-justify-content: space-between;
+	-webkit-align-items: flex-end;
+}
+
+label {
+	display: block;
+	line-height: 2rem;
 }
 
 label.primary {
@@ -120,12 +131,13 @@ label.primary {
 }
 
 label.secondary {
-	color: #CCC;
+	color: #AFAFAF;
 }
 
 input:not([type=submit]):not([type=file]) {
 	width: 100%;
 	padding: 10px;
+	font-size: 1.4rem;
 }
 
 
