@@ -13,6 +13,7 @@ body {
 	background: #F1F1F1;
 	color: black;
 	font-family: 'Ubuntu', sans-serif, Helvetica, Arial;
+	font-size: 1.3rem;
 }
 
 .wrapper {
@@ -51,10 +52,6 @@ input::-moz-selection {
 a, a:visited, .footer a, .footer a:visited {
 	color: #013F6D;
 	text-decoration: none;
-}
-
-p, a {
-	font-size: 1.2em;
 }
 
 @font-face {
@@ -130,26 +127,31 @@ h1 a:hover {
 	background: white;
 	padding: 15px;
 	margin-top: 15px;
+	border: 1px solid #D8D8D8;
+	box-shadow: 0 0 3px 0 #CCC;
 }
 
-h2 {
+/*h2 {
 	color: black;
 	margin-bottom: -8px;
-}
+}*/
 
-.right {
+/*.right {
 	width: 60%;
 	float: right;
-}
+}*/
 
-.radio {
+/* Forms */
+
+
+/*.radio {
 	margin-right: 10%;
 }
 
 input[type="radio"] {
 	margin-right: 1%;
 }
-
+*/
 .bookmarklet:before {
 	font-family: 'icons';
 	content: "\e600";
@@ -158,7 +160,6 @@ input[type="radio"] {
 
 /* reCAPTCHA */
 .recaptcha-container {
-	font-size: 1.2em;
 	overflow: hidden;
 }
 
@@ -229,12 +230,8 @@ svg#url-qr-code {
 .footer p {
 	/*padding: 2%;*/
 	/*margin: 0 auto;*/
-	font-size: 1.1em;
+	font-size: 1.2rem;
 	margin: 0;
-}
-
-.footer a {
-	font-size: 1.1em;
 }
 
 .footer a:hover {
