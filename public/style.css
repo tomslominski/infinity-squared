@@ -3,7 +3,7 @@ Infinity Squared CSS
 https://github.com/tomslominski/infinity-squared
 */
 
-/* Structure */
+/* Set up */
 html {
 	font-size: 62.5%;
 	box-sizing: border-box;
@@ -16,25 +16,7 @@ body {
 	font-size: 1.3rem;
 }
 
-.wrapper {
-	width: 60%;
-	margin: 0 auto;
-}
-
-#container {
-	width: 60%;
-	min-width: 720px;
-	margin: 0 auto;
-	background-color: white;
-}
-
-/* General */
 ::selection {
-	background: rgba(1,63,109,0.7);
-	color: #FFF;
-}
-
-input::selection {
 	background: rgba(1,63,109,0.7);
 	color: #FFF;
 }
@@ -42,16 +24,6 @@ input::selection {
 ::-moz-selection {
 	background: rgba(1,63,109,0.7);
 	color: #FFF;
-}
-
-input::-moz-selection {
-	background: rgba(1,63,109,0.7);
-	color: #FFF;
-}
-
-a, a:visited, .footer a, .footer a:visited {
-	color: #013F6D;
-	text-decoration: none;
 }
 
 @font-face {
@@ -71,18 +43,37 @@ a, a:visited, .footer a, .footer a:visited {
 	font-variant: normal;
 	text-transform: none;
 	line-height: 1;
-	/* Better Font Rendering =========== */
+	/* Better font rendering */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 
-/* Header */
-header {
-	margin: 0 auto;
-	margin-top: 10px;
+/* Structure and global design */
+a, a:visited {
+	color: #013F6D;
+	text-decoration: none;
 }
 
-h1 {
+.wrapper {
+	width: 60%;
+	margin: 0 auto;
+}
+
+.content {
+	background: white;
+	padding: 15px;
+	margin-top: 15px;
+	border: 1px solid #D8D8D8;
+	box-shadow: 0 0 3px 0 #CCC;
+}
+
+/* Header */
+.site-header {
+	margin: 0 auto;
+	padding: 0;
+}
+
+.site-title {
 	background-color: #013F6D;
 	width: 100%;
 	text-align: center;
@@ -92,12 +83,12 @@ h1 {
 	margin: 0 auto;
 }
 
-h1 a, h1 a:visited {
+.site-title a, .site-tite a:visited {
 	color: white;
 	text-decoration: none;
 }
 
-h1 a:hover {
+.site-title a:hover {
 	border-bottom: #FFF 1px dashed;
 }
 
@@ -122,43 +113,7 @@ h1 a:hover {
 	background: #292929;
 }
 
-/* Main style */
-.content {
-	background: white;
-	padding: 15px;
-	margin-top: 15px;
-	border: 1px solid #D8D8D8;
-	box-shadow: 0 0 3px 0 #CCC;
-}
-
-/*h2 {
-	color: black;
-	margin-bottom: -8px;
-}*/
-
-/*.right {
-	width: 60%;
-	float: right;
-}*/
-
 /* Forms */
-
-
-/*.radio {
-	margin-right: 10%;
-}
-
-input[type="radio"] {
-	margin-right: 1%;
-}
-*/
-.bookmarklet:before {
-	font-family: 'icons';
-	content: "\e600";
-	margin: 2px;
-}
-
-/* reCAPTCHA */
 .recaptcha-container {
 	overflow: hidden;
 }
@@ -222,14 +177,18 @@ svg#url-qr-code {
 }
 
 /* Footer */
+.bookmarklet:before {
+	font-family: 'icons';
+	content: "\e600";
+	margin: 2px;
+}
+
 .footer {
 	text-align: center;
 	border-top: 2px solid #000;
 }
 
 .footer p {
-	/*padding: 2%;*/
-	/*margin: 0 auto;*/
 	font-size: 1.2rem;
 	margin: 0;
 }
