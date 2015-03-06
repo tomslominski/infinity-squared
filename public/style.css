@@ -143,6 +143,11 @@ input:not([type=submit]):not([type=file]) {
 	padding: 10px;
 	font-size: 1.6rem;
 	border: 0.5px solid #BEBEBE;
+	margin-top: 5px;
+}
+
+.g-recaptcha {
+	margin-top: 5px;
 }
 
 input:not([type=submit]):not([type=file]):focus {
