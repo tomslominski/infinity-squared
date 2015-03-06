@@ -25,13 +25,8 @@ isq_load_textdomain();
 		<title><?php echo ISQ::$general['name']; ?></title> <!-- Site title defined in theme settings -->
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="<?php echo YOURLS_SITE; ?>/public/formalize.css" /> <!-- Formalize CSS -->
-		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.1.1/basic/jquery.qtip.min.css" /><!-- qTip CSS -->
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,italic,bold,bolditalic"><!-- Ubuntu from Google Web Fonts -->
 		<link rel="stylesheet" href="<?php echo YOURLS_SITE; ?>/public/style.css" /><!-- Theme CSS -->
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> <!-- jQuery -->
-		<script src="<?php echo YOURLS_SITE; ?>/public/js/jquery.formalize.min.js"></script><!-- Formalize JS -->
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.1.1/basic/jquery.qtip.min.js"></script><!-- qTip JS -->
 		<?php if ( ISQ::$social['plus'] ) { ?>
 			<script type="text/javascript" src="https://apis.google.com/js/plusone.js">
 				{lang: "en-GB"}
@@ -66,15 +61,6 @@ isq_load_textdomain();
 			});
 			</script>
 		<?php } ?>
-		<script>
-		$(document).ready(function()
-		{
-			$('a.bookmarklet').qtip({
-			});
-			$('label').qtip({
-			});
-		});
-		</script>
 
 		<!-- App icons generated using http://realfavicongenerator.net -->
 		<link rel="apple-touch-icon" sizes="57x57" href="public/images/app-icons/apple-touch-icon-57x57.png">
