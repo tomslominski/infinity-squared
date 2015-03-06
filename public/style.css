@@ -32,7 +32,6 @@ body {
 /* Structure and global design */
 a, a:visited {
 	color: #013F6D;
-	fill: #013F6D;
 	text-decoration: none;
 }
 
@@ -248,6 +247,20 @@ svg#url-qr-code {
 .footer a:hover {
 	text-decoration: none;
 	border-bottom: dashed 1px #013F6D;
+}
+
+.icon-github svg {
+	height: 1.2rem;
+	width: 1.2rem;
+	transition: fill 0.5s;
+}
+
+.icon-github svg:hover {
+	fill: #013F6D;
+}
+
+a.icon-github:hover {
+	border-bottom: none;
 }
 
 /* Mobile */
