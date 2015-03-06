@@ -29,13 +29,6 @@ body {
 	color: #FFF;
 }
 
-.icon-inline {
-	vertical-align: top;
-	height: 1.2rem;
-	width: 1.2rem;
-	padding: 0 2px;
-}
-
 /* Structure and global design */
 a, a:visited {
 	color: #013F6D;
@@ -220,6 +213,25 @@ input[type=submit] {
 svg#url-qr-code {
 	width: 50%;
 	height: 50%;
+}
+
+/* Bookmarklet */
+.bookmarklet-container {
+	text-align: center;
+}
+
+.bookmarklet {
+	background: #EBEBEB;
+	padding: 7px;
+	margin: 8px 0;
+	font-size: 1.6rem;
+}
+
+.icon-bookmarklet {
+	vertical-align: center;
+	height: 1.4rem;
+	width: 1.4rem;
+	margin-right: 5px;
 }
 
 /* Footer */
