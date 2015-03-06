@@ -26,31 +26,17 @@ body {
 	color: #FFF;
 }
 
-@font-face {
-	font-family: 'icons';
-	src:url('fonts/icons.woff') format('woff'),
-		url('fonts/icons.ttf') format('truetype'),
-		url('fonts/icons.svg#icons') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-[class^="icon-"], [class*=" icon-"] {
-	font-family: 'icons';
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	/* Better font rendering */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+.icon-inline {
+	vertical-align: top;
+	height: 1.2rem;
+	width: 1.2rem;
+	padding: 0 2px;
 }
 
 /* Structure and global design */
 a, a:visited {
 	color: #013F6D;
+	fill: #013F6D;
 	text-decoration: none;
 }
 
@@ -177,12 +163,6 @@ svg#url-qr-code {
 }
 
 /* Footer */
-.bookmarklet:before {
-	font-family: 'icons';
-	content: "\e600";
-	margin: 2px;
-}
-
 .footer {
 	text-align: center;
 	border-top: 2px solid #000;
