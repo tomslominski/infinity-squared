@@ -100,8 +100,16 @@ a, a:visited {
 }
 
 /* Forms */
-.recaptcha-container {
-	overflow: hidden;
+input:not([type=submit]):not([type=file]) {
+	padding: 10px;
+}
+
+.full-width input:not([type=submit]):not([type=file]) {
+	width: 100%;
+}
+
+.half-width input:not([type=submit]):not([type=file]) {
+	width: 50%;
 }
 
 /* Tooltips */
