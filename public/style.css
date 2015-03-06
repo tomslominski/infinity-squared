@@ -148,7 +148,7 @@ input:not([type=submit]):not([type=file]) {
 	width: 100%;
 	padding: 10px;
 	font-size: 1.6rem;
-	border: 0.5px solid #BEBEBE;
+	border: 1px solid #D8D8D8;
 	margin-top: 5px;
 }
 
