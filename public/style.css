@@ -100,17 +100,31 @@ a, a:visited {
 }
 
 /* Forms */
-input:not([type=submit]):not([type=file]) {
-	padding: 10px;
+.form-item {
+	padding: 2%;
 }
 
-.full-width input:not([type=submit]):not([type=file]) {
+.full-width {
 	width: 100%;
 }
 
-.half-width input:not([type=submit]):not([type=file]) {
+.half-width {
 	width: 50%;
 }
+
+label.primary {
+	font-weight: bold;
+}
+
+label.secondary {
+	color: #CCC;
+}
+
+input:not([type=submit]):not([type=file]) {
+	width: 100%;
+	padding: 10px;
+}
+
 
 /* Tooltips */
 .qtip-default {
