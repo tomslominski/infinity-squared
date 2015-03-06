@@ -164,8 +164,14 @@ input:not([type=submit]):not([type=file]):focus {
 
 input[type=submit] {
 	font-size: 1.4rem;
-	padding: 5px;
+	padding: 10px;
 	border-radius: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background: #EBEBEB;
+	border: none;
+	font-family: 'Ubuntu', sans-serif, Helvetica, Arial;
 }
 
 .submit-container {
