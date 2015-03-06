@@ -224,9 +224,16 @@ svg#url-qr-code {
 	padding: 7px;
 	margin: 8px 0;
 	font-size: 1.6rem;
+	color: black;
+	transition: color 0.5s, fill 0.5s;
 }
 
-.icon-bookmarklet {
+.bookmarklet:hover {
+	color: #013F6D;
+	fill: #013F6D;
+}
+
+.icon-move svg {
 	vertical-align: center;
 	height: 1.4rem;
 	width: 1.4rem;
