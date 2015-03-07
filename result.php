@@ -6,7 +6,7 @@ $recaptcha_json = json_decode($recaptcha_data, TRUE);
 
 // What happens when the CAPTCHA was completed incorrectly
 if ($recaptcha_json['success'] != 'true') {
-	echo '<p class="error">' . yourls__( 'Are you a bot? Google thinks so. Go back and try again.', 'isq_translation' ) . '</p>';
+	echo '<div class="content"><p class="error">' . yourls__( 'Are you a bot? Google certainly thinks so. Please go back and try again.', 'isq_translation' ) . '</p></div>';
 	include('footer.php');
 	die();
 }
@@ -35,29 +35,50 @@ if ( ISQ::$general['qr'] ) {
 
 ?>
 
-<!-- Error reporting -->
-<?php isset( $error ) ? $error : ''; ?>
+<div class="content">
+	<!-- Error reporting -->
+	<?php isset( $error ) ? $error : ''; ?>
 
-<!-- Default output -->
-<h2><?php yourls_e( 'Results', 'isq_translation'); ?></h2>
-<p><?php yourls_e( 'View your short URL', 'isq_translation'); ?></p>
-<div class="output">
-	<p><label for="longurl"><?php yourls_e( 'Original URL:', 'isq_translation'); ?></label> <input type="text" name="longurl" onclick="this.select();" onload="this.select();" value="<?php echo $url; ?>" id="long-copy"> <?php if (!empty(ISQ::$general['clipboard'])) { echo '<button id="long-copy" data-clipboard-target="long-copy" class="desktop-only">' . yourls__( 'Copy to Clipboard', 'isq-translation' ) . '</button>'; } ?> </p>
-	<p><label for="shorturl"><?php yourls_e( 'Short URL:', 'isq_translation'); ?></label> <input type="text" name="shorturl" onclick="this.select();" onload="this.select();" value="<?php echo $shorturl; ?>" id="short-copy"> <?php if (!empty(ISQ::$general['clipboard'])) { echo '<button id="short-copy" data-clipboard-target="short-copy" class="desktop-only">' . yourls__( 'Copy to Clipboard', 'isq-translation' ) . '</button>'; } ?> </p>
-	<p><label for="stats"><?php /* translators: This is short for statistics */ yourls_e( 'Stats:', 'isq_translation'); ?></label> <input type="text" name="stats" onclick="this.select();" onload="this.select();" value="<?php echo $shorturl . '+'; ?>" id="stats-copy"> <?php if (!empty(ISQ::$general['clipboard'])) { echo '<button id="stats-copy" data-clipboard-target="stats-copy" class="desktop-only">' . yourls__( 'Copy to Clipboard', 'isq-translation' ) . '</button>'; } ?> </p>
-	<p class="desktop-only"><?php yourls_e( 'Click on a link and press Ctrl+C to quickly copy it.', 'isq_translation'); ?></p>
+	<!-- Default output -->
+	<h2><?php yourls_e( 'Your short URL', 'isq_translation'); ?></h2>
+
+	<div class="output">
+		<div class="form-item full-width">
+			<label for="longurl"><?php yourls_e( 'Original URL:', 'isq_translation'); ?></label>
+			<input type="text" name="longurl" onclick="this.select();" onload="this.select();" value="<?php echo $url; ?>" id="long-copy">
+			<?php if (!empty(ISQ::$general['clipboard'])) { echo '<button id="long-copy" data-clipboard-target="long-copy" class="desktop-only">' . yourls__( 'Copy to Clipboard', 'isq-translation' ) . '</button>'; } ?>
+		</div>
+
+		<div class="halves">
+
+		<div class="form-item half-width left">
+			<label for="shorturl"><?php yourls_e( 'Short URL:', 'isq_translation'); ?></label>
+			<input type="text" name="shorturl" onclick="this.select();" onload="this.select();" value="<?php echo $shorturl; ?>" id="short-copy">
+			<?php if (!empty(ISQ::$general['clipboard'])) { echo '<button id="short-copy" data-clipboard-target="short-copy" class="desktop-only">' . yourls__( 'Copy to Clipboard', 'isq-translation' ) . '</button>'; } ?>
+		</div>
+		
+		<div class="form-item half-width right">
+			<label for="stats"><?php /* translators: This is short for statistics */ yourls_e( 'Stats:', 'isq_translation'); ?></label>
+			<input type="text" name="stats" onclick="this.select();" onload="this.select();" value="<?php echo $shorturl . '+'; ?>" id="stats-copy">
+			<?php if (!empty(ISQ::$general['clipboard'])) { echo '<button id="stats-copy" data-clipboard-target="stats-copy" class="desktop-only">' . yourls__( 'Copy to Clipboard', 'isq-translation' ) . '</button>'; } ?>
+		</div>
+		
+		</div>
+
+		<p class="desktop-only"><?php yourls_e( 'Click on a link and press Ctrl+C to quickly copy it.', 'isq_translation'); ?></p>
+	</div>
+
+	<!-- Social sharers -->
+	<h2><?php yourls_e( 'Share', 'isq_translation'); ?></h2>
+	<p><?php yourls_e( 'Share your short URL', 'isq_translation'); ?></p>
+	<?php if ( ISQ::$social['facebook'] ) { echo '<div class="social-sharer"><a href="http://facebook.com/sharer.php?u=' . $shorturl . '" class="share-button" target="_blank"><img src="public/img/facebook.png" alt="Facebook" width="55px" height="62px" /></a></div>'; } ?>
+	<?php if ( ISQ::$social['twitter'] ) { echo '<div class="social-sharer"><a href="http://twitter.com/share" class="twitter-share-button" data-url="' . $shorturl . '" data-text="'. $title .'" data-count="vertical">Tweet</a><script src="http://platform.twitter.com/widgets.js"></script></div>'; } ?>
+	<?php if ( ISQ::$social['plus'] ) { echo '<div class="g-plus social-sharer" data-action="share" data-annotation="vertical-bubble" data-height="62" data-href="' . $shorturl . '"></div>'; } ?>
+	<?php if ( ISQ::$social['linkedin'] ) { echo '<div class="social-sharer"><script src="http://platform.linkedin.com/in.js"></script><script type="IN/Share" data-url="' . $shorturl . '" data-counter="top"></script></div>'; } ?>
+	<?php if ( ISQ::$social['tumblr'] ) { echo '<a href="http://www.tumblr.com/share/link?url='. urlencode($shorturl) .'&name='. urlencode($title) .'" title="Share on Tumblr"><img src="public/img/tumblr.png" alt="Share on Tumblr" width="55px" height="62px" /></a>'; } ?>
+
+	<!-- QR code -->
+	<?php if ( ISQ::$general['qr'] ) { echo '<h2>' . yourls__( 'QR code', 'isq-translation' ) . '</h2><p>' . yourls__( 'Share your link with external devices', 'isq-translation' ) . '</p>' . $qrCode; } ?>
 </div>
-
-<!-- QR code -->
-<?php if ( ISQ::$general['qr'] ) { echo '<h2>' . yourls__( 'QR code', 'isq-translation' ) . '</h2><p>' . yourls__( 'Share your link with external devices', 'isq-translation' ) . '</p>' . $qrCode; } ?>
-
-<!-- Social sharers -->
-<h2><?php yourls_e( 'Share', 'isq_translation'); ?></h2>
-<p><?php yourls_e( 'Share your short URL', 'isq_translation'); ?></p>
-<?php if ( ISQ::$social['facebook'] ) { echo '<div class="social-sharer"><a href="http://facebook.com/sharer.php?u=' . $shorturl . '" class="share-button" target="_blank"><img src="public/img/facebook.png" alt="Facebook" width="55px" height="62px" /></a></div>'; } ?>
-<?php if ( ISQ::$social['twitter'] ) { echo '<div class="social-sharer"><a href="http://twitter.com/share" class="twitter-share-button" data-url="' . $shorturl . '" data-text="'. $title .'" data-count="vertical">Tweet</a><script src="http://platform.twitter.com/widgets.js"></script></div>'; } ?>
-<?php if ( ISQ::$social['plus'] ) { echo '<div class="g-plus social-sharer" data-action="share" data-annotation="vertical-bubble" data-height="62" data-href="' . $shorturl . '"></div>'; } ?>
-<?php if ( ISQ::$social['linkedin'] ) { echo '<div class="social-sharer"><script src="http://platform.linkedin.com/in.js"></script><script type="IN/Share" data-url="' . $shorturl . '" data-counter="top"></script></div>'; } ?>
-<?php if ( ISQ::$social['tumblr'] ) { echo '<a href="http://www.tumblr.com/share/link?url='. urlencode($shorturl) .'&name='. urlencode($title) .'" title="Share on Tumblr"><img src="public/img/tumblr.png" alt="Share on Tumblr" width="55px" height="62px" /></a>'; } ?>
 
 <?php include('footer.php'); ?>
