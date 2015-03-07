@@ -15,7 +15,7 @@
 </div>
 </div>
 
-<?php if (!empty(ISQ::$general['clipboard'])) { ?>
+<?php if ( ISQ::$general['clipboard'] && in_array( 'ZeroClipboard', $dependencies ) ) { ?>
 	<script type="text/javascript" src="public/ZeroClipboard/ZeroClipboard.min.js"></script>
 	<script>
 		ZeroClipboard.config({
