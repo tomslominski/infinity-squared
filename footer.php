@@ -24,8 +24,10 @@
 
 		var clipboardClient = new ZeroClipboard( document.getElementsByClassName("copy-button") );
 
+		var copied = "<?php yourls_e( 'Copied', 'isq_translation'); ?>";
+
 		clipboardClient.on( 'aftercopy', function(event) {
-        	event.target.innerHTML = "Copied!";
+        	event.target.innerHTML = copied;
         } );
 	</script>
 <?php } ?>
