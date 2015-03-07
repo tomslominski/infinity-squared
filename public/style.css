@@ -184,15 +184,6 @@ input[type=submit] {
 }
 
 /* Output */
-.output label {
-	width: 30%;
-	float: left;
-}
-
-.output input {
-	width: 70%
-}
-
 .error {
 	color: red;
 	font-weight: bold;
@@ -202,22 +193,6 @@ input[type=submit] {
 .social-sharer {
 	display: inline-block;
 	padding: 0 2px;
-}
-
-.output label {
-	width: 20%;
-}
-
-.output input {
-	width: 60%
-}
-
-.output button {
-	float: right;
-}
-
-.output button.active {
-	color:#013F6D;
 }
 
 svg#url-qr-code {

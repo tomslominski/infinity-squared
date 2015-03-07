@@ -44,7 +44,7 @@ if ( ISQ::$general['qr'] ) {
 
 	<div class="output">
 		<div class="form-item full-width">
-			<label for="longurl"><?php yourls_e( 'Original URL:', 'isq_translation'); ?></label>
+			<label for="longurl" class="primary"><?php yourls_e( 'Original URL', 'isq_translation'); ?></label>
 			<input type="text" name="longurl" onclick="this.select();" onload="this.select();" value="<?php echo $url; ?>" id="long-copy">
 			<?php if (!empty(ISQ::$general['clipboard'])) { echo '<button id="long-copy" data-clipboard-target="long-copy" class="desktop-only">' . yourls__( 'Copy to Clipboard', 'isq-translation' ) . '</button>'; } ?>
 		</div>
@@ -52,14 +52,14 @@ if ( ISQ::$general['qr'] ) {
 		<div class="halves">
 
 		<div class="form-item half-width left">
-			<label for="shorturl"><?php yourls_e( 'Short URL:', 'isq_translation'); ?></label>
-			<input type="text" name="shorturl" onclick="this.select();" onload="this.select();" value="<?php echo $shorturl; ?>" id="short-copy">
+			<label for="shorturl" class="primary"><?php yourls_e( 'Short URL', 'isq_translation'); ?></label>
+			<input type="text" name="shorturl" onclick="this.select();" value="<?php echo $shorturl; ?>" id="short-copy">
 			<?php if (!empty(ISQ::$general['clipboard'])) { echo '<button id="short-copy" data-clipboard-target="short-copy" class="desktop-only">' . yourls__( 'Copy to Clipboard', 'isq-translation' ) . '</button>'; } ?>
 		</div>
 		
 		<div class="form-item half-width right">
-			<label for="stats"><?php /* translators: This is short for statistics */ yourls_e( 'Stats:', 'isq_translation'); ?></label>
-			<input type="text" name="stats" onclick="this.select();" onload="this.select();" value="<?php echo $shorturl . '+'; ?>" id="stats-copy">
+			<label for="stats" class="primary"><?php /* translators: This is short for statistics */ yourls_e( 'Stats', 'isq_translation'); ?></label>
+			<input type="text" name="stats" onclick="this.select();" value="<?php echo $shorturl . '+'; ?>" id="stats-copy">
 			<?php if (!empty(ISQ::$general['clipboard'])) { echo '<button id="stats-copy" data-clipboard-target="stats-copy" class="desktop-only">' . yourls__( 'Copy to Clipboard', 'isq-translation' ) . '</button>'; } ?>
 		</div>
 		
