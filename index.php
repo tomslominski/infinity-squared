@@ -38,7 +38,7 @@ $title   = isset( $_REQUEST['title'] ) ? yourls_sanitize_title( $_REQUEST['title
 		</div>
 
 		<div class="form-item submit-container">
-			<input type="submit" value="<?php yourls_e( 'Shorten', 'isq_translation'); ?>">
+			<input type="submit" class="button" value="<?php yourls_e( 'Shorten', 'isq_translation'); ?>">
 		</div>
 	</form>
 </div>

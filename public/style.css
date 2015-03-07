@@ -136,6 +136,10 @@ label.secondary {
 	color: #AFAFAF;
 }
 
+input {
+	font-family: 'Ubuntu', sans-serif, Helvetica, Arial;
+}
+
 input:not([type=submit]):not([type=file]) {
 	width: 100%;
 	padding: 10px;
@@ -161,15 +165,17 @@ input[type=submit] {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
-	background: #EBEBEB;
-	border: none;
-	font-family: 'Ubuntu', sans-serif, Helvetica, Arial;
+}
+
+.button {
+	background: #F9F9F9;
+	border: 1px solid #D3D3D3;
 	transition: background 0.5s;
 	cursor: pointer;
 }
 
-input[type=submit]:hover {
-	background: #D3D3D3;
+.button:hover {
+	background: #E2E2E2;
 }
 
 .submit-container {
@@ -223,26 +229,20 @@ svg#url-qr-code {
 /* Bookmarklet */
 .bookmarklet-container {
 	text-align: center;
+	margin: 20px 0;
 }
 
 .bookmarklet {
-	background: #EBEBEB;
 	padding: 7px;
-	margin: 8px 0;
-	font-size: 1.6rem;
+	font-size: 1.4rem;
 	color: black;
-	transition: background 0.5s;
-}
-
-.bookmarklet:hover {
-	background: #D3D3D3;
 }
 
 .icon-move svg {
 	vertical-align: center;
-	height: 1.4rem;
-	width: 1.4rem;
-	margin-right: 5px;
+	height: 1.2rem;
+	width: 1.2rem;
+	margin-right: 3px;
 }
 
 /* Footer */
