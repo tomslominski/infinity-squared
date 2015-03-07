@@ -146,6 +146,7 @@ input:not([type=submit]):not([type=file]) {
 	font-size: 1.6rem;
 	border: 1px solid #D8D8D8;
 	margin-top: 5px;
+	transition: box-shadow 0.5s, border 0.5s;
 }
 
 .g-recaptcha {
