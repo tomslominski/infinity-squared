@@ -190,6 +190,11 @@ input[type=submit] {
 	text-align: center;
 }
 
+.copy-button {
+	margin-top: 2px;
+	margin-left: 0;
+}
+
 .social-sharer {
 	display: inline-block;
 	padding: 0 2px;

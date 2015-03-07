@@ -14,5 +14,21 @@
 </div>
 </div>
 </div>
+
+<?php if (!empty(ISQ::$general['clipboard'])) { ?>
+	<script type="text/javascript" src="public/ZeroClipboard/ZeroClipboard.min.js"></script>
+	<script>
+		ZeroClipboard.config({
+			swfPath: "public/ZeroClipboard/ZeroClipboard.swf"
+		});
+
+		var clipboardClient = new ZeroClipboard( document.getElementsByClassName("copy-button") );
+
+		clipboardClient.on( 'aftercopy', function(event) {
+        	event.target.innerHTML = "Copied!";
+        } );
+	</script>
+<?php } ?>
+
 </body>
 </html>

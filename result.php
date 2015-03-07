@@ -45,22 +45,22 @@ if ( ISQ::$general['qr'] ) {
 	<div class="output">
 		<div class="form-item full-width">
 			<label for="longurl" class="primary"><?php yourls_e( 'Original URL', 'isq_translation'); ?></label>
-			<input type="text" name="longurl" onclick="this.select();" onload="this.select();" value="<?php echo $url; ?>" id="long-copy">
-			<?php if (!empty(ISQ::$general['clipboard'])) { echo '<button id="long-copy" data-clipboard-target="long-copy" class="desktop-only">' . yourls__( 'Copy to Clipboard', 'isq-translation' ) . '</button>'; } ?>
+			<input type="text" name="longurl" id="longurl" onclick="this.select();" onload="this.select();" value="<?php echo $url; ?>">
+			<?php if (!empty(ISQ::$general['clipboard'])) { echo '<button data-clipboard-target="longurl" class="desktop-only copy-button button">' . yourls__( 'Copy to Clipboard', 'isq-translation' ) . '</button>'; } ?>
 		</div>
 
 		<div class="halves">
 
 		<div class="form-item half-width left">
 			<label for="shorturl" class="primary"><?php yourls_e( 'Short URL', 'isq_translation'); ?></label>
-			<input type="text" name="shorturl" onclick="this.select();" value="<?php echo $shorturl; ?>" id="short-copy">
-			<?php if (!empty(ISQ::$general['clipboard'])) { echo '<button id="short-copy" data-clipboard-target="short-copy" class="desktop-only">' . yourls__( 'Copy to Clipboard', 'isq-translation' ) . '</button>'; } ?>
+			<input type="text" name="shorturl" id="shorturl" onclick="this.select();" value="<?php echo $shorturl; ?>">
+			<?php if (!empty(ISQ::$general['clipboard'])) { echo '<button data-clipboard-target="shorturl" class="desktop-only copy-button button">' . yourls__( 'Copy to Clipboard', 'isq-translation' ) . '</button>'; } ?>
 		</div>
 		
 		<div class="form-item half-width right">
 			<label for="stats" class="primary"><?php /* translators: This is short for statistics */ yourls_e( 'Stats', 'isq_translation'); ?></label>
-			<input type="text" name="stats" onclick="this.select();" value="<?php echo $shorturl . '+'; ?>" id="stats-copy">
-			<?php if (!empty(ISQ::$general['clipboard'])) { echo '<button id="stats-copy" data-clipboard-target="stats-copy" class="desktop-only">' . yourls__( 'Copy to Clipboard', 'isq-translation' ) . '</button>'; } ?>
+			<input type="text" name="stats" id="stats" onclick="this.select();" value="<?php echo $shorturl . '+'; ?>" id="stats-copy">
+			<?php if (!empty(ISQ::$general['clipboard'])) { echo '<button data-clipboard-target="stats" class="desktop-only copy-button button">' . yourls__( 'Copy to Clipboard', 'isq-translation' ) . '</button>'; } ?>
 		</div>
 		
 		</div>

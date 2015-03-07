@@ -27,41 +27,12 @@ isq_load_textdomain();
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,italic,bold,bolditalic"><!-- Ubuntu from Google Web Fonts -->
 		<link rel="stylesheet" href="<?php echo YOURLS_SITE; ?>/public/style.css" /><!-- Theme CSS -->
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> <!-- jQuery -->
 		<?php if ( ISQ::$social['plus'] ) { ?>
 			<script type="text/javascript" src="https://apis.google.com/js/plusone.js">
 				{lang: "en-GB"}
 			</script>
 		<?php } ?>
 		<script src='https://www.google.com/recaptcha/api.js'></script><!-- reCAPTCHA -->
-		<?php if (!empty(ISQ::$general['clipboard'])) { ?>
-			<script type="text/javascript" src="js/jquery.zclip.min.js"></script>
-			<script>
-			$(document).ready(function(){
-				$('button#long-copy').zclip({
-					path:'js/ZeroClipboard.swf',
-					copy:function(){return $('input#long-copy').val();},
-					afterCopy: function() {
-						$("button#long-copy").html('<?php yourls_e( 'Copied!', 'isq_translation'); ?>');
-					}
-				});
-				$('button#short-copy').zclip({
-					path:'js/ZeroClipboard.swf',
-					copy:function(){return $('input#short-copy').val();},
-					afterCopy: function() {
-						$("button#short-copy").html('<?php yourls_e( 'Copied!', 'isq_translation'); ?>');
-					}
-				});
-				$('button#stats-copy').zclip({
-					path:'js/ZeroClipboard.swf',
-					copy:function(){return $('input#stats-copy').val();},
-					afterCopy: function() {
-						$("button#stats-copy").html('<?php yourls_e( 'Copied!', 'isq_translation'); ?>');
-					}
-				});
-			});
-			</script>
-		<?php } ?>
 
 		<!-- App icons generated using http://realfavicongenerator.net -->
 		<link rel="apple-touch-icon" sizes="57x57" href="public/images/app-icons/apple-touch-icon-57x57.png">
