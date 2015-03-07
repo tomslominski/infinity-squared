@@ -10,7 +10,7 @@
 </div>
 
 <div class="content footer">
-	<p><?php yourls_e( 'Powered by <a href="http://yourls.org/">YOURLS</a>. Design by <a href="http://tomslominski.net/">Tom Slominski</a>.', 'isq_translation') ?> <a class="icon-github" href="https://github.com/tomslominski/infinity-squared"><?php include('public/images/github.svg'); ?></p>
+	<p><?php yourls_e( 'Powered by <a href="http://yourls.org/">YOURLS</a>. Designed by <a href="http://tomslominski.net/">Tom Slominski</a>.', 'isq_translation') ?> <a class="icon-github" href="https://github.com/tomslominski/infinity-squared"><?php include('public/images/github.svg'); ?></p>
 </div>
 </div>
 </div>
