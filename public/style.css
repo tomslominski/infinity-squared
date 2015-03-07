@@ -173,6 +173,7 @@ input[type=submit] {
 	border: 1px solid #D3D3D3;
 	transition: background 0.5s;
 	cursor: pointer;
+	margin: 0;
 }
 
 .button:hover {
@@ -192,7 +193,6 @@ input[type=submit] {
 
 .copy-button {
 	margin-top: 2px;
-	margin-left: 0;
 }
 
 .social-sharer {
