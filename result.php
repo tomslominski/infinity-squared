@@ -13,6 +13,10 @@ function display_error($message) {
 	die();
 }
 
+if ( empty( $_REQUEST['url'] ) ) {
+	display_error( yourls__( 'You haven\'t entered a URL to shorten. Please go back and try again.', 'isq_translation' ) );
+};
+
 if ( !empty(ISQ::$recaptcha['sitekey']) && !empty(ISQ::$recaptcha['secret']) ) {
 	$recaptcha_data = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . ISQ::$recaptcha['secret'] . '&response=' . $_REQUEST['g-recaptcha-response']);
 	$recaptcha_json = json_decode($recaptcha_data, TRUE);
@@ -25,7 +29,7 @@ if ( !empty(ISQ::$recaptcha['sitekey']) && !empty(ISQ::$recaptcha['secret']) ) {
 	if ( $_REQUEST['basic_antispam'] != "" ) {
 		display_error( yourls__( 'Are you a bot? The verification was not completed successfully. Please go back and try again.', 'isq_translation' ) );
 	}
-}
+};
 
 $url     = isset( $_REQUEST['url'] ) ? yourls_sanitize_url( $_REQUEST['url'] ) : '';
 $keyword = isset( $_REQUEST['keyword'] ) ? yourls_sanitize_keyword( $_REQUEST['keyword'] ) : '' ;
