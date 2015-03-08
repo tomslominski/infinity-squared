@@ -12,7 +12,7 @@ $title   = isset( $_REQUEST['title'] ) ? yourls_sanitize_title( $_REQUEST['title
 		<div class="form-item full-width">
 			<p><label for="url" class="primary"><?php yourls_e( 'Long URL', 'isq_translation'); ?></label></p>
 			<p><label for="url" class="secondary"><?php yourls_e( 'Paste the long URL here. This is required.', 'isq_translation'); ?></label></p>
-			<input type="url" id="url" name="url" value="<?php echo($url); ?>">
+			<input type="url" id="url" name="url" value="<?php echo($url); ?>" autofocus>
 		</div>
 
 		<div class="halves">
