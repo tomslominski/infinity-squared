@@ -199,6 +199,10 @@ input[type=submit] {
 	margin-top: 2px;
 }
 
+.copy-button:focus {
+	outline: none;
+}
+
 .social-button {
 	display: inline-block;
 	border-color: #F0F0F0;
