@@ -48,6 +48,10 @@ a, a:visited {
 	box-shadow: 0 0 3px 0 #CCC;
 }
 
+.hidden {
+	display: none;
+}
+
 /* Header */
 .site-header {
 	margin: 0 auto;

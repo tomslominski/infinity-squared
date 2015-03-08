@@ -40,6 +40,8 @@ ISQ::$social = array(
 
 // reCAPTCHA API KEYS
 // Get yourls from https://www.google.com/recaptcha/admin
+// If you don't want to use reCAPTCHA, that's cool. Leave this empty, and basic
+// antispam protection will be provided.
 ISQ::$recaptcha = array(
 	'sitekey' => '',
 	'secret' => ''

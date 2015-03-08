@@ -3,14 +3,24 @@ $dependencies = array( 'ZeroClipboard' );
 
 include('header.php');
 
-$recaptcha_data = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . ISQ::$recaptcha['secret'] . '&response=' . $_REQUEST['g-recaptcha-response']);
-$recaptcha_json = json_decode($recaptcha_data, TRUE);
-
-// What happens when the CAPTCHA was completed incorrectly
-if ($recaptcha_json['success'] != 'true') {
-	echo '<div class="content"><p class="error">' . yourls__( 'Are you a bot? Google certainly thinks so. Please go back and try again.', 'isq_translation' ) . '</p></div>';
+function display_error($message) {
+	echo '<div class="content"><p class="error">' . $message . '</p></div>';
 	include('footer.php');
 	die();
+}
+
+if ( !empty(ISQ::$recaptcha['sitekey']) && !empty(ISQ::$recaptcha['secret']) ) {
+	$recaptcha_data = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . ISQ::$recaptcha['secret'] . '&response=' . $_REQUEST['g-recaptcha-response']);
+	$recaptcha_json = json_decode($recaptcha_data, TRUE);
+
+	// What happens when the CAPTCHA was completed incorrectly
+	if ( $recaptcha_json['success'] != 'true' ) {
+		display_error( yourls__( 'Are you a bot? Google certainly thinks you are. Please go back and try again.', 'isq_translation' ) );
+	}
+} else {
+	if ( $_REQUEST['basic_antispam'] != "" ) {
+		display_error( yourls__( 'Are you a bot? The verification was not completed successfully. Please go back and try again.', 'isq_translation' ) );
+	}
 }
 
 $url     = isset( $_REQUEST['url'] ) ? yourls_sanitize_url( $_REQUEST['url'] ) : '';

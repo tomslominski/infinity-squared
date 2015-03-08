@@ -31,11 +31,23 @@ $title   = isset( $_REQUEST['title'] ) ? yourls_sanitize_title( $_REQUEST['title
 
 		</div>
 
-		<div class="form-item recaptcha-container">
-			<p><label class="primary" title=""><?php yourls_e( 'Verification', 'isq_translation'); ?></label></p>
-			<p><label class="secondary"><?php yourls_e( 'reCAPTCHA verification used to ensure you are not a bot.', 'isq_translation'); ?></label></p>
-			<div class="g-recaptcha" data-sitekey="<?php echo ISQ::$recaptcha['sitekey']; ?>"></div>
-		</div>
+		<?php
+			if ( !empty(ISQ::$recaptcha['sitekey']) && !empty(ISQ::$recaptcha['secret']) ) {
+		?>
+			<div class="form-item recaptcha-container">
+				<p><label class="primary" title=""><?php yourls_e( 'Verification', 'isq_translation'); ?></label></p>
+				<p><label class="secondary"><?php yourls_e( 'reCAPTCHA verification used to ensure you are not a bot.', 'isq_translation'); ?></label></p>
+				<div class="g-recaptcha" data-sitekey="<?php echo ISQ::$recaptcha['sitekey']; ?>"></div>
+			</div>
+		<?php
+			} else {
+		?>
+			<div class="hidden">
+				<input type="hidden" name="basic_antispam">
+			</div>
+		<?php
+			}
+		?>
 
 		<div class="form-item submit-container">
 			<input type="submit" class="button" value="<?php yourls_e( 'Shorten', 'isq_translation'); ?>">
