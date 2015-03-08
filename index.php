@@ -33,6 +33,7 @@ $title   = isset( $_REQUEST['title'] ) ? yourls_sanitize_title( $_REQUEST['title
 
 		<?php
 			if ( !empty(ISQ::$recaptcha['sitekey']) && !empty(ISQ::$recaptcha['secret']) ) {
+				$dependencies[] = 'reCAPTCHA';
 		?>
 			<div class="form-item recaptcha-container">
 				<p><label class="primary" title=""><?php yourls_e( 'Verification', 'isq_translation'); ?></label></p>

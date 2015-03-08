@@ -27,7 +27,6 @@ isq_load_textdomain();
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,italic,bold,bolditalic"><!-- Ubuntu from Google Web Fonts -->
 		<link rel="stylesheet" href="<?php echo YOURLS_SITE; ?>/public/style.css" /><!-- Theme CSS -->
-		<script src='https://www.google.com/recaptcha/api.js'></script><!-- reCAPTCHA -->
 
 		<!-- App icons generated using http://realfavicongenerator.net -->
 		<link rel="apple-touch-icon" sizes="57x57" href="public/images/app-icons/apple-touch-icon-57x57.png">

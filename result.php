@@ -1,7 +1,11 @@
 <?php
-$dependencies = array( 'ZeroClipboard' );
+$dependencies = array();
 
 include('header.php');
+
+if ( ISQ::$general['clipboard'] ) {
+	$dependencies[] = 'ZeroClipboard';
+};
 
 function display_error($message) {
 	echo '<div class="content"><p class="error">' . $message . '</p></div>';

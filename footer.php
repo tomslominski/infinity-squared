@@ -15,7 +15,7 @@
 </div>
 </div>
 
-<?php if ( ISQ::$general['clipboard'] && in_array( 'ZeroClipboard', $dependencies ) ) { ?>
+<?php if ( in_array( 'ZeroClipboard', $dependencies ) ) { ?>
 	<script type="text/javascript" src="public/ZeroClipboard/ZeroClipboard.min.js"></script>
 	<script>
 		ZeroClipboard.config({
@@ -30,6 +30,10 @@
         	event.target.innerHTML = copied;
         } );
 	</script>
+<?php }
+
+if ( in_array( 'reCAPTCHA', $dependencies ) ) { ?>
+	<script src='https://www.google.com/recaptcha/api.js'></script>
 <?php } ?>
 
 </body>
