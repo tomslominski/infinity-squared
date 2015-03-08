@@ -260,17 +260,17 @@ svg#url-qr-code {
 }
 
 /* Footer */
-.footer {
+.site-footer {
 	text-align: center;
 	border-top: 2px solid #000;
 }
 
-.footer p {
+.site-footer p {
 	font-size: 1.2rem;
 	margin: 0;
 }
 
-.footer a:hover {
+.site-footer a:hover {
 	text-decoration: none;
 	border-bottom: dashed 1px #013F6D;
 }

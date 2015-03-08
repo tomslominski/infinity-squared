@@ -9,8 +9,8 @@
 	<p><?php yourls_e( 'Support for bookmarklets on mobile varies. For example, they work on Chrome for Android but you have to add and sync them from your desktop.', 'isq_translation') ?></p>
 </div>
 
-<div class="content footer">
-	<p><?php yourls_e( 'Powered by <a href="http://yourls.org/">YOURLS</a>. Designed by <a href="http://tomslominski.net/">Tom Slominski</a>.', 'isq_translation') ?> <a class="icon-github" href="https://github.com/tomslominski/infinity-squared"><?php include('public/images/github.svg'); ?></p>
+<footer class="content site-footer">
+	<p><?php yourls_e( 'Powered by <a href="http://yourls.org/">YOURLS</a>. Designed by <a href="http://tomslominski.net/">Tom Slominski</a>.', 'isq_translation') ?> <a class="icon-github" href="https://github.com/tomslominski/infinity-squared"><?php include('public/images/github.svg'); ?></a></p>
 </div>
 </div>
 </div>
