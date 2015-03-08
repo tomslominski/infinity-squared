@@ -25,7 +25,7 @@ isq_load_textdomain();
 		<title><?php echo ISQ::$general['name']; ?></title> <!-- Site title defined in theme settings -->
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,italic,bold,bolditalic"><!-- Ubuntu from Google Web Fonts -->
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" href="<?php echo YOURLS_SITE; ?>/public/style.css" /><!-- Theme CSS -->
 
 		<!-- App icons generated using http://realfavicongenerator.net -->

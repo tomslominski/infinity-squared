@@ -15,8 +15,11 @@ html {
 body {
 	background: #F1F1F1;
 	color: black;
-	font-family: 'Ubuntu', sans-serif, Helvetica, Arial;
 	font-size: 1.4rem;
+}
+
+body, input {
+	font-family: 'Open Sans', 'Trebuchet MS', Helvetica, sans-serif;
 }
 
 ::selection {
@@ -138,10 +141,6 @@ label.primary {
 
 label.secondary {
 	color: #AFAFAF;
-}
-
-input {
-	font-family: 'Ubuntu', sans-serif, Helvetica, Arial;
 }
 
 input:not([type=submit]):not([type=file]) {
