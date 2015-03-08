@@ -31,15 +31,21 @@ if ( !empty(ISQ::$recaptcha['sitekey']) && !empty(ISQ::$recaptcha['secret']) ) {
 	}
 };
 
-$url     = isset( $_REQUEST['url'] ) ? yourls_sanitize_url( $_REQUEST['url'] ) : '';
-$keyword = isset( $_REQUEST['keyword'] ) ? yourls_sanitize_keyword( $_REQUEST['keyword'] ) : '' ;
-$title   = isset( $_REQUEST['title'] ) ? yourls_sanitize_title( $_REQUEST['title'] ) : '' ;
-$return  = yourls_add_new_link( $url, $keyword, $title );		
+// Get parameters -- they will all be sanitized in yourls_add_new_link()
+$url     = $_REQUEST['url'];
+$keyword = isset( $_REQUEST['keyword'] ) ? $_REQUEST['keyword'] : '' ;
+$title   = isset( $_REQUEST['title'] ) ?  $_REQUEST['title'] : '' ;
+$text    = isset( $_REQUEST['text'] ) ?  $_REQUEST['text'] : '' ;
+
+// Create short URL, receive array $return with various information
+$return  = yourls_add_new_link( $url, $keyword, $title );
 
 $shorturl = isset( $return['shorturl'] ) ? $return['shorturl'] : '';
 $message  = isset( $return['message'] ) ? $return['message'] : '';
 $title    = isset( $return['title'] ) ? $return['title'] : '';
+$status   = isset( $return['status'] ) ? $return['status'] : '';
 
+// URL encoded links used in the social sharing buttons
 $encoded_shorturl = urlencode($shorturl);
 $encoded_title = urlencode($title);
 
