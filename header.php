@@ -27,11 +27,6 @@ isq_load_textdomain();
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,italic,bold,bolditalic"><!-- Ubuntu from Google Web Fonts -->
 		<link rel="stylesheet" href="<?php echo YOURLS_SITE; ?>/public/style.css" /><!-- Theme CSS -->
-		<?php if ( ISQ::$social['plus'] ) { ?>
-			<script type="text/javascript" src="https://apis.google.com/js/plusone.js">
-				{lang: "en-GB"}
-			</script>
-		<?php } ?>
 		<script src='https://www.google.com/recaptcha/api.js'></script><!-- reCAPTCHA -->
 
 		<!-- App icons generated using http://realfavicongenerator.net -->

@@ -22,6 +22,9 @@ $shorturl = isset( $return['shorturl'] ) ? $return['shorturl'] : '';
 $message  = isset( $return['message'] ) ? $return['message'] : '';
 $title    = isset( $return['title'] ) ? $return['title'] : '';
 
+$encoded_shorturl = urlencode($shorturl);
+$encoded_title = urlencode($title);
+
 // QR code shenanigans
 if ( ISQ::$general['qr'] ) { 
 
@@ -73,11 +76,21 @@ if ( ISQ::$general['qr'] ) {
 	<!-- Social sharers -->
 	<h2><?php yourls_e( 'Share', 'isq_translation'); ?></h2>
 	<p><?php yourls_e( 'Share your short URL', 'isq_translation'); ?></p>
-	<?php if ( ISQ::$social['facebook'] ) { echo '<div class="social-sharer"><a href="http://facebook.com/sharer.php?u=' . $shorturl . '" class="share-button" target="_blank"><img src="public/img/facebook.png" alt="Facebook" width="55px" height="62px" /></a></div>'; } ?>
-	<?php if ( ISQ::$social['twitter'] ) { echo '<div class="social-sharer"><a href="http://twitter.com/share" class="twitter-share-button" data-url="' . $shorturl . '" data-text="'. $title .'" data-count="vertical">Tweet</a><script src="http://platform.twitter.com/widgets.js"></script></div>'; } ?>
-	<?php if ( ISQ::$social['plus'] ) { echo '<div class="g-plus social-sharer" data-action="share" data-annotation="vertical-bubble" data-height="62" data-href="' . $shorturl . '"></div>'; } ?>
-	<?php if ( ISQ::$social['linkedin'] ) { echo '<div class="social-sharer"><script src="http://platform.linkedin.com/in.js"></script><script type="IN/Share" data-url="' . $shorturl . '" data-counter="top"></script></div>'; } ?>
-	<?php if ( ISQ::$social['tumblr'] ) { echo '<a href="http://www.tumblr.com/share/link?url='. urlencode($shorturl) .'&name='. urlencode($title) .'" title="Share on Tumblr"><img src="public/img/tumblr.png" alt="Share on Tumblr" width="55px" height="62px" /></a>'; } ?>
+	<div class="social-sharing">
+		<?php
+			if ( ISQ::$social['twitter'] ) { echo '<span onclick="window.open(\'https://twitter.com/intent/tweet?url=' . $encoded_shorturl . '&text=' . $encoded_title . '\',\'_blank\',\'width=550,height=380\')" class="button social-button twitter" title="Share on Twitter">' . file_get_contents('public/images/twitter.svg') . '</span>'; }
+
+			if ( ISQ::$social['appdotnet'] ) { echo '<span onclick="window.open(\'https://account.app.net/intent/post/?text=' . $encoded_title . '&url=' . $encoded_shorturl . '\',\'_blank\',\'width=550,height=380\')" class="button social-button appdotnet" title="Share on App.net">' . file_get_contents('public/images/appdotnet.svg') . '</span>'; }
+
+			if ( ISQ::$social['facebook'] ) { echo '<span onclick="window.open(\'https://www.facebook.com/sharer/sharer.php?u=' . $shorturl . '\',\'_blank\',\'width=550,height=380\')" class="button social-button facebook" title="Share on Facebook">' . file_get_contents('public/images/facebook.svg') . '</span>'; }
+
+			if ( ISQ::$social['tumblr'] ) { echo '<span onclick="window.open(\'http://www.tumblr.com/share/link?url=' . $encoded_shorturl . '&name=' . $encoded_title . '\',\'_blank\',\'width=550,height=380\')" class="button social-button tumblr" title="Share on Tumblr">' . file_get_contents('public/images/tumblr.svg') . '</span>'; }
+
+			if ( ISQ::$social['linkedin'] ) { echo '<span onclick="window.open(\'https://www.linkedin.com/shareArticle?mini=true&url=' . $encoded_shorturl . '&title=' . $encoded_title . '\',\'_blank\',\'width=550,height=380\')" class="button social-button linkedin" title="Share on LinkedIn">' . file_get_contents('public/images/linkedin.svg') . '</span>'; }	
+
+			if ( ISQ::$social['googleplus'] ) { echo '<span onclick="window.open(\'https://plus.google.com/share?url=' . $encoded_shorturl . '\',\'_blank\',\'width=550,height=380\')" class="button social-button googleplus" title="Share on LinkedIn">' . file_get_contents('public/images/googleplus.svg') . '</span>'; }
+		?>		
+	</div>
 
 	<!-- QR code -->
 	<?php if ( ISQ::$general['qr'] ) { echo '<h2>' . yourls__( 'QR code', 'isq-translation' ) . '</h2><p>' . yourls__( 'Share your link with external devices', 'isq-translation' ) . '</p>' . $qrCode; } ?>

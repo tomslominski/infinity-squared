@@ -30,11 +30,12 @@ ISQ::$links = array(
 
 // SOCIAL SHARING
 ISQ::$social = array(
-	'facebook' => TRUE,
 	'twitter' => TRUE,
-	'plus' => TRUE,
+	'appdotnet' => TRUE,
+	'facebook' => TRUE,
 	'linkedin' => TRUE,
-	'tumblr' => TRUE
+	'tumblr' => TRUE,
+	'googleplus' => TRUE
 );
 
 // reCAPTCHA API KEYS

@@ -195,9 +195,40 @@ input[type=submit] {
 	margin-top: 2px;
 }
 
-.social-sharer {
+.social-button {
 	display: inline-block;
-	padding: 0 2px;
+	border-color: #F0F0F0;
+}
+
+.social-button.twitter {
+	background-color: #55ACEE;
+}
+
+.social-button.appdotnet {
+	background-color: #49474B;
+}
+
+.social-button.facebook {
+	background-color: #3B5998;
+}
+
+.social-button.tumblr {
+	background-color: #35465C;
+}
+
+.social-button.linkedin {
+	background-color: #0976B4;
+}
+
+.social-button.googleplus {
+	background-color: #DD4B39;
+}
+
+.social-button svg {
+	width: 40px;
+	height: 40px;
+	padding: 6px;
+	fill: white;
 }
 
 svg#url-qr-code {
