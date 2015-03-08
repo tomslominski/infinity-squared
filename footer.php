@@ -11,6 +11,9 @@
 
 <footer class="content site-footer">
 	<p><?php yourls_e( 'Powered by <a href="http://yourls.org/">YOURLS</a>. Designed by <a href="http://tomslominski.net/">Tom Slominski</a>.', 'isq_translation') ?> <a class="icon-github" href="https://github.com/tomslominski/infinity-squared"><?php include('public/images/github.svg'); ?></a></p>
+	<?php if ( !empty(ISQ::$recaptcha['sitekey']) && !empty(ISQ::$recaptcha['secret']) ) { ?>
+		<p class="recaptcha-cookie">This site uses cookies for Google reCAPTCHA.<p>
+	<?php }; ?>
 </div>
 </div>
 </div>

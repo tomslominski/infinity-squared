@@ -274,6 +274,11 @@ svg#url-qr-code {
 	margin: 0;
 }
 
+.site-footer .recaptcha-cookie {
+	margin-top: 5px;
+	color: #AFAFAF;
+}
+
 .site-footer a:hover {
 	text-decoration: none;
 	border-bottom: dashed 1px #013F6D;
