@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <?php
 // Start YOURLS engine
-require_once( dirname(__FILE__).'/includes/load-yourls.php' );
+require_once( dirname(__FILE__) . '/includes/load-yourls.php' );
 
 // Ask for Infinity Squared settings
-include( dirname(__FILE__).'/public/config.php' );
-
-if( ( @include dirname(__FILE__).'/public/config.php' ) === false) {
-	include( dirname(__FILE__).'/public/config-sample.php' );
+if( @include dirname(__FILE__) . '/public/config.php' ) {
+	include( dirname(__FILE__) . '/public/config.php' );
+} else {
+	include( dirname(__FILE__) . '/public/config-sample.php' );
 }
 
 class ISQ { public static $general = array(), $links = array(), $social = array(), $recaptcha = array(); }
