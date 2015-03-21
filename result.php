@@ -75,7 +75,7 @@ if ( ISQ::$general['qr'] ) {
 		<div class="form-item full-width">
 			<label for="longurl" class="primary"><?php yourls_e( 'Original URL', 'isq_translation'); ?></label>
 			<input type="text" name="longurl" id="longurl" onclick="this.select();" onload="this.select();" value="<?php echo $url; ?>">
-			<?php if ( ISQ::$general['clipboard'] ) { echo '<button data-clipboard-target="longurl" class="desktop-only copy-button button">' . yourls__( 'Copy to clipboard', 'isq-translation' ) . '</button>'; } ?>
+			<?php if ( ISQ::$general['clipboard'] ) { echo '<button data-clipboard-target="longurl" class="desktop-only copy-button button">' . yourls__( 'Copy to clipboard', 'isq_translation' ) . '</button>'; } ?>
 		</div>
 
 		<div class="halves">
@@ -83,13 +83,13 @@ if ( ISQ::$general['qr'] ) {
 		<div class="form-item half-width left">
 			<label for="shorturl" class="primary"><?php yourls_e( 'Short URL', 'isq_translation'); ?></label>
 			<input type="text" name="shorturl" id="shorturl" onclick="this.select();" value="<?php echo $shorturl; ?>">
-			<?php if ( ISQ::$general['clipboard'] ) { echo '<button data-clipboard-target="shorturl" class="desktop-only copy-button button">' . yourls__( 'Copy to clipboard', 'isq-translation' ) . '</button>'; } ?>
+			<?php if ( ISQ::$general['clipboard'] ) { echo '<button data-clipboard-target="shorturl" class="desktop-only copy-button button">' . yourls__( 'Copy to clipboard', 'isq_translation' ) . '</button>'; } ?>
 		</div>
 		
 		<div class="form-item half-width right">
 			<label for="stats" class="primary"><?php /* translators: This is short for statistics */ yourls_e( 'Stats', 'isq_translation'); ?></label>
 			<input type="text" name="stats" id="stats" onclick="this.select();" value="<?php echo $shorturl . '+'; ?>" id="stats-copy">
-			<?php if ( ISQ::$general['clipboard'] ) { echo '<button data-clipboard-target="stats" class="desktop-only copy-button button">' . yourls__( 'Copy to clipboard', 'isq-translation' ) . '</button>'; } ?>
+			<?php if ( ISQ::$general['clipboard'] ) { echo '<button data-clipboard-target="stats" class="desktop-only copy-button button">' . yourls__( 'Copy to clipboard', 'isq_translation' ) . '</button>'; } ?>
 		</div>
 		
 		</div>
@@ -117,7 +117,7 @@ if ( ISQ::$general['qr'] ) {
 	</div>
 
 	<!-- QR code -->
-	<?php if ( ISQ::$general['qr'] ) { echo '<h2>' . yourls__( 'QR code', 'isq-translation' ) . '</h2><p>' . yourls__( 'Share your link with external devices', 'isq-translation' ) . '</p>' . $qrCode; } ?>
+	<?php if ( ISQ::$general['qr'] ) { echo '<h2>' . yourls__( 'QR code', 'isq_translation' ) . '</h2><p>' . yourls__( 'Share your link with external devices', 'isq_translation' ) . '</p>' . $qrCode; } ?>
 </div>
 
 <?php include('footer.php'); ?>
