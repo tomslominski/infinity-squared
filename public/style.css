@@ -215,7 +215,8 @@ input:not([type=submit]):not([type=file]):focus {
 input[type=submit] {
 	font-size: 1.4rem;
 	padding: 10px;
-	border-radius: none;
+	border-radius: 0;
+	outline: none;
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
