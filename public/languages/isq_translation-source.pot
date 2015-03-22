@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Infinity Squared\n"
-"POT-Creation-Date: 2015-03-22 16:51-0000\n"
-"PO-Revision-Date: 2015-03-22 16:52-0000\n"
+"POT-Creation-Date: 2015-03-22 19:25-0000\n"
+"PO-Revision-Date: 2015-03-22 19:25-0000\n"
 "Last-Translator: Tom Slominski <me@tomslominski>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -32,7 +32,7 @@ msgid ""
 "access shortening functions."
 msgstr ""
 
-#: footer.php:7 index.php:54
+#: footer.php:7 index.php:61
 msgid "Shorten"
 msgstr ""
 
@@ -55,7 +55,7 @@ msgid ""
 "\"http://tomslominski.net/\">Tom Slominski</a>."
 msgstr ""
 
-#: footer.php:30
+#: footer.php:31
 msgid "Copied!"
 msgstr ""
 
@@ -88,11 +88,11 @@ msgid ""
 "Optional title used when sharing a link from YOURLS using social sharers."
 msgstr ""
 
-#: index.php:39
+#: index.php:46
 msgid "Verification"
 msgstr ""
 
-#: index.php:40
+#: index.php:47
 msgid "reCAPTCHA verification used to ensure you are not a bot."
 msgstr ""
 
@@ -100,53 +100,59 @@ msgstr ""
 msgid "You haven't entered a URL to shorten. Please go back and try again."
 msgstr ""
 
-#: result.php:26
+#: result.php:35
 msgid ""
 "Are you a bot? Google certainly thinks you are. Please go back and try again."
 msgstr ""
 
-#: result.php:30
+#: result.php:43
 msgid ""
 "Are you a bot? The verification was not completed successfully. Please go "
 "back and try again."
 msgstr ""
 
-#: result.php:72
+#: result.php:49
+msgid ""
+"Are you a bot? No antispam protection was completed successfully. Please go "
+"back and try again."
+msgstr ""
+
+#: result.php:92
 msgid "Your short URL"
 msgstr ""
 
-#: result.php:76
+#: result.php:96
 msgid "Original URL"
 msgstr ""
 
-#: result.php:78 result.php:86 result.php:92
+#: result.php:98 result.php:106 result.php:112
 msgid "Copy to clipboard"
 msgstr ""
 
-#: result.php:84
+#: result.php:104
 msgid "Short URL"
 msgstr ""
 
-#: result.php:90
+#: result.php:110
 msgid "Stats"
 msgstr ""
 
-#: result.php:97
+#: result.php:117
 msgid "Click on a link and press Ctrl+C to quickly copy it."
 msgstr ""
 
-#: result.php:101
+#: result.php:121
 msgid "Share"
 msgstr ""
 
-#: result.php:102
+#: result.php:122
 msgid "Share your short URL"
 msgstr ""
 
-#: result.php:120
+#: result.php:140
 msgid "QR code"
 msgstr ""
 
-#: result.php:120
+#: result.php:140
 msgid "Share your link with external devices"
 msgstr ""
