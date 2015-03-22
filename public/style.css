@@ -243,6 +243,15 @@ input[type=submit] {
 .social-button {
 	display: inline-block;
 	border-color: #F0F0F0;
+	font-size: 0;
+	margin-right: 2px;
+}
+
+.social-button svg {
+	width: 40px;
+	height: 40px;
+	padding: 6px;
+	fill: white;
 }
 
 .social-button.twitter {
@@ -267,13 +276,6 @@ input[type=submit] {
 
 .social-button.googleplus {
 	background-color: #DD4B39;
-}
-
-.social-button svg {
-	width: 40px;
-	height: 40px;
-	padding: 6px;
-	fill: white;
 }
 
 svg#url-qr-code {
