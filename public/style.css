@@ -391,6 +391,3 @@ header {
 #wrap > p {
 	color: red;
 }
-
-/* Importing custom user styles */
-@import url("public/user-style.css");

@@ -27,6 +27,9 @@ isq_load_textdomain();
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" href="<?php echo YOURLS_SITE; ?>/public/style.css" /><!-- Theme CSS -->
+		<?php if ( ISQ::$general['customstyle'] ) { ?>
+			<link rel="stylesheet" href="<?php echo YOURLS_SITE; ?>/public/custom.css" /><!-- Custom CSS -->
+		<?php } ?>
 
 		<!-- App icons generated using http://realfavicongenerator.net -->
 		<link rel="apple-touch-icon" sizes="57x57" href="public/images/app-icons/apple-touch-icon-57x57.png">
