@@ -1,0 +1,152 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Infinity Squared\n"
+"POT-Creation-Date: 2015-03-22 16:51-0000\n"
+"PO-Revision-Date: 2015-03-22 16:52-0000\n"
+"Last-Translator: Tom Slominski <me@tomslominski>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.5\n"
+"X-Poedit-KeywordsList: yourls__;yourls_e;yourls_s;yourls_se;"
+"yourls_esc_attr__;yourls_esc_html__;yourls_x;yourls_ex;yourls_esc_attr_x;"
+"yourls_esc_html_x;yourls_n:1,2;yourls_nx:1,2;yourls_n_noop:1,2;"
+"yourls_nx_noop:1,2\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: footer.php:3
+msgid "The bookmarklet"
+msgstr ""
+
+#: footer.php:5
+msgid "Save this as a bookmark."
+msgstr ""
+
+#: footer.php:6
+msgid ""
+"Add this to your bookmarks or drag it to your bookmarks bar to quickly "
+"access shortening functions."
+msgstr ""
+
+#: footer.php:7 index.php:54
+msgid "Shorten"
+msgstr ""
+
+#: footer.php:8
+msgid ""
+"This bookmarklet takes the page URL and title and opens a new tab, where you "
+"can fill out a CAPTCHA. If you have selected text before using the "
+"bookmarklet, that will be used as the keyword."
+msgstr ""
+
+#: footer.php:9
+msgid ""
+"Support for bookmarklets on mobile varies. For example, they work on Chrome "
+"for Android but you have to add and sync them from your desktop."
+msgstr ""
+
+#: footer.php:13
+msgid ""
+"Powered by <a href=\"http://yourls.org/\">YOURLS</a>. Designed by <a href="
+"\"http://tomslominski.net/\">Tom Slominski</a>."
+msgstr ""
+
+#: footer.php:30
+msgid "Copied!"
+msgstr ""
+
+#: index.php:10
+msgid "Enter a new URL to shorten"
+msgstr ""
+
+#: index.php:13
+msgid "Long URL"
+msgstr ""
+
+#: index.php:14
+msgid "Paste the long URL here. This is required."
+msgstr ""
+
+#: index.php:21
+msgid "Custom keyword"
+msgstr ""
+
+#: index.php:22
+msgid "A keyword replaces the default short string."
+msgstr ""
+
+#: index.php:27
+msgid "Custom title"
+msgstr ""
+
+#: index.php:28
+msgid ""
+"Optional title used when sharing a link from YOURLS using social sharers."
+msgstr ""
+
+#: index.php:39
+msgid "Verification"
+msgstr ""
+
+#: index.php:40
+msgid "reCAPTCHA verification used to ensure you are not a bot."
+msgstr ""
+
+#: result.php:17
+msgid "You haven't entered a URL to shorten. Please go back and try again."
+msgstr ""
+
+#: result.php:26
+msgid ""
+"Are you a bot? Google certainly thinks you are. Please go back and try again."
+msgstr ""
+
+#: result.php:30
+msgid ""
+"Are you a bot? The verification was not completed successfully. Please go "
+"back and try again."
+msgstr ""
+
+#: result.php:72
+msgid "Your short URL"
+msgstr ""
+
+#: result.php:76
+msgid "Original URL"
+msgstr ""
+
+#: result.php:78 result.php:86 result.php:92
+msgid "Copy to clipboard"
+msgstr ""
+
+#: result.php:84
+msgid "Short URL"
+msgstr ""
+
+#: result.php:90
+msgid "Stats"
+msgstr ""
+
+#: result.php:97
+msgid "Click on a link and press Ctrl+C to quickly copy it."
+msgstr ""
+
+#: result.php:101
+msgid "Share"
+msgstr ""
+
+#: result.php:102
+msgid "Share your short URL"
+msgstr ""
+
+#: result.php:120
+msgid "QR code"
+msgstr ""
+
+#: result.php:120
+msgid "Share your link with external devices"
+msgstr ""
