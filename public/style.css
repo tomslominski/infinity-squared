@@ -32,6 +32,16 @@ body, input {
 	color: #FFF;
 }
 
+.desktop-only {
+	display: none;
+}
+
+@media screen and (min-width: 1024px) {
+	.desktop-only {
+		display: inline-block;
+	}
+}
+
 /* Structure and global design */
 a, a:visited {
 	color: #013F6D;
@@ -39,8 +49,9 @@ a, a:visited {
 }
 
 .wrapper {
-	width: 60%;
+	width: 100%;
 	margin: 0 auto;
+	max-width: 900px;
 }
 
 .content {
@@ -55,6 +66,18 @@ a, a:visited {
 	display: none;
 }
 
+@media screen and (min-width: 720px) {
+	.wrapper {
+		width: 80%;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.wrapper {
+		width: 60%;
+	}
+}
+
 /* Header */
 .site-header {
 	margin: 0 auto;
@@ -66,9 +89,10 @@ a, a:visited {
 	width: 100%;
 	text-align: center;
 	color: white;
-	font-size: 6rem;
+	font-size: 4rem;
 	border-top: 4px #000 solid;
 	margin: 0 auto;
+	font-weight: bold;
 }
 
 .site-title a, .site-tite a:visited {
@@ -99,6 +123,18 @@ a, a:visited {
 .menu a:hover {
 	transition: background 0.8s;
 	background: #292929;
+}
+
+@media screen and (min-width: 720px) {
+	.site-title {
+		font-size: 5rem;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.site-title {
+		font-size: 6rem;
+	}
 }
 
 /* Forms */
@@ -150,6 +186,8 @@ input:not([type=submit]):not([type=file]) {
 	border: 1px solid #D8D8D8;
 	margin-top: 5px;
 	transition: box-shadow 0.5s, border 0.5s;
+	-webkit-appearance: none;
+	border-radius: 0;
 }
 
 .g-recaptcha {
@@ -298,7 +336,7 @@ a.icon-github:hover {
 }
 
 /* Mobile */
-@media screen and (max-width: 720px) {
+/*@media screen and (max-width: 720px) {
 body {
 	background:white;
 	margin:0;
@@ -323,7 +361,7 @@ header {
 .desktop-only, .zclip {
 	display:none;
 }
-}
+}*/
 
 /* Error page */
 #wrap > h1 > a {
