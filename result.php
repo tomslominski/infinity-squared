@@ -17,19 +17,38 @@ if ( empty( $_REQUEST['url'] ) ) {
 	display_error( yourls__( 'You haven\'t entered a URL to shorten. Please go back and try again.', 'isq_translation' ) );
 };
 
-if ( !empty(ISQ::$recaptcha['sitekey']) && !empty(ISQ::$recaptcha['secret']) ) {
+// Check what CAPTCHA method was used
+$antispam_method = $_REQUEST['antispam_method'];
+
+if ( $antispam_method == 'user_login' ) {
+
+	// User is logged into YOURLS
+
+} else if ( $antispam_method == 'recaptcha' ) {
+
+	// Google reCAPTCHA is enabled
 	$recaptcha_data = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . ISQ::$recaptcha['secret'] . '&response=' . $_REQUEST['g-recaptcha-response']);
 	$recaptcha_json = json_decode($recaptcha_data, TRUE);
 
-	// What happens when the CAPTCHA was completed incorrectly
+	// What happens when the reCAPTCHA was completed incorrectly
 	if ( $recaptcha_json['success'] != 'true' ) {
 		display_error( yourls__( 'Are you a bot? Google certainly thinks you are. Please go back and try again.', 'isq_translation' ) );
 	}
-} else {
+
+} else if ( $antispam_method == 'basic' ) {
+
+	// Basic antispam protection fallback
+	// What happens when it was not completed correctly
 	if ( $_REQUEST['basic_antispam'] != "" ) {
 		display_error( yourls__( 'Are you a bot? The verification was not completed successfully. Please go back and try again.', 'isq_translation' ) );
 	}
-};
+
+} else {
+
+	// No antispam protection was detected
+	display_error( yourls__( 'Are you a bot? No antispam protection was completed successfully. Please go back and try again.', 'isq_translation' ) );
+
+}
 
 // Get parameters -- they will all be sanitized in yourls_add_new_link()
 $url     = $_REQUEST['url'];

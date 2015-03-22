@@ -32,21 +32,28 @@ $title   = isset( $_REQUEST['title'] ) ? yourls_sanitize_title( $_REQUEST['title
 		</div>
 
 		<?php
-			if ( !empty(ISQ::$recaptcha['sitekey']) && !empty(ISQ::$recaptcha['secret']) ) {
+			if ( yourls_is_valid_user() == 1 ) {
+
+				echo '<input type="hidden" name="antispam_method" value="user_login" class="hidden">';
+
+			} else if ( !empty(ISQ::$recaptcha['sitekey']) && !empty(ISQ::$recaptcha['secret']) ) {
+
 				$dependencies[] = 'reCAPTCHA';
-		?>
-			<div class="form-item recaptcha-container">
-				<p><label class="primary" title=""><?php yourls_e( 'Verification', 'isq_translation'); ?></label></p>
-				<p><label class="secondary"><?php yourls_e( 'reCAPTCHA verification used to ensure you are not a bot.', 'isq_translation'); ?></label></p>
-				<div class="g-recaptcha" data-sitekey="<?php echo ISQ::$recaptcha['sitekey']; ?>"></div>
-			</div>
-		<?php
+
+				echo '<input type="hidden" name="antispam_method" value="recaptcha" class="hidden">';
+			?>
+				<div class="form-item recaptcha-container">
+					<p><label class="primary" title=""><?php yourls_e( 'Verification', 'isq_translation'); ?></label></p>
+					<p><label class="secondary"><?php yourls_e( 'reCAPTCHA verification used to ensure you are not a bot.', 'isq_translation'); ?></label></p>
+					<div class="g-recaptcha" data-sitekey="<?php echo ISQ::$recaptcha['sitekey']; ?>"></div>
+				</div>
+			<?php
+
 			} else {
-		?>
-			<div class="hidden">
-				<input type="hidden" name="basic_antispam">
-			</div>
-		<?php
+
+				echo '<input type="hidden" name="antispam_method" value="basic" class="hidden">';
+				echo '<input type="hidden" name="basic_antispam" class="hidden">';
+
 			}
 		?>
 
