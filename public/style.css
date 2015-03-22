@@ -85,23 +85,28 @@ a, a:visited {
 }
 
 .site-title {
-	background-color: #013F6D;
+	display: block;
 	width: 100%;
 	text-align: center;
-	color: white;
-	font-size: 4rem;
+	background: #013F6D;
 	border-top: 4px #000 solid;
-	margin: 0 auto;
-	font-weight: bold;
+	transition: background 0.5s;
 }
 
-.site-title a, .site-tite a:visited {
+.site-title h1 {
+	font-size: 4rem;
+	font-weight: bold;
+	color: white;
+	margin: 0;
+}
+
+.site-tite:visited h1 {
 	color: white;
 	text-decoration: none;
 }
 
-.site-title a:hover {
-	border-bottom: #FFF 1px dashed;
+.site-title:hover {
+	background: #0D4B78;
 }
 
 .menu {
@@ -126,13 +131,13 @@ a, a:visited {
 }
 
 @media screen and (min-width: 720px) {
-	.site-title {
+	.site-title h1 {
 		font-size: 5rem;
 	}
 }
 
 @media screen and (min-width: 1024px) {
-	.site-title {
+	.site-title h1 {
 		font-size: 6rem;
 	}
 }

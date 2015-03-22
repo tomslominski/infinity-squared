@@ -55,7 +55,9 @@ isq_load_textdomain();
 		<div class="wrapper">
 
 			<header class="content site-header">
-				<a href="<?php echo YOURLS_SITE; ?>"><h1 class="site-title"><?php echo ISQ::$general['name']; ?></h1></a>
+				<a href="<?php echo YOURLS_SITE; ?>" class="site-title">
+					<h1><?php echo ISQ::$general['name']; ?></h1>
+				</a>
 				<nav class="menu">
 					<?php
 						foreach( ISQ::$links as $menuItem ) {
