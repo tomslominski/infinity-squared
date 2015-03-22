@@ -217,7 +217,7 @@ input[type=submit] {
 	margin: 0;
 }
 
-.button:hover {
+.button:hover, .zeroclipboard-is-hover {
 	background: #E2E2E2;
 }
 
@@ -245,6 +245,11 @@ input[type=submit] {
 	border-color: #F0F0F0;
 	font-size: 0;
 	margin-right: 2px;
+	transition: opacity 0.5s;
+}
+
+.social-button:hover {
+	opacity: 0.85;
 }
 
 .social-button svg {
