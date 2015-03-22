@@ -39,5 +39,12 @@ if ( in_array( 'reCAPTCHA', $dependencies ) ) { ?>
 	<script src='https://www.google.com/recaptcha/api.js'></script>
 <?php } ?>
 
+<script>
+	window.addEventListener('load',function load() {
+		window.removeEventListener('load', load, false);
+		document.body.classList.remove('load');
+	},false);
+</script>
+
 </body>
 </html>

@@ -50,7 +50,7 @@ isq_load_textdomain();
 		<meta name="theme-color" content="#013f6d">
 	</head>
 
-	<body>
+	<body class="load">
 
 		<div class="wrapper">
 
