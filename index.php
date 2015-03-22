@@ -26,7 +26,7 @@ $title   = isset( $_REQUEST['title'] ) ? yourls_sanitize_title( $_REQUEST['title
 		<div class="form-item half-width right">
 			<p><label for="title" class="primary"><?php yourls_e( 'Custom title', 'isq_translation'); ?></label></p>
 			<p><label for="title" class="secondary"><?php yourls_e( 'Optional title used when sharing a link from YOURLS using social sharers.', 'isq_translation'); ?></label></p>
-			<input type="text" id="title" value="<?php echo($title); ?>">
+			<input type="text" id="title" name="title" value="<?php echo($title); ?>">
 		</div>
 
 		</div>
