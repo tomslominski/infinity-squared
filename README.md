@@ -6,7 +6,7 @@ A beautiful public page theme for YOURLS, carefully crafted by [Tom Slominski](h
 ![Front page of Infinity Squared 2.0](http://i.imgur.com/Wc1cVRF.png)
 ###### Front page of Infinity Squared 2.0
 
-#### **[See more screenshots](https://github.com/tomslominski/infinity-squared/wiki/Screenshots)**
+#### **[See more screenshots](http://imgur.com/a/f4g0x)**
 
 Features
 --------
