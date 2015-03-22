@@ -19,6 +19,7 @@
 </div>
 
 <?php if ( in_array( 'ZeroClipboard', $dependencies ) ) { ?>
+	<!-- ZeroClipboard is MIT licensed -->
 	<script type="text/javascript" src="public/ZeroClipboard/ZeroClipboard.min.js"></script>
 	<script>
 		ZeroClipboard.config({
@@ -39,6 +40,7 @@ if ( in_array( 'reCAPTCHA', $dependencies ) ) { ?>
 	<script src='https://www.google.com/recaptcha/api.js'></script>
 <?php } ?>
 
+<!-- Delay loading of transitions until page is fully loaded -->
 <script>
 	window.addEventListener('load',function load() {
 		window.removeEventListener('load', load, false);

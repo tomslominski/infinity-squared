@@ -71,6 +71,7 @@ $encoded_title = urlencode($title);
 // QR code shenanigans
 if ( ISQ::$general['qr'] ) { 
 
+	// PHP QR Code is LGPL licensed
 	include('public/phpqrcode/qrlib.php');
 
 	$qrContainerId = 'url-qr-code'; 
