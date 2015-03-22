@@ -11,6 +11,7 @@
 !.gitignore
 !README.md
 !LICENSE.md
+!CHANGELOG.md
 
 # But specifically ignore these things
 public/config.php

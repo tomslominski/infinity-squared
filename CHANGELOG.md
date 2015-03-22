@@ -1,5 +1,27 @@
-Infinity-Squared CHANGELOG
+Infinity Squared changelog
 ==========================
+
+2.0 (March 2015)
+----------------
+* New, more spaced out design.
+  * SVG based Retina graphics, based on Font Awesome.
+  * Custom social sharing buttons.
+  * Nicer, larger font.
+  * Mobile first design.
+  * Improved error page. Now it has an actual footer, and the errors can be more easily displayed using the `display_error()` function.
+* Decent antispam system. If the user is logged in, antispam protection is ommited. If not, reCAPTCHA keys can be supplied for Google's new tick-CAPTCHA to be used. If both of those are failed, basic fill-box protection is used.
+* Shunned jQuery.
+* Shunned the dependency on the soon-to-be deprecated Google Charts API, in favour of PHP QR Code.
+* Using a different ZeroClipboard script and updating it's settings to more reliably find copy material.
+* Dependency system for scripts, so scripts like ZeroClipboard are not loaded where they're not needed, such as on the index page. Dependencies are added to the `dependencies[]` array, and then if the dependency is in the array during loading, the script is loaded.
+* Updated POT.
+* Corrected all of the settings code in `index.php` and `results.php`. It should now more reliably detect whether settings are enabled or not.
+
+1.6 (January 2014)
+------------------
+* reCAPTCHA support.
+* Single new bookmarklet.
+* Custom CSS styling which will not be overwritten on upgrade.
 
 1.5 (August 2013)
 -----------------
