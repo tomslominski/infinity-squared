@@ -9,11 +9,11 @@
 !header.php
 !footer.php
 !.gitignore
+!README.md
+!LICENSE.md
 
 # But specifically ignore these things
 public/config.php
 public/.DS_Store
 public/custom.css
-
-# Also specifically ignore the phpqrcode cache
 public/phpqrcode/cache/*
