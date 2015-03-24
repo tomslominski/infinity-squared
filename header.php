@@ -21,7 +21,7 @@ yourls_load_custom_textdomain( 'isq_translation', '/public/languages' );
 		<title><?php echo ISQ::$general['name']; ?></title> <!-- Site title defined in theme settings -->
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
+		<link href="//fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" href="<?php echo YOURLS_SITE; ?>/public/style.css" /><!-- Theme CSS -->
 		<?php if ( ISQ::$general['customstyle'] ) { ?>
 			<link rel="stylesheet" href="<?php echo YOURLS_SITE; ?>/public/custom.css" /><!-- Custom CSS -->
