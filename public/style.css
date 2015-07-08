@@ -228,6 +228,8 @@ input[type=submit] {
 	transition: background 0.5s;
 	cursor: pointer;
 	margin: 0;
+	padding: 7px;
+	display: inline-block;
 }
 
 .button:hover, .zeroclipboard-is-hover {
@@ -240,9 +242,15 @@ input[type=submit] {
 
 /* Output */
 .error {
-	color: red;
-	font-weight: bold;
 	text-align: center;
+}
+
+.error p.message {
+	margin-bottom: 30px;
+}
+
+.error p .key {
+	font-weight: bold;
 }
 
 .copy-button {
@@ -308,7 +316,6 @@ svg#url-qr-code {
 }
 
 .bookmarklet {
-	padding: 7px;
 	font-size: 1.4rem;
 	color: black;
 }

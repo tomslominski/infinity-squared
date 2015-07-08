@@ -7,15 +7,35 @@ if ( ISQ::$general['clipboard'] ) {
 	$dependencies[] = 'ZeroClipboard';
 };
 
-function display_error($message) {
-	echo '<div class="content"><p class="error">' . $message . '</p></div>';
+function display_error( $message, $action ) {
+	echo '<div class="content error">';
+		echo '<p class="message">' . $message . '</p>';
+
+		if( !empty( $action ) ) {
+			echo $action;
+		} else {
+			echo '<p class="action"><a href="javascript:history.go(-1)" class="button">' . yourls__( '&larr; Go back and try again', 'isq_translation' ) . '</a></p>';
+		}
+	echo '</div>';
+
 	include('footer.php');
 	die();
 }
 
 if ( empty( $_REQUEST['url'] ) ) {
-	display_error( yourls__( 'You haven\'t entered a URL to shorten. Please go back and try again.', 'isq_translation' ) );
+	display_error( yourls__( 'You haven\'t entered a URL to shorten.', 'isq_translation' ) );
 };
+
+if ( !yourls_keyword_is_reserved( $_REQUEST['keyword'] ) ) {
+	display_error( sprintf( yourls__( 'The keyword %1$s is reserved.'), '<span class="key">' . $_REQUEST['keyword'] . '</span>' ) );
+}
+
+if( function_exists( 'advanced_reserved_urls' ) ) {
+	if ( advanced_reserved_urls( $_REQUEST['keyword'] ) ) {
+		display_error( sprintf( yourls__( 'The keyword %1$s is restricted.'), '<span class="key">' . $_REQUEST['keyword'] . '</span>' ) );
+	}
+}
+
 
 // Check what CAPTCHA method was used
 $antispam_method = $_REQUEST['antispam_method'];
@@ -32,7 +52,7 @@ if ( $antispam_method == 'user_login' ) {
 
 	// What happens when the reCAPTCHA was completed incorrectly
 	if ( $recaptcha_json['success'] != 'true' ) {
-		display_error( yourls__( 'Are you a bot? Google certainly thinks you are. Please go back and try again.', 'isq_translation' ) );
+		display_error( yourls__( 'Are you a bot? Google certainly thinks you are.', 'isq_translation' ) );
 	}
 
 } else if ( $antispam_method == 'basic' ) {
@@ -40,13 +60,13 @@ if ( $antispam_method == 'user_login' ) {
 	// Basic antispam protection fallback
 	// What happens when it was not completed correctly
 	if ( $_REQUEST['basic_antispam'] != "" ) {
-		display_error( yourls__( 'Are you a bot? The verification was not completed successfully. Please go back and try again.', 'isq_translation' ) );
+		display_error( yourls__( 'Are you a bot? The verification was not completed successfully.', 'isq_translation' ) );
 	}
 
 } else {
 
 	// No antispam protection was detected
-	display_error( yourls__( 'Are you a bot? No antispam protection was completed successfully. Please go back and try again.', 'isq_translation' ) );
+	display_error( yourls__( 'Are you a bot? No antispam protection was completed successfully.', 'isq_translation' ) );
 
 }
 
