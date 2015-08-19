@@ -26,12 +26,12 @@ if ( empty( $_REQUEST['url'] ) ) {
 	display_error( yourls__( 'You haven\'t entered a URL to shorten.', 'isq_translation' ) );
 };
 
-if ( !yourls_keyword_is_reserved( $_REQUEST['keyword'] ) ) {
+if ( yourls_keyword_is_reserved( $_REQUEST['keyword'] ) ) {
 	display_error( sprintf( yourls__( 'The keyword %1$s is reserved.'), '<span class="key">' . $_REQUEST['keyword'] . '</span>' ) );
 }
 
 if( function_exists( 'advanced_reserved_urls' ) ) {
-	if ( advanced_reserved_urls( $_REQUEST['keyword'] ) ) {
+	if ( advanced_reserved_urls( false, $_REQUEST['keyword'] ) ) {
 		display_error( sprintf( yourls__( 'The keyword %1$s is restricted.'), '<span class="key">' . $_REQUEST['keyword'] . '</span>' ) );
 	}
 }
