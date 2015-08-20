@@ -26,16 +26,10 @@ if ( empty( $_REQUEST['url'] ) ) {
 	display_error( yourls__( 'You haven\'t entered a URL to shorten.', 'isq_translation' ) );
 };
 
-if ( yourls_keyword_is_reserved( $_REQUEST['keyword'] ) ) {
+// Check if the keyword is reserved
+if ( !empty( $_REQUEST['keyword'] ) && yourls_keyword_is_reserved( $_REQUEST['keyword'] ) ) {
 	display_error( sprintf( yourls__( 'The keyword %1$s is reserved.'), '<span class="key">' . $_REQUEST['keyword'] . '</span>' ) );
 }
-
-if( function_exists( 'advanced_reserved_urls' ) ) {
-	if ( advanced_reserved_urls( false, $_REQUEST['keyword'] ) ) {
-		display_error( sprintf( yourls__( 'The keyword %1$s is restricted.'), '<span class="key">' . $_REQUEST['keyword'] . '</span>' ) );
-	}
-}
-
 
 // Check what CAPTCHA method was used
 $antispam_method = $_REQUEST['antispam_method'];
