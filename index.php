@@ -32,7 +32,7 @@ $title   = isset( $_REQUEST['title'] ) ? yourls_sanitize_title( $_REQUEST['title
 		</div>
 
 		<?php
-			if ( yourls_is_valid_user() == 1 ) {
+			if ( function_exists( 'yourls_is_valid_user' ) && yourls_is_valid_user() == 1 ) {
 
 				echo '<input type="hidden" name="antispam_method" value="user_login" class="hidden">';
 
