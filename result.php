@@ -82,20 +82,6 @@ $status   = isset( $return['status'] ) ? $return['status'] : '';
 $encoded_shorturl = urlencode($shorturl);
 $encoded_title = urlencode($title);
 
-// QR code shenanigans
-if ( ISQ::$general['qr'] ) { 
-
-	// PHP QR Code is LGPL licensed
-	include('public/phpqrcode/qrlib.php');
-
-	$qrContainerId = 'url-qr-code'; 
-	$saveToFile = false; 
-	$imageWidth = 600; // in pixels
-
-	$qrCode = QRcode::svg($url, $qrContainerId, $saveToFile, QR_ECLEVEL_L, $imageWidth);
-
-};
-
 ?>
 
 <div class="content">
@@ -150,8 +136,18 @@ if ( ISQ::$general['qr'] ) {
 		?>		
 	</div>
 
-	<!-- QR code -->
-	<?php if ( ISQ::$general['qr'] ) { echo '<h2>' . yourls__( 'QR code', 'isq_translation' ) . '</h2><p>' . yourls__( 'Share your link with external devices', 'isq_translation' ) . '</p>' . $qrCode; } ?>
+	<?php if ( ISQ::$general['qr'] ) : ?>
+		<!-- QR code -->
+		<h2><?php yourls_e( 'QR code', 'isq_translation' ); ?></h2>
+		<p><?php yourls_e( 'Share your link with external devices', 'isq_translation' ); ?></p>
+	
+	<?php
+		// PHP QR Code is LGPL licensed
+		include('public/phpqrcode/qrlib.php');
+
+		echo QRcode::svg( $shorturl, 'url-qr-code', false, QR_ECLEVEL_L, '600' );
+	endif; ?>
+
 </div>
 
 <?php include('footer.php'); ?>
