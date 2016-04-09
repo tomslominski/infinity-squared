@@ -13,7 +13,7 @@ if( @include dirname(__FILE__) . '/public/config.php' ) {
 class ISQ { public static $general = array(), $links = array(), $social = array(), $recaptcha = array(); }
 
 // Load translations
-yourls_load_custom_textdomain( 'isq_translation', '/public/languages' );
+yourls_load_custom_textdomain( 'isq_translation', 'public/languages' );
 ?>
 
 <html>
