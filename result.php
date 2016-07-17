@@ -132,7 +132,9 @@ $encoded_title = urlencode($title);
 
 			if ( ISQ::$social['linkedin'] ) { echo '<span onclick="window.open(\'https://www.linkedin.com/shareArticle?mini=true&url=' . $encoded_shorturl . '&title=' . $encoded_title . '\',\'_blank\',\'width=550,height=380\')" class="button social-button linkedin" title="Share on LinkedIn">' . file_get_contents('public/images/linkedin.svg') . '</span>'; }	
 
-			if ( ISQ::$social['googleplus'] ) { echo '<span onclick="window.open(\'https://plus.google.com/share?url=' . $encoded_shorturl . '\',\'_blank\',\'width=550,height=380\')" class="button social-button googleplus" title="Share on LinkedIn">' . file_get_contents('public/images/googleplus.svg') . '</span>'; }
+			if ( ISQ::$social['googleplus'] ) { echo '<span onclick="window.open(\'https://plus.google.com/share?url=' . $encoded_shorturl . '\',\'_blank\',\'width=550,height=380\')" class="button social-button googleplus" title="Share on Google+">' . file_get_contents('public/images/googleplus.svg') . '</span>'; }
+			
+			if ( ISQ::$social['vk'] ) { echo '<span onclick="window.open(\'https://vk.com/share.php?url=' . $encoded_shorturl . '\',\'_blank\',\'width=550,height=380\')" class="button social-button vk" title="Share on VK">' . file_get_contents('public/images/vk.svg') . '</span>'; }
 		?>		
 	</div>
 
