@@ -147,8 +147,6 @@ $dependencies[] = 'clipboard.js';
 				</div>
 			</div>
 		</div>
-
-		<p class="desktop-only"><?php yourls_e( 'Click on a link and press Ctrl+C to quickly copy it.', 'isq_translation'); ?></p>
 	</div>
 
 	<!-- Social sharers -->

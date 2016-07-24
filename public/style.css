@@ -419,32 +419,15 @@ a.icon-github:hover {
 }
 
 /* Mobile */
-/*@media screen and (max-width: 720px) {
-body {
-	background:white;
-	margin:0;
-}
+@media screen and (max-width: 720px) {
+	.halves {
+		display: block;
+	}
 
-#container {
-	min-width:0;
-	width:100%;
-	margin:0;
-	padding:0;
+	.half-width {
+		width: 100%;
+	}
 }
-
-header {
-	width:100%;
-	padding:0;
-}
-
-.menu li {
-	margin-top:0;
-}
-
-.desktop-only, .zclip {
-	display:none;
-}
-}*/
 
 /* Error page */
 #wrap > h1 > a {
