@@ -1,11 +1,5 @@
 <?php
-$dependencies = array();
-
 include('header.php');
-
-if ( ISQ::$general['clipboard'] ) {
-	$dependencies[] = 'ZeroClipboard';
-};
 
 function display_error( $message, $action = null ) {
 	echo '<div class="content error">';
@@ -83,6 +77,11 @@ $status   = isset( $return['status'] ) ? $return['status'] : '';
 // URL encoded links used in the social sharing buttons
 $encoded_shorturl = urlencode($shorturl);
 $encoded_title = urlencode($title);
+
+// Add dependencies
+if ( ISQ::$general['clipboard'] ) {
+	$dependencies[] = 'ZeroClipboard';
+};
 
 ?>
 

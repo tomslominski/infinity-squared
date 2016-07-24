@@ -18,6 +18,8 @@
 </div>
 </div>
 
+<?php global $dependencies; ?>
+
 <?php if ( in_array( 'ZeroClipboard', $dependencies ) ) { ?>
 	<!-- ZeroClipboard is MIT licensed -->
 	<script type="text/javascript" src="public/ZeroClipboard/ZeroClipboard.min.js"></script>
