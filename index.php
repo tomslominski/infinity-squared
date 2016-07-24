@@ -8,7 +8,7 @@ $title   = isset( $_REQUEST['title'] ) ? yourls_sanitize_title( $_REQUEST['title
 
 <div class="content">
 	<h2><?php yourls_e( 'Enter a new URL to shorten', 'isq_translation'); ?></h2>
-	<form method="post" action="result.php" class="newurl">
+	<form method="post" action="result.php" class="newurl" novalidate>
 		<div class="form-item full-width">
 			<p><label for="url" class="primary"><?php yourls_e( 'Long URL', 'isq_translation'); ?></label></p>
 			<p><label for="url" class="secondary"><?php yourls_e( 'Paste the long URL here. This is required.', 'isq_translation'); ?></label></p>
@@ -20,7 +20,7 @@ $title   = isset( $_REQUEST['title'] ) ? yourls_sanitize_title( $_REQUEST['title
 		<div class="form-item half-width left">
 			<p><label for="keyword" class="primary"><?php yourls_e( 'Custom keyword', 'isq_translation'); ?></label></p>
 			<p><label for="keyword" class="secondary"><?php yourls_e( 'A keyword replaces the default short string.', 'isq_translation'); ?></label></p>
-			<input type="text" id="keyword" name="keyword" value="<?php echo($keyword); ?>">
+			<input type="text" id="keyword" name="keyword" autocorrect="off" autocapitalize="none" value="<?php echo($keyword); ?>">
 		</div>
 
 		<div class="form-item half-width right">
