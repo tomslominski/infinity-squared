@@ -32,23 +32,6 @@ body, input {
 	color: #FFF;
 }
 
-.desktop-only {
-	display: none;
-}
-
-@media screen and (min-width: 1024px) {
-	.desktop-only {
-		display: inline-block;
-	}
-}
-
-.load * {
-	-webkit-transition: none !important;
-	-moz-transition: none !important;
-	-ms-transition: none !important;
-	-o-transition: none !important;
-}
-
 /* Structure and global design */
 a, a:visited {
 	color: #013F6D;
