@@ -27,6 +27,11 @@ if ( !empty( $_REQUEST['keyword'] ) && yourls_keyword_is_reserved( $_REQUEST['ke
 	display_error( sprintf( yourls__( 'The keyword %1$s is reserved.'), '<span class="key">' . $_REQUEST['keyword'] . '</span>' ) );
 }
 
+// Check if the keyword is taken
+if ( !empty( $_REQUEST['keyword'] ) && yourls_keyword_is_taken( $_REQUEST['keyword'] ) ) {
+	display_error( sprintf( yourls__( 'The keyword %1$s is taken.'), '<span class="key">' . $_REQUEST['keyword'] . '</span>' ) );
+}
+
 // Check what CAPTCHA method was used
 $antispam_method = $_REQUEST['antispam_method'];
 
@@ -73,6 +78,11 @@ $shorturl = isset( $return['shorturl'] ) ? $return['shorturl'] : '';
 $message  = isset( $return['message'] ) ? $return['message'] : '';
 $title    = isset( $return['title'] ) ? $return['title'] : '';
 $status   = isset( $return['status'] ) ? $return['status'] : '';
+
+// Check for all other errors
+if( empty( $shorturl ) ) {
+	display_error( yourls__( 'The URL could not be shortened.', 'isq_translation' ) );
+}
 
 // URL encoded links used in the social sharing buttons
 $encoded_shorturl = urlencode($shorturl);
