@@ -304,6 +304,10 @@ input[type=submit] {
 	background-color: #DD4B39;
 }
 
+.social-button.vk {
+	background-color: #4D7198;
+}
+
 svg#url-qr-code {
 	width: 50%;
 	height: 50%;
