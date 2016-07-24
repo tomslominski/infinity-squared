@@ -8,7 +8,6 @@
 ISQ::$general = array(
 	'name' => 'URL shortener', // The name of your URL shortener
 	'qr' => TRUE, // Do you want to display a QR code?
-	'clipboard' => 1, // Do you want to enable zeroClipboard? (uses flash)
 	'customstyle' => TRUE // Do you want to enable the custom stylesheet, found in public/custom.css?
 );
 

@@ -6,7 +6,7 @@ $title   = isset( $_REQUEST['title'] ) ? yourls_sanitize_title( $_REQUEST['title
 
 ?>
 
-<div class="content">
+<div class="content index">
 	<h2><?php yourls_e( 'Enter a new URL to shorten', 'isq_translation'); ?></h2>
 	<form method="post" action="result.php" class="newurl" novalidate>
 		<div class="form-item full-width">
@@ -16,19 +16,17 @@ $title   = isset( $_REQUEST['title'] ) ? yourls_sanitize_title( $_REQUEST['title
 		</div>
 
 		<div class="halves">
+			<div class="form-item half-width left">
+				<p><label for="keyword" class="primary"><?php yourls_e( 'Custom keyword', 'isq_translation'); ?></label></p>
+				<p><label for="keyword" class="secondary"><?php yourls_e( 'A keyword replaces the default short string.', 'isq_translation'); ?></label></p>
+				<input type="text" id="keyword" name="keyword" autocorrect="off" autocapitalize="none" value="<?php echo($keyword); ?>">
+			</div>
 
-		<div class="form-item half-width left">
-			<p><label for="keyword" class="primary"><?php yourls_e( 'Custom keyword', 'isq_translation'); ?></label></p>
-			<p><label for="keyword" class="secondary"><?php yourls_e( 'A keyword replaces the default short string.', 'isq_translation'); ?></label></p>
-			<input type="text" id="keyword" name="keyword" autocorrect="off" autocapitalize="none" value="<?php echo($keyword); ?>">
-		</div>
-
-		<div class="form-item half-width right">
-			<p><label for="title" class="primary"><?php yourls_e( 'Custom title', 'isq_translation'); ?></label></p>
-			<p><label for="title" class="secondary"><?php yourls_e( 'Optional title used when sharing a link from YOURLS using social sharers.', 'isq_translation'); ?></label></p>
-			<input type="text" id="title" name="title" value="<?php echo($title); ?>">
-		</div>
-
+			<div class="form-item half-width right">
+				<p><label for="title" class="primary"><?php yourls_e( 'Custom title', 'isq_translation'); ?></label></p>
+				<p><label for="title" class="secondary"><?php yourls_e( 'Optional title used when sharing a link from YOURLS using social sharers.', 'isq_translation'); ?></label></p>
+				<input type="text" id="title" name="title" value="<?php echo($title); ?>">
+			</div>
 		</div>
 
 		<?php

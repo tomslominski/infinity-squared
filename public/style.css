@@ -200,6 +200,7 @@ input:not([type=submit]):not([type=file]) {
 	transition: box-shadow 0.5s, border 0.5s;
 	-webkit-appearance: none;
 	border-radius: 0;
+	height: 45px;
 }
 
 .g-recaptcha {
@@ -232,7 +233,7 @@ input[type=submit] {
 	display: inline-block;
 }
 
-.button:hover, .zeroclipboard-is-hover {
+.button:hover {
 	background: #E2E2E2;
 }
 
@@ -253,12 +254,62 @@ input[type=submit] {
 	font-weight: bold;
 }
 
-.copy-button {
-	margin-top: 2px;
+.input-with-copy {
+	position: relative;
 }
 
-.copy-button:focus {
-	outline: none;
+.input-with-copy input:not([type=submit]):not([type=file]) {
+	width: calc( 100% - 45px );
+}
+
+.input-with-copy .copy-button {
+	position: absolute;
+	right: 0;
+	top: 5px;
+	height: 45px;
+	width: 45px;
+	border-left: 0;
+}
+
+.copy-message {
+	position: absolute;
+	top: 6px;
+	left: 1px;
+	height: 43px;
+	line-height: 43px;
+	width: calc( 100% - 47px );
+	text-align: center;
+	background: rgba(0, 0, 0, 0.7);
+	transition: opacity 0.3s, visibility 0.3s;
+	color: white;
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transform: translate3d(0, 0, 0); // WebKit animation fix
+}
+
+.copy-message.visible {
+	opacity: 1;
+	visibility: visible;
+}
+
+.copy-message .os {
+	display: none;
+}
+
+.copy-message.error.macos .macos {
+	display: block;
+}
+
+.copy-message.error.pc .pc {
+	display: block;
+}
+
+.copy-message.error.mobile .mobile {
+	display: block;
+}
+
+.copy-message.error.other .other {
+	display: block;
 }
 
 .social-button {

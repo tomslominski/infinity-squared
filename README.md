@@ -53,3 +53,5 @@ Licensing
 Just like YOURLS, Infinity Squared is licensed under the MIT license. Basically, you can do whatever you want with it as long as you give attribution wherever you use it. There is no guarantee that this software will work.
 
 You can find the full license in the root directory of Infinity Squared, under LICENSE.md.
+
+Clipboard.js is also licensed under the MIT license.

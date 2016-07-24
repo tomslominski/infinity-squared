@@ -89,13 +89,11 @@ $encoded_shorturl = urlencode($shorturl);
 $encoded_title = urlencode($title);
 
 // Add dependencies
-if ( ISQ::$general['clipboard'] ) {
-	$dependencies[] = 'ZeroClipboard';
-};
+$dependencies[] = 'clipboard.js';
 
 ?>
 
-<div class="content">
+<div class="content result">
 	<!-- Error reporting -->
 	<?php isset( $error ) ? $error : ''; ?>
 
@@ -105,24 +103,49 @@ if ( ISQ::$general['clipboard'] ) {
 	<div class="output">
 		<div class="form-item full-width">
 			<label for="longurl" class="primary"><?php yourls_e( 'Original URL', 'isq_translation'); ?></label>
-			<input type="text" name="longurl" id="longurl" onclick="this.select();" onload="this.select();" value="<?php echo $url; ?>">
-			<?php if ( ISQ::$general['clipboard'] ) { echo '<button data-clipboard-target="longurl" class="desktop-only copy-button button">' . yourls__( 'Copy to clipboard', 'isq_translation' ) . '</button>'; } ?>
+			<div class="input-with-copy">
+				<input type="text" name="longurl" id="longurl" onclick="this.select();" onload="this.select();" value="<?php echo $url; ?>">
+				<button data-clipboard-target="#longurl" class="copy-button button" title="<?php yourls_e( 'Copy to clipboard', 'isq_translation' ); ?>"><img src="public/images/clippy.svg"></button>
+				<div class="copy-message success" id="copy-success"><?php yourls_e( 'Copied to clipboard', 'isq_translation' ); ?></div>
+				<div class="copy-message error" id="copy-error">
+					<span class="os macos"><?php yourls_e( 'Press ⌘+C to copy', 'isq_translation' ); ?></span>
+					<span class="os pc"><?php yourls_e( 'Press Ctrl+C to copy', 'isq_translation' ); ?></span>
+					<span class="os mobile"><?php yourls_e( 'Tap copy', 'isq_translation' ); ?></span>
+					<span class="os other"><?php yourls_e( 'Failed to copy', 'isq_translation' ); ?></span>
+				</div>
+			</div>
 		</div>
 
 		<div class="halves">
-
-		<div class="form-item half-width left">
-			<label for="shorturl" class="primary"><?php yourls_e( 'Short URL', 'isq_translation'); ?></label>
-			<input type="text" name="shorturl" id="shorturl" onclick="this.select();" value="<?php echo $shorturl; ?>">
-			<?php if ( ISQ::$general['clipboard'] ) { echo '<button data-clipboard-target="shorturl" class="desktop-only copy-button button">' . yourls__( 'Copy to clipboard', 'isq_translation' ) . '</button>'; } ?>
-		</div>
-		
-		<div class="form-item half-width right">
-			<label for="stats" class="primary"><?php /* translators: This is short for statistics */ yourls_e( 'Stats', 'isq_translation'); ?></label>
-			<input type="text" name="stats" id="stats" onclick="this.select();" value="<?php echo $shorturl . '+'; ?>" id="stats-copy">
-			<?php if ( ISQ::$general['clipboard'] ) { echo '<button data-clipboard-target="stats" class="desktop-only copy-button button">' . yourls__( 'Copy to clipboard', 'isq_translation' ) . '</button>'; } ?>
-		</div>
-		
+			<div class="form-item half-width left">
+				<label for="shorturl" class="primary"><?php yourls_e( 'Short URL', 'isq_translation'); ?></label>
+				<div class="input-with-copy">
+					<input type="text" name="shorturl" id="shorturl" onclick="this.select();" value="<?php echo $shorturl; ?>">
+					<button data-clipboard-target="#shorturl" class="copy-button button" title="<?php yourls_e( 'Copy to clipboard', 'isq_translation' ); ?>"><img src="public/images/clippy.svg"></button>
+					<div class="copy-message success" id="copy-success"><?php yourls_e( 'Copied to clipboard', 'isq_translation' ); ?></div>
+					<div class="copy-message error" id="copy-error">
+						<span class="os macos"><?php yourls_e( 'Press ⌘+C to copy', 'isq_translation' ); ?></span>
+						<span class="os pc"><?php yourls_e( 'Press Ctrl+C to copy', 'isq_translation' ); ?></span>
+						<span class="os mobile"><?php yourls_e( 'Tap copy', 'isq_translation' ); ?></span>
+						<span class="os other"><?php yourls_e( 'Failed to copy', 'isq_translation' ); ?></span>
+					</div>
+				</div>
+			</div>
+			
+			<div class="form-item half-width right">
+				<label for="stats" class="primary"><?php /* translators: This is short for statistics */ yourls_e( 'Stats', 'isq_translation'); ?></label>
+				<div class="input-with-copy">
+					<input type="text" name="stats" id="stats" onclick="this.select();" value="<?php echo $shorturl . '+'; ?>" id="stats-copy">
+					<button data-clipboard-target="#stats" class="copy-button button" title="<?php yourls_e( 'Copy to clipboard', 'isq_translation' ); ?>"><img src="public/images/clippy.svg"></button>
+					<div class="copy-message success" id="copy-success"><?php yourls_e( 'Copied to clipboard', 'isq_translation' ); ?></div>
+					<div class="copy-message error" id="copy-error">
+						<span class="os macos"><?php yourls_e( 'Press ⌘+C to copy', 'isq_translation' ); ?></span>
+						<span class="os pc"><?php yourls_e( 'Press Ctrl+C to copy', 'isq_translation' ); ?></span>
+						<span class="os mobile"><?php yourls_e( 'Tap copy', 'isq_translation' ); ?></span>
+						<span class="os other"><?php yourls_e( 'Failed to copy', 'isq_translation' ); ?></span>
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<p class="desktop-only"><?php yourls_e( 'Click on a link and press Ctrl+C to quickly copy it.', 'isq_translation'); ?></p>

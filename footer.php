@@ -20,35 +20,14 @@
 
 <?php global $dependencies; ?>
 
-<?php if ( in_array( 'ZeroClipboard', $dependencies ) ) { ?>
-	<!-- ZeroClipboard is MIT licensed -->
-	<script type="text/javascript" src="public/ZeroClipboard/ZeroClipboard.min.js"></script>
-	<script>
-		ZeroClipboard.config({
-			swfPath: "public/ZeroClipboard/ZeroClipboard.swf"
-		});
-
-		var clipboardClient = new ZeroClipboard( document.getElementsByClassName("copy-button") );
-
-		var copied = "<?php yourls_e( 'Copied!', 'isq_translation'); ?>";
-
-		clipboardClient.on( 'aftercopy', function(event) {
-        	event.target.innerHTML = copied;
-        } );
-	</script>
+<?php if ( in_array( 'clipboard.js', $dependencies ) ) { ?>
+	<script src="public/js/clipboard.min.js"></script>
+	<script src="public/js/app.js"></script>
 <?php }
 
 if ( in_array( 'reCAPTCHA', $dependencies ) ) { ?>
-	<script src='https://www.google.com/recaptcha/api.js'></script>
+	<script src="https://www.google.com/recaptcha/api.js"></script>
 <?php } ?>
-
-<!-- Delay loading of transitions until page is fully loaded -->
-<script>
-	window.addEventListener('load',function load() {
-		window.removeEventListener('load', load, false);
-		document.body.classList.remove('load');
-	},false);
-</script>
 
 </body>
 </html>
