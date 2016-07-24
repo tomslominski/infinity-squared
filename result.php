@@ -7,15 +7,17 @@ if ( ISQ::$general['clipboard'] ) {
 	$dependencies[] = 'ZeroClipboard';
 };
 
-function display_error( $message, $action ) {
+function display_error( $message, $action = null ) {
 	echo '<div class="content error">';
 		echo '<p class="message">' . $message . '</p>';
 
-		if( !empty( $action ) ) {
-			echo $action;
-		} else {
-			echo '<p class="action"><a href="javascript:history.go(-1)" class="button">' . yourls__( '&larr; Go back and try again', 'isq_translation' ) . '</a></p>';
-		}
+		echo '<p class="action">';
+			if( !empty( $action ) ) {
+				echo $action;
+			} else {
+				echo '<a href="' . YOURLS_SITE . '" class="button">' . yourls__( '&larr; Go home and try again', 'isq_translation' ) . '</a>';
+			}
+		echo '</p>';
 	echo '</div>';
 
 	include('footer.php');
