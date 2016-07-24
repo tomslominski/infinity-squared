@@ -23,8 +23,12 @@ ISQ::$links = array(
 		'link' => 'http://tomslominski.net/'
 	),
 	array(
-		'name' => 'Get ∞²!',
+		'name' => yourls__( 'Get ∞²!', 'isq_translation' ),
 		'link' => 'https://github.com/tomslominski/infinity-squared/'
+	),
+	array(
+		'name' => yourls__( 'Admin area', 'isq_translation' ),
+		'link' => YOURLS_SITE . '/admin/'
 	)
 );
 
