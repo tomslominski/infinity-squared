@@ -1,11 +1,11 @@
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Infinity Squared\n"
-"POT-Creation-Date: 2016-11-04 12:50+0100\n"
-"PO-Revision-Date: 2015-03-22 19:25-0000\n"
-"Last-Translator: Tom Slominski <me@tomslominski>\n"
+"POT-Creation-Date: 2016-11-04 12:57+0100\n"
+"PO-Revision-Date: 2016-11-04 12:58+0100\n"
+"Last-Translator: \n"
 "Language-Team: \n"
+"Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,21 +22,23 @@ msgstr ""
 
 #: footer.php:3
 msgid "The bookmarklet"
-msgstr ""
+msgstr "El marcador"
 
 #: footer.php:5
 msgid "Save this as a bookmark."
-msgstr ""
+msgstr "Guardar como marcador"
 
 #: footer.php:6
 msgid ""
 "Add this to your bookmarks or drag it to your bookmarks bar to quickly "
 "access shortening functions."
 msgstr ""
+"Añada esto a sus marcadores, o arrástrelo a su barra de marcadores para "
+"acceder rápidamente a las funciones de acortado de urls"
 
 #: footer.php:7 index.php:59
 msgid "Shorten"
-msgstr ""
+msgstr "Acortar"
 
 #: footer.php:8
 msgid ""
@@ -44,154 +46,171 @@ msgid ""
 "can fill out a CAPTCHA. If you have selected text before using the "
 "bookmarklet, that will be used as the keyword."
 msgstr ""
+"Este marcador toma la URL de la página y el título y abre una nueva pestaña, "
+"donde puede llenar una CAPTCHA. Si ha seleccionado texto antes de utilizar "
+"el marcador, se utilizará como palabra clave."
 
 #: footer.php:9
 msgid ""
 "Support for bookmarklets on mobile varies. For example, they work on Chrome "
 "for Android but you have to add and sync them from your desktop."
 msgstr ""
+"Soporte para marcadores en el móvil. Por ejemplo, trabajan en Chrome para "
+"Android, pero tienes que añadirlos y sincronizarlos desde tu escritorio."
 
 #: footer.php:13
 msgid ""
 "Powered by <a href=\"http://yourls.org/\">YOURLS</a>. Designed by <a href="
 "\"http://tomslominski.net/\">Tom Slominski</a>."
 msgstr ""
+"Desarrollado por <a href=\"http://yourls.org/\"> YOURLS </a>. Diseñado por "
+"<a href=\"http://tomslominski.net/\"> Tom Slominski </a>."
 
 #: footer.php:15
 msgid "This site uses cookies for Google reCAPTCHA"
-msgstr ""
+msgstr "Este sitio usa cookies para Google reCAPTCHA"
 
 #: index.php:10
 msgid "Enter a new URL to shorten"
-msgstr ""
+msgstr "Introduzca una url para acortarla"
 
 #: index.php:13
 msgid "Long URL"
-msgstr ""
+msgstr "URL Larga"
 
 #: index.php:14
 msgid "Paste the long URL here. This is required."
-msgstr ""
+msgstr "Pegue la URL larga aquí (Este campo es obligatorio)"
 
 #: index.php:20
 msgid "Custom keyword"
-msgstr ""
+msgstr "Personalizar palabra clave"
 
 #: index.php:21
 msgid "A keyword replaces the default short string."
-msgstr ""
+msgstr "Una palabra clave, reemplaza la cadena de caracteres por defecto"
 
 #: index.php:26
 msgid "Custom title"
-msgstr ""
+msgstr "Título personalizadon"
 
 #: index.php:27
 msgid ""
 "Optional title used when sharing a link from YOURLS using social sharers."
 msgstr ""
+"Título opcional usado cuando compartes en una red social un enlace usando "
+"los botones de abajo"
 
 #: index.php:44
 msgid "Verification"
-msgstr ""
+msgstr "Verificación"
 
 #: index.php:45
 msgid "reCAPTCHA verification used to ensure you are not a bot."
-msgstr ""
+msgstr "Verificación reCAPTCHA para asegurar que no eres un robot"
 
 #: public/config-sample.php:26
 msgid "Get ∞²!"
-msgstr ""
+msgstr "¡Obtener ∞²!"
 
 #: public/config-sample.php:30
 msgid "Admin area"
-msgstr ""
+msgstr "Área de administración"
 
 #: result.php:12
 msgid "&larr; Go home and try again"
-msgstr ""
+msgstr "&larr; Ir a inicio e intentarlo de nuevo"
 
 #: result.php:22
 msgid "You haven't entered a URL to shorten."
 msgstr ""
+"No has introducido una URL para acortar, por favor vuelva atrás e inténtelo "
+"de nuevo"
 
 #: result.php:27
 #, php-format
 msgid "The keyword %1$s is reserved."
-msgstr ""
+msgstr "La palabra clave %1$s está reservada"
 
 #: result.php:32
 #, php-format
 msgid "The keyword %1$s is taken."
-msgstr ""
+msgstr "La palabra clave %1$s ya está en uso"
 
 #: result.php:50
 msgid "Are you a bot? Google certainly thinks you are."
 msgstr ""
+"¿Eres un robot?. Google piensa que si... Por favor, vuelva atrás e inténtelo "
+"de nuevo"
 
 #: result.php:58
 msgid "Are you a bot? The verification was not completed successfully."
 msgstr ""
+"¿Eres un robot? La verificación no se ha completado correctamente. Por "
+"favor, vuelva atrás e inténtelo de nuevo"
 
 #: result.php:64
 msgid "Are you a bot? No antispam protection was completed successfully."
 msgstr ""
+"¿Eres un robot?. La protección anti spam no se ha completado correctamente. "
+"Por favor, vuelva atrás e inténtelo de nuevo"
 
 #: result.php:84
 msgid "The URL could not be shortened."
-msgstr ""
+msgstr "La URL no se ha podido acortar"
 
 #: result.php:101
 msgid "Your short URL"
-msgstr ""
+msgstr "Su URL acortada"
 
 #: result.php:105
 msgid "Original URL"
-msgstr ""
+msgstr "URL Original"
 
 #: result.php:108 result.php:124 result.php:139
 msgid "Copy to clipboard"
-msgstr ""
+msgstr "Copiar al portapapeles"
 
 #: result.php:109 result.php:125 result.php:140
 msgid "Copied to clipboard"
-msgstr ""
+msgstr "Copiado al portapapeles"
 
 #: result.php:111 result.php:127 result.php:142
 msgid "Press ⌘+C to copy"
-msgstr ""
+msgstr "Pulse  ⌘+C para copiar"
 
 #: result.php:112 result.php:128 result.php:143
 msgid "Press Ctrl+C to copy"
-msgstr ""
+msgstr "Haga clic en un enlace y presione CTRL +C para copiarlo."
 
 #: result.php:113 result.php:129 result.php:144
 msgid "Tap copy"
-msgstr ""
+msgstr "Tocar para copiar"
 
 #: result.php:114 result.php:130 result.php:145
 msgid "Failed to copy"
-msgstr ""
+msgstr "Falló al copiar"
 
 #: result.php:121
 msgid "Short URL"
-msgstr ""
+msgstr "Su URL acortada"
 
 #: result.php:136
 msgid "Stats"
-msgstr ""
+msgstr "Estadísticas"
 
 #: result.php:153
 msgid "Share"
-msgstr ""
+msgstr "Compartir"
 
 #: result.php:154
 msgid "Share your short URL"
-msgstr ""
+msgstr "Compartir su URL corta"
 
 #: result.php:175
 msgid "QR code"
-msgstr ""
+msgstr "Código QR"
 
 #: result.php:176
 msgid "Share your link with external devices"
-msgstr ""
+msgstr "Comparta su enlace con dispositivos externos"
