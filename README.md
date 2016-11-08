@@ -3,7 +3,7 @@ Infinity Squared
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/tomslominski)
 
-[Latest release](https://github.com/tomslominski/infinity-squared/releases)
+[Download](https://github.com/tomslominski/infinity-squared/releases)
 
 A beautiful public page theme for YOURLS, carefully crafted by [Tom Slominski](http://tomslominski.net/). It can be used to give the public access to your short domain, not just registered users.
 
@@ -23,13 +23,13 @@ Features
 
 Installation
 ------------
-1. Download the latest [release](https://github.com/tomslominski/infinity-squared/releases) from GitHub and enter the folder which houses `index.php`.
+1. Download the latest [release](https://github.com/tomslominski/infinity-squared/releases/latest) from GitHub and enter the folder which houses `index.php`.
 2. Upload all of the files into the directory where you've installed YOURLS. It doesn't have any additional requirements. If you can run YOURLS, you can run ∞²! Some of the files might collide with the files YOURLS also provides, like `README.md`. You can choose to replace them or not, it doesn't matter.
 3. Rename `public/config-sample.php` to `public/config.php` and make ∞² suit you.
 
 Upgrade
 -------
-1. Download the latest [release](https://github.com/tomslominski/infinity-squared/releases) from GitHub and enter the folder which houses `index.php`.
+1. Download the latest [release](https://github.com/tomslominski/infinity-squared/releases/latest) from GitHub and enter the folder which houses `index.php`.
 2. Remember to do a backup before you make any changes on your server.
 3. Replace all of the files from the downloaded release with the release on your server. **Remember that if you've made any changes to the core theme files, they will be overwritten, so be careful!** A `config.php` is not provided with the release, so you don't need to worry about loosing your settings.
 4. Copy over any new settings from `config-sample.php` into your own `config.php`.
