@@ -40,7 +40,7 @@ You can also create a `public/custom.css` style and change the appropriate setti
 
 Translating
 -----------
-By default, Infinity Squared comes with Polish and Russian translations, as well as it's default English language. To enable any of those languages, you need to edit YOURLS' `config.php`, as described [here](https://github.com/YOURLS/YOURLS/wiki/YOURLS-in-your-language#install-yourls-in-your-language).
+By default, Infinity Squared comes with Polish, Russian and Spanish translations, as well as it's default English language. To enable any of those languages, you need to edit YOURLS' `config.php`, as described [here](https://github.com/YOURLS/YOURLS/wiki/YOURLS-in-your-language#install-yourls-in-your-language).
 
 If you want to translate Infinity Squared into your own language, [this blog post](http://blog.yourls.org/2013/02/workshop-how-to-create-your-own-translation-file-for-yourls/) from YOURLS describes how to do it. You can find the latest .pot file in `public/languages/isq_translation-source.pot`. Please follow the contributing guidelines below to add your translation to Infinity Squared.
 
