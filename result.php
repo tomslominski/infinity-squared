@@ -18,6 +18,21 @@ function display_error( $message, $action = null ) {
 	die();
 }
 
+function get_remote_file( $url ) {
+	if( function_exists( 'curl_init' ) ) {
+		$curl = curl_init();
+		curl_setopt( $curl, CURLOPT_URL, $url );
+		curl_setopt( $curl, CURLOPT_RETURNTRANSFER, true );
+		$output = curl_exec( $curl );
+		curl_close( $curl );
+		return $output;
+	} elseif( ini_get( 'allow_url_fopen' ) ) {
+		return file_get_contents( $url );
+	} else {
+		display_error( yourls__( 'Your server doesn\'t support reCAPTCHA. Ask your host to install cURL or turn on allow_url_fopen.', 'isq_translation' ) );
+	}
+}
+
 if ( empty( $_REQUEST['url'] ) ) {
 	display_error( yourls__( 'You haven\'t entered a URL to shorten.', 'isq_translation' ) );
 };
@@ -42,7 +57,7 @@ if ( $antispam_method == 'user_login' ) {
 } else if ( $antispam_method == 'recaptcha' ) {
 
 	// Google reCAPTCHA is enabled
-	$recaptcha_data = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . ISQ::$recaptcha['secret'] . '&response=' . $_REQUEST['g-recaptcha-response']);
+	$recaptcha_data = get_remote_file('https://www.google.com/recaptcha/api/siteverify?secret=' . ISQ::$recaptcha['secret'] . '&response=' . $_REQUEST['g-recaptcha-response']);
 	$recaptcha_json = json_decode($recaptcha_data, TRUE);
 
 	// What happens when the reCAPTCHA was completed incorrectly
@@ -131,7 +146,7 @@ $dependencies[] = 'clipboard.js';
 					</div>
 				</div>
 			</div>
-			
+
 			<div class="form-item half-width right">
 				<label for="stats" class="primary"><?php /* translators: This is short for statistics */ yourls_e( 'Stats', 'isq_translation'); ?></label>
 				<div class="input-with-copy">
@@ -162,19 +177,19 @@ $dependencies[] = 'clipboard.js';
 
 			if ( ISQ::$social['tumblr'] ) { echo '<span onclick="window.open(\'http://www.tumblr.com/share/link?url=' . $encoded_shorturl . '&name=' . $encoded_title . '\',\'_blank\',\'width=550,height=380\')" class="button social-button tumblr" title="Share on Tumblr">' . file_get_contents('public/images/tumblr.svg') . '</span>'; }
 
-			if ( ISQ::$social['linkedin'] ) { echo '<span onclick="window.open(\'https://www.linkedin.com/shareArticle?mini=true&url=' . $encoded_shorturl . '&title=' . $encoded_title . '\',\'_blank\',\'width=550,height=380\')" class="button social-button linkedin" title="Share on LinkedIn">' . file_get_contents('public/images/linkedin.svg') . '</span>'; }	
+			if ( ISQ::$social['linkedin'] ) { echo '<span onclick="window.open(\'https://www.linkedin.com/shareArticle?mini=true&url=' . $encoded_shorturl . '&title=' . $encoded_title . '\',\'_blank\',\'width=550,height=380\')" class="button social-button linkedin" title="Share on LinkedIn">' . file_get_contents('public/images/linkedin.svg') . '</span>'; }
 
 			if ( ISQ::$social['googleplus'] ) { echo '<span onclick="window.open(\'https://plus.google.com/share?url=' . $encoded_shorturl . '\',\'_blank\',\'width=550,height=380\')" class="button social-button googleplus" title="Share on Google+">' . file_get_contents('public/images/googleplus.svg') . '</span>'; }
-			
+
 			if ( ISQ::$social['vk'] ) { echo '<span onclick="window.open(\'https://vk.com/share.php?url=' . $encoded_shorturl . '\',\'_blank\',\'width=550,height=380\')" class="button social-button vk" title="Share on VK">' . file_get_contents('public/images/vk.svg') . '</span>'; }
-		?>		
+		?>
 	</div>
 
 	<?php if ( ISQ::$general['qr'] ) : ?>
 		<!-- QR code -->
 		<h2><?php yourls_e( 'QR code', 'isq_translation' ); ?></h2>
 		<p><?php yourls_e( 'Share your link with external devices', 'isq_translation' ); ?></p>
-	
+
 	<?php
 		// PHP QR Code is LGPL licensed
 		include('public/phpqrcode/qrlib.php');
