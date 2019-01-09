@@ -30,28 +30,34 @@ $title   = isset( $_REQUEST['title'] ) ? yourls_sanitize_title( $_REQUEST['title
 		</div>
 
 		<?php
-			if ( function_exists( 'yourls_is_valid_user' ) && yourls_is_valid_user() == 1 ) {
+			switch( is_get_antispam_method() ) {
+				case 'login': ?>
+					<input type="hidden" name="antispam_method" value="user_login" class="hidden">
+				<?php break;
 
-				echo '<input type="hidden" name="antispam_method" value="user_login" class="hidden">';
+				case 'recaptcha_v3':
+					$dependencies[] = 'recaptcha_v3';
+				?>
+					<input type="hidden" name="antispam_method" value="recaptcha_v3" class="hidden">
+					<input type="hidden" name="recaptcha_token" id="recaptcha_token" class="hidden">
+				<?php break;
 
-			} else if ( !empty(ISQ::$recaptcha['sitekey']) && !empty(ISQ::$recaptcha['secret']) ) {
+				case 'recaptcha':
+					$dependencies[] = 'recaptcha';
+				?>
+					<input type="hidden" name="antispam_method" value="recaptcha" class="hidden">
 
-				$dependencies[] = 'reCAPTCHA';
+					<div class="form-item recaptcha-container">
+						<p><label class="primary" title=""><?php yourls_e( 'Verification', 'isq_translation'); ?></label></p>
+						<p><label class="secondary"><?php yourls_e( 'reCAPTCHA verification used to ensure you are not a bot.', 'isq_translation'); ?></label></p>
+						<div class="g-recaptcha" data-sitekey="<?php echo ISQ::$recaptcha['sitekey']; ?>"></div>
+					</div>
+				<?php break;
 
-				echo '<input type="hidden" name="antispam_method" value="recaptcha" class="hidden">';
-			?>
-				<div class="form-item recaptcha-container">
-					<p><label class="primary" title=""><?php yourls_e( 'Verification', 'isq_translation'); ?></label></p>
-					<p><label class="secondary"><?php yourls_e( 'reCAPTCHA verification used to ensure you are not a bot.', 'isq_translation'); ?></label></p>
-					<div class="g-recaptcha" data-sitekey="<?php echo ISQ::$recaptcha['sitekey']; ?>"></div>
-				</div>
-			<?php
-
-			} else {
-
-				echo '<input type="hidden" name="antispam_method" value="basic" class="hidden">';
-				echo '<input type="hidden" name="basic_antispam" class="hidden">';
-
+				default: ?>
+					<input type="hidden" name="antispam_method" value="basic" class="hidden">
+					<input type="hidden" name="basic_antispam" class="hidden">
+				<?php break;
 			}
 		?>
 

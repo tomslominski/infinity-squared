@@ -10,7 +10,10 @@ if( @include dirname(__FILE__) . '/public/config.php' ) {
 	include( dirname(__FILE__) . '/public/config-sample.php' );
 }
 
-class ISQ { public static $general = array(), $links = array(), $social = array(), $recaptcha = array(); }
+class ISQ { public static $general = array(), $links = array(), $social = array(), $recaptcha = array(), $recaptcha_v3 = array(); }
+
+// Load functions
+require_once( dirname(__FILE__) . '/public/functions.php' );
 
 // Default dependencies
 $dependencies = array();

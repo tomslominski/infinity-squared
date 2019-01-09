@@ -48,3 +48,14 @@ if( document.querySelectorAll( '.copy-button' ).length > 0 ) {
     } );
 
 }
+
+// reCAPTCHA
+if( 'object' === typeof grecaptcha ) {
+    grecaptcha.ready( function() {
+        var sitekey = document.querySelectorAll( '#recaptcha-sitekey' )[0].innerHTML;
+
+        grecaptcha.execute( sitekey, {action: 'homepage'} ).then( function( token ) {
+            document.querySelectorAll( '#recaptcha_token' )[0].value = token;
+        });
+    });
+}

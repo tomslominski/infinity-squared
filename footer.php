@@ -10,24 +10,30 @@
 </div>
 
 <footer class="content site-footer">
-	<p><?php yourls_e( 'Powered by <a href="http://yourls.org/">YOURLS</a>. Designed by <a href="http://tomslominski.net/">Tom Slominski</a>.', 'isq_translation') ?> <a class="icon-github" href="https://github.com/tomslominski/infinity-squared"><?php include('public/images/github.svg'); ?></a></p>
-	<?php if ( !empty(ISQ::$recaptcha['sitekey']) && !empty(ISQ::$recaptcha['secret']) ) { ?>
-		<p class="recaptcha-cookie"><?php yourls_e('This site uses cookies for Google reCAPTCHA','isq_translation')?>.<p>
-	<?php }; ?>
+	<p><?php yourls_e( 'Powered by <a href="http://yourls.org/">YOURLS</a>. Designed by <a href="https://slomin.ski/">Tom Slominski</a>.', 'isq_translation') ?> <a class="icon-github" href="https://github.com/tomslominski/infinity-squared"><?php include('public/images/github.svg'); ?></a></p>
+	<?php if( 'recaptcha' == is_get_antispam_method() || 'recaptcha_v3' == is_get_antispam_method() ) : ?>
+		<p class="recaptcha-cookie"><?php yourls_e('This site uses cookies for Google reCAPTCHA','isq_translation'); ?>.<p>
+	<?php endif; ?>
 </div>
 </div>
 </div>
 
 <?php global $dependencies; ?>
 
-<?php if ( in_array( 'clipboard.js', $dependencies ) ) { ?>
-	<script src="public/js/clipboard.min.js"></script>
-	<script src="public/js/app.js"></script>
-<?php }
-
-if ( in_array( 'reCAPTCHA', $dependencies ) ) { ?>
+<?php if( in_array( 'recaptcha_v3', $dependencies ) ) : ?>
+	<script type="text/template" id="recaptcha-sitekey"><?php echo ISQ::$recaptcha['sitekey']; ?></script>
+	<script src="https://www.google.com/recaptcha/api.js?render=<?php echo ISQ::$recaptcha['sitekey']; ?>"></script>
+<?php elseif( in_array( 'recaptcha', $dependencies ) ) : ?>
 	<script src="https://www.google.com/recaptcha/api.js"></script>
+<?php endif; ?>
+
+<?php if( in_array( 'clipboard.js', $dependencies ) ) { ?>
+	<script src="public/js/clipboard.min.js"></script>
 <?php } ?>
+
+<?php if( in_array( array( 'recaptcha_v3', 'clipboard.js' ), $dependencies ) ) : ?>
+	<script src="public/js/app.js"></script>
+<?php endif; ?>
 
 </body>
 </html>

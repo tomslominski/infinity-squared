@@ -52,4 +52,11 @@ ISQ::$recaptcha = array(
 	'secret' => ''
 );
 
+// Separate API keys for reCAPTCHA v3
+ISQ::$recaptcha_v3 = array(
+	'sitekey' => '',
+	'secret' => '',
+	'threshold' => '0.5',
+);
+
 ?>

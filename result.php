@@ -1,38 +1,6 @@
 <?php
 include('header.php');
 
-function display_error( $message, $action = null ) {
-	echo '<div class="content error">';
-		echo '<p class="message">' . $message . '</p>';
-
-		echo '<p class="action">';
-			if( !empty( $action ) ) {
-				echo $action;
-			} else {
-				echo '<a href="' . YOURLS_SITE . '" class="button">' . yourls__( '&larr; Go home and try again', 'isq_translation' ) . '</a>';
-			}
-		echo '</p>';
-	echo '</div>';
-
-	include('footer.php');
-	die();
-}
-
-function get_remote_file( $url ) {
-	if( function_exists( 'curl_init' ) ) {
-		$curl = curl_init();
-		curl_setopt( $curl, CURLOPT_URL, $url );
-		curl_setopt( $curl, CURLOPT_RETURNTRANSFER, true );
-		$output = curl_exec( $curl );
-		curl_close( $curl );
-		return $output;
-	} elseif( ini_get( 'allow_url_fopen' ) ) {
-		return file_get_contents( $url );
-	} else {
-		display_error( yourls__( 'Your server doesn\'t support reCAPTCHA. Ask your host to install cURL or turn on allow_url_fopen.', 'isq_translation' ) );
-	}
-}
-
 if ( empty( $_REQUEST['url'] ) ) {
 	display_error( yourls__( 'You haven\'t entered a URL to shorten.', 'isq_translation' ) );
 };
@@ -50,34 +18,45 @@ if ( !empty( $_REQUEST['keyword'] ) && yourls_keyword_is_taken( $_REQUEST['keywo
 // Check what CAPTCHA method was used
 $antispam_method = $_REQUEST['antispam_method'];
 
-if ( $antispam_method == 'user_login' ) {
+switch( is_get_antispam_method() ) {
+	case 'login':
+		if( !yourls_is_valid_user() ) {
+			display_error( yourls__( 'You are not logged in - please go back and try again.', 'isq_translation' ) );
+		}
+	break;
 
-	// User is logged into YOURLS
+	case 'recaptcha_v3':
+		$recaptcha_data = get_remote_file( 'https://www.google.com/recaptcha/api/siteverify?secret=' . ISQ::$recaptcha_v3['secret'] . '&response=' . $_POST['recaptcha_token'] );
+		$recaptcha = json_decode( $recaptcha_data );
 
-} else if ( $antispam_method == 'recaptcha' ) {
+		if( $recaptcha->success != true || $recaptcha->action != 'homepage' || $recaptcha->score < ISQ::$recaptcha_v3['threshold'] ) {
+			display_error( yourls__( 'Are you a bot? Google certainly thinks you are.', 'isq_translation' ) );
+		}
+	break;
 
-	// Google reCAPTCHA is enabled
-	$recaptcha_data = get_remote_file('https://www.google.com/recaptcha/api/siteverify?secret=' . ISQ::$recaptcha['secret'] . '&response=' . $_REQUEST['g-recaptcha-response']);
-	$recaptcha_json = json_decode($recaptcha_data, TRUE);
+	case 'recaptcha':
+		// Google reCAPTCHA is enabled
+		$recaptcha_data = get_remote_file( 'https://www.google.com/recaptcha/api/siteverify?secret=' . ISQ::$recaptcha['secret'] . '&response=' . $_POST['g-recaptcha-response'] );
+		$recaptcha_json = json_decode( $recaptcha_data, true );
 
-	// What happens when the reCAPTCHA was completed incorrectly
-	if ( $recaptcha_json['success'] != 'true' ) {
-		display_error( yourls__( 'Are you a bot? Google certainly thinks you are.', 'isq_translation' ) );
-	}
+		// What happens when the reCAPTCHA was completed incorrectly
+		if ( $recaptcha_json['success'] != 'true' ) {
+			display_error( yourls__( 'Are you a bot? Google certainly thinks you are.', 'isq_translation' ) );
+		}
+	break;
 
-} else if ( $antispam_method == 'basic' ) {
+	case 'basic':
+		// Basic antispam protection fallback
+		// What happens when it was not completed correctly
+		if( !empty( $_POST['basic_antispam'] ) ) {
+			display_error( yourls__( 'Are you a bot? The anti-spam check was not completed successfully.', 'isq_translation' ) );
+		}
+	break;
 
-	// Basic antispam protection fallback
-	// What happens when it was not completed correctly
-	if ( $_REQUEST['basic_antispam'] != "" ) {
-		display_error( yourls__( 'Are you a bot? The verification was not completed successfully.', 'isq_translation' ) );
-	}
-
-} else {
-
-	// No antispam protection was detected
-	display_error( yourls__( 'Are you a bot? No antispam protection was completed successfully.', 'isq_translation' ) );
-
+	default:
+		// No anti-spam check was completed at all
+		display_error( yourls__( 'Are you a bot? No anti-spam check was completed successfully.', 'isq_translation' ) );
+	break;
 }
 
 // Get parameters -- they will all be sanitized in yourls_add_new_link()
