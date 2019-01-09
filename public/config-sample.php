@@ -20,7 +20,7 @@ ISQ::$links = array(
 	),
 	array(
 		'name' => 'Tom Slominski',
-		'link' => 'http://tomslominski.net/'
+		'link' => 'https://slomin.ski/'
 	),
 	array(
 		'name' => yourls__( 'Get ∞²!', 'isq_translation' ),

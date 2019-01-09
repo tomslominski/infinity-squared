@@ -5,7 +5,7 @@ Infinity Squared
 
 [Download](https://github.com/tomslominski/infinity-squared/releases)
 
-A beautiful public page theme for YOURLS, carefully crafted by [Tom Slominski](http://tomslominski.net/). It can be used to give the public access to your short domain, not just registered users.
+A beautiful public page theme for YOURLS, carefully crafted by [Tom Slominski](https://slomin.ski/). It can be used to give the public access to your short domain, not just registered users.
 
 ![Front page of Infinity Squared 2.0](http://i.imgur.com/Wc1cVRF.png)
 ###### Front page of Infinity Squared 2.0
