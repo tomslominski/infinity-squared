@@ -21,8 +21,8 @@
 <?php global $dependencies; ?>
 
 <?php if( in_array( 'recaptcha_v3', $dependencies ) ) : ?>
-	<script type="text/template" id="recaptcha-sitekey"><?php echo ISQ::$recaptcha['sitekey']; ?></script>
-	<script src="https://www.google.com/recaptcha/api.js?render=<?php echo ISQ::$recaptcha['sitekey']; ?>"></script>
+	<script type="text/template" id="recaptcha-sitekey"><?php echo ISQ::$recaptcha_v3['sitekey']; ?></script>
+	<script src="https://www.google.com/recaptcha/api.js?render=<?php echo ISQ::$recaptcha_v3['sitekey']; ?>"></script>
 <?php elseif( in_array( 'recaptcha', $dependencies ) ) : ?>
 	<script src="https://www.google.com/recaptcha/api.js"></script>
 <?php endif; ?>
@@ -31,7 +31,7 @@
 	<script src="public/js/clipboard.min.js"></script>
 <?php } ?>
 
-<?php if( in_array( array( 'recaptcha_v3', 'clipboard.js' ), $dependencies ) ) : ?>
+<?php if( in_array( 'recaptcha_v3', $dependencies ) || in_array( 'clipboard.js', $dependencies ) ) : ?>
 	<script src="public/js/app.js"></script>
 <?php endif; ?>
 
