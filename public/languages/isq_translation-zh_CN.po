@@ -1,0 +1,204 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Infinity Squared\n"
+"POT-Creation-Date: 2019-05-26 04:25+0800\n"
+"PO-Revision-Date: 2019-05-26 04:55+0800\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.3\n"
+"X-Poedit-KeywordsList: yourls__;yourls_e;yourls_s;yourls_se;"
+"yourls_esc_attr__;yourls_esc_html__;yourls_x;yourls_ex;yourls_esc_attr_x;"
+"yourls_esc_html_x;yourls_n:1,2;yourls_nx:1,2;yourls_n_noop:1,2;"
+"yourls_nx_noop:1,2\n"
+"X-Poedit-Basepath: ../..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Last-Translator: wordlesswind <i@qingly.me>\n"
+"Language: zh_CN\n"
+"X-Poedit-SearchPath-0: public/languages\n"
+"X-Poedit-SearchPath-1: .\n"
+
+#: footer.php:3
+msgid "The bookmarklet"
+msgstr "书签"
+
+#: footer.php:5
+msgid "Save this as a bookmark."
+msgstr "将其另存为书签。"
+
+#: footer.php:6
+msgid ""
+"Add this to your bookmarks or drag it to your bookmarks bar to quickly "
+"access shortening functions."
+msgstr "将其添加到书签或将其拖拽到书签栏中，以便快速访问缩短功能。"
+
+#: footer.php:7 index.php:59
+msgid "Shorten"
+msgstr "缩短"
+
+#: footer.php:8
+msgid ""
+"This bookmarklet takes the page URL and title and opens a new tab, where you "
+"can fill out a CAPTCHA. If you have selected text before using the "
+"bookmarklet, that will be used as the keyword."
+msgstr ""
+"此书签会获取页面的URL和标题，并打开一个新标签页，您可以在其中填写验证码。如果"
+"您在使用书签之前选择了文本，那么它将成为关键字。"
+
+#: footer.php:9
+msgid ""
+"Support for bookmarklets on mobile varies. For example, they work on Chrome "
+"for Android but you have to add and sync them from your desktop."
+msgstr ""
+"对移动设备上的书签的支持各不相同。例如，它们适用于 Android 的 Chrome，但您必"
+"须从桌面添加并同步它们。"
+
+#: footer.php:13
+msgid ""
+"Powered by <a href=\"http://yourls.org/\">YOURLS</a>. Designed by <a href="
+"\"http://tomslominski.net/\">Tom Slominski</a>."
+msgstr ""
+"由 <a href=\"http://yourls.org/\">YOURLS</a> 驱动。由 <a href=\"http://"
+"tomslominski.net/\">Tom Slominski </a>设计。"
+
+#: footer.php:15
+msgid "This site uses cookies for Google reCAPTCHA"
+msgstr "本网站需要 cookies 来使用 Google reCAPTCHA"
+
+#: index.php:10
+msgid "Enter a new URL to shorten"
+msgstr "输入要缩短的新网址"
+
+#: index.php:13
+msgid "Long URL"
+msgstr "长网址"
+
+#: index.php:14
+msgid "Paste the long URL here. This is required."
+msgstr "必须在此粘贴长网址。"
+
+#: index.php:20
+msgid "Custom keyword"
+msgstr "自定义关键字"
+
+#: index.php:21
+msgid "A keyword replaces the default short string."
+msgstr "关键字将替换默认的短字符串。"
+
+#: index.php:26
+msgid "Custom title"
+msgstr "自定义标题"
+
+#: index.php:27
+msgid ""
+"Optional title used when sharing a link from YOURLS using social sharers."
+msgstr "可选标题，在 YOURLS 使用 social sharers 分享链接时采用"
+
+#: index.php:44
+msgid "Verification"
+msgstr "验证"
+
+#: index.php:45
+msgid "reCAPTCHA verification used to ensure you are not a bot."
+msgstr "reCAPTCHA 验证用于确保您不是机器人。"
+
+#: public/config-sample.php:26
+msgid "Get ∞²!"
+msgstr "获取 ∞²！"
+
+#: public/config-sample.php:30
+msgid "Admin area"
+msgstr "管理界面"
+
+#: result.php:12
+msgid "&larr; Go home and try again"
+msgstr "返回首页并再试一次"
+
+#: result.php:22
+msgid "You haven't entered a URL to shorten."
+msgstr "您尚未输入要缩短的网址。"
+
+#: result.php:27
+#, php-format
+msgid "The keyword %1$s is reserved."
+msgstr "关键字 %1$s 已被保留。"
+
+#: result.php:32
+#, php-format
+msgid "The keyword %1$s is taken."
+msgstr "关键字 %1$s 已被使用。"
+
+#: result.php:50
+msgid "Are you a bot? Google certainly thinks you are."
+msgstr "您是机器人吗？Google 毫无疑问地认为您是。"
+
+#: result.php:58
+msgid "Are you a bot? The verification was not completed successfully."
+msgstr "您是机器人吗？ 验证没有顺利完成。"
+
+#: result.php:64
+#, fuzzy
+msgid "Are you a bot? No antispam protection was completed successfully."
+msgstr "您是机器人吗？防垃圾邮件保护已成功完成。"
+
+#: result.php:84
+msgid "The URL could not be shortened."
+msgstr "该网址无法被缩短。"
+
+#: result.php:101
+msgid "Your short URL"
+msgstr "您的短网址"
+
+#: result.php:105
+msgid "Original URL"
+msgstr "原始网址"
+
+#: result.php:108 result.php:124 result.php:139
+msgid "Copy to clipboard"
+msgstr "复制到剪贴板"
+
+#: result.php:109 result.php:125 result.php:140
+msgid "Copied to clipboard"
+msgstr "已复制到剪贴板"
+
+#: result.php:111 result.php:127 result.php:142
+msgid "Press ⌘+C to copy"
+msgstr "按 ⌘+ C 进行复制"
+
+#: result.php:112 result.php:128 result.php:143
+msgid "Press Ctrl+C to copy"
+msgstr "按 Ctrl + C 进行复制"
+
+#: result.php:113 result.php:129 result.php:144
+msgid "Tap copy"
+msgstr "点击复制"
+
+#: result.php:114 result.php:130 result.php:145
+msgid "Failed to copy"
+msgstr "无法复制"
+
+#: result.php:121
+msgid "Short URL"
+msgstr "短网址"
+
+#: result.php:136
+msgid "Stats"
+msgstr "统计"
+
+#: result.php:153
+msgid "Share"
+msgstr "分享"
+
+#: result.php:154
+msgid "Share your short URL"
+msgstr "分享您的短网址"
+
+#: result.php:175
+msgid "QR code"
+msgstr "二维码"
+
+#: result.php:176
+msgid "Share your link with external devices"
+msgstr "与外部设备分享您的链接"
