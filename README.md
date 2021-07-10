@@ -1,7 +1,12 @@
+This project is no longer supported
+===================================
+
+Thank you for your support over the years, but as of 10/07/21 this project is no longer supported. It still works perfectly fine, so feel free to download it and use it, but it will no longer receive any updates (and it hasn't done in years anyway!). If anybody would like to fork the repo and continue the project, feel free to do so.
+
+---
+
 Infinity Squared
 ================
-
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/tomslominski)
 
 [Download](https://github.com/tomslominski/infinity-squared/releases)
 
