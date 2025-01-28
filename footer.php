@@ -10,7 +10,7 @@
 </div>
 
 <footer class="content site-footer">
-	<p><?php yourls_e( 'Powered by <a href="http://yourls.org/">YOURLS</a>. Designed by <a href="https://slomin.ski/">Tom Slominski</a>.', 'isq_translation') ?> <a class="icon-github" href="https://github.com/tomslominski/infinity-squared"><?php include('public/images/github.svg'); ?></a></p>
+	<p><?php yourls_e( 'Powered by <a href="http://yourls.org/">YOURLS</a>.</p>
 	<?php if( 'recaptcha' == is_get_antispam_method() || 'recaptcha_v3' == is_get_antispam_method() ) : ?>
 		<p class="recaptcha-cookie"><?php yourls_e('This site uses cookies for Google reCAPTCHA','isq_translation'); ?>.<p>
 	<?php endif; ?>
